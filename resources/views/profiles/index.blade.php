@@ -1,0 +1,78 @@
+@extends('layouts.app')
+
+@section('title', 'Registrovaní užívatelia')
+
+
+@section('content')
+
+@include('inc.messages')
+
+    @if (Session::has('message'))
+
+        <div class="alert alert-info">{{ Session::get('message') }}</div>
+    
+    @endif
+
+
+        <div class="container">
+
+            
+            <table class="col-12 border border-black pt-3 align-items-center nowrap ml-2 card-body">
+                <p class="col-12 card-header align-items-center nowrap ml-2">Registrovaní Užívatelia</p>
+                        <tr class="border border-secondary">
+                            <th class="p-2 border border-secondary"><strong>Meno</strong></th>
+                            <th class="p-2 border border-secondary"><strong>Email</strong></th>
+                            <th class="p-2 border border-secondary"><strong>Profil</strong></th>
+                            <th class="p-2 border border-secondary"><strong>Registrovaný</strong></th>
+                            <th class="p-2">
+                                @can('isAdmin')
+                                    <div class="d-flex justify-content-center">
+                                        <a href="{{ route('register') }}" class="">
+                                            <button class="create-user-icon" type="submit" title="Nový Užívateľ"><i class="fa fa-user-plus"></i></button>
+                                        </a>
+                                    </div>
+                                @endcan
+                            </th>
+                        </tr>
+                    @foreach($users as $user)
+
+                        <tr class="border border-secondary">
+                            <td class="p-2 border border-secondary">{{ $user->username }}</td>
+                            <td class="p-2 border border-secondary">{{ $user->email }}</td>
+                            <td class="p-2 border border-secondary">{{ $user->role }}</td>
+                            <td class="p-2 border border-secondary">{{ $user->created_at->format('d.m Y') }}</td>
+                            <td class="p-2 border border-secondary">
+                                @can('delete', $user)
+                                    <form action="/profiles/{{ $user->id }}" method="post">
+                                        @method('DELETE')
+                                        @csrf
+                                        
+                                        @if($user->role == 'head_admin')
+                                            @can('isHeadAdmin')
+                                                <div class="d-inline-flex">
+                                                    <a href="{{ route('password.update') }}" >
+                                                        <button type="submit" class="ml-1" title="Upraviť"><i class="fa fa-edit edit-icon"></i></button>                                   
+                                                    </a>
+                                                </div>
+                                            @endcan
+                                        @endif
+
+                                        @if($user->role == 'admin' || $user->role == 'user')
+                                            <div class="d-inline-flex">
+                                                <a href="{{ route('password.update') }}" class="" title="Upraviť">
+                                                    <button type="submit" class="ml-1" title="Upraviť"><i class="fa fa-edit edit-icon"></i></button>                                   
+                                                </a>
+                                                <button type="submit" class="" title="Zmazať príspevok"><i class="fa fa-trash delete-icon"></i></button>
+                                            </div>
+                                        @endif
+
+                                    </form>
+                                @endcan
+                            </td>
+                        </tr>
+
+                    @endforeach
+
+                </table>
+        </div>
+@endsection
