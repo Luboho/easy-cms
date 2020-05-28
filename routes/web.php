@@ -54,6 +54,6 @@ Route::get('/rooms/{room}/edit', 'RoomsController@edit')->name('rooms.edit');
 Route::patch('/rooms/{room}', 'RoomsController@update')->name('rooms.update');
 Route::delete('/rooms/{room}', 'RoomsController@destroy')->name('rooms.destroy');
 
-Route::get('/profiles', 'ProfilesController@index')->middleware('can:isAdmin')->name('profiles.index');
-Route::delete('/profiles/{user}', 'ProfilesController@destroy')->middleware('can:isAdmin')->name('profile.destroy');
+Route::get('/profiles', 'ProfilesController@index')->middleware('can:isHeadAdmin')->name('profiles.index');
+Route::delete('/profiles/{user}', 'ProfilesController@destroy')->middleware('can:isHeadAdmin')->name('profile.destroy');
 

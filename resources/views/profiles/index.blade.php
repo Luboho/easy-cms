@@ -25,7 +25,7 @@
                             <th class="p-2 border border-secondary"><strong>Profil</strong></th>
                             <th class="p-2 border border-secondary"><strong>Registrovaný</strong></th>
                             <th class="p-2">
-                                @can('isAdmin')
+                                @can('isHeadAdmin')
                                     <div class="d-flex justify-content-center">
                                         <a href="{{ route('register') }}" class="">
                                             <button class="create-user-icon" type="submit" title="Nový Užívateľ"><i class="fa fa-user-plus"></i></button>
@@ -49,23 +49,27 @@
                                         
                                         @if($user->role == 'head_admin')
                                             @can('isHeadAdmin')
-                                                <div class="d-inline-flex">
-                                                    <a href="{{ route('password.update') }}" >
-                                                        <button type="submit" class="ml-1" title="Upraviť"><i class="fa fa-edit edit-icon"></i></button>                                   
-                                                    </a>
+                                                <div class="">
+                                                    @if (Route::has('password.request'))
+                                                        <a class="btn btn-link" href="{{ route('password.request') }}">
+                                                            <i class="fa fa-edit edit-icon"></i>
+                                                        </a>
+                                                    @endif
                                                 </div>
                                             @endcan
                                         @endif
 
-                                        @if($user->role == 'admin' || $user->role == 'user')
-                                            <div class="d-inline-flex">
-                                                <a href="{{ route('password.update') }}" class="" title="Upraviť">
-                                                    <button type="submit" class="ml-1" title="Upraviť"><i class="fa fa-edit edit-icon"></i></button>                                   
-                                                </a>
-                                                <button type="submit" class="" title="Zmazať príspevok"><i class="fa fa-trash delete-icon"></i></button>
+                                        @if($user->role == 'admin' )
+                                            <div class="">
+                                                {{-- @if (Route::has('password.request'))
+                                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                                        <i class="fa fa-edit edit-icon"></i>
+                                                    </a>
+                                                @endif --}}
+                                                <div class="d-flex justify-content-center"><button type="submit" class="" title="Zmazať príspevok"><i class="fa fa-trash delete-icon"></i></button></div>
                                             </div>
                                         @endif
-
+                                        
                                     </form>
                                 @endcan
                             </td>
