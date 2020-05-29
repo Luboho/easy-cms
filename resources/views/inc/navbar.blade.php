@@ -74,7 +74,7 @@
                         </li>
 
                         <!-- Users | New User -->
-                        @can('isAdmin')
+                        @can('isHeadAdmin')
                             <li class="nav-item ">
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
