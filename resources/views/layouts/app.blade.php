@@ -57,7 +57,7 @@
 
                             <div class="ml-3">
                                 <h5 class="pt-3 font-weight-bold">Otvorené</h5>
-                                <p class="ml-2">{{ $company->openHours }}</p>
+                                <p class="ml-2">{!! $company->openHours !!}</p>
                             </div>
         
                             <div class="ml-3 border-secondary">
@@ -83,6 +83,13 @@
 
         <up-down></up-down>                                             {{--UP & DOWN Arrows--}}
 
+
+        <script src="//cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
+        <script>
+            CKEDITOR.replace( 'summary-ckeditor' );
+            CKEDITOR.replace( 'summary-ckeditor2' );
+        </script>
+        
     </div>
 </body>
 </html>

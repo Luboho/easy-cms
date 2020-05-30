@@ -19,7 +19,7 @@ class CreateCompaniesTable extends Migration
             $table->string('mobile')->nullable();
             $table->string('phone')->nullable();
             $table->string('facebook')->nullable();
-            $table->string('openHours')->nullable();
+            $table->text('openHours')->nullable();
             $table->string('name')->nullable();
             $table->string('street')->nullable();
             $table->string('city')->nullable();

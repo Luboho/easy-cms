@@ -48,7 +48,7 @@
                     <label for="text" class="col-form-label font-weight-bold" id="grid-form-item1">Text</label>
     
                     <textarea rows="3" cols="50"
-                        id="grid-form-item2"
+                        id="summary-ckeditor"
                         name="text"                                                                     {{-- TEXT --}}
                         type="text" 
                         class="form-control @error('text') is-invalid @enderror" 
@@ -87,20 +87,20 @@
 
                     <div class="form-group grid-form-container">
                         <label for="attention_message" class="col-form-label text-white font-weight-bold" id="grid-form-item1">Upozornenie</label>
-                                                                                                            {{-- Attention Message--}}
-                        <input id="grid-form-item2" 
-                                name="attention_message"
-                                type="text" 
-                                class="form-control @error('attention_message') is-invalid @enderror" 
-                                caption="attention_message" 
-                                value="{{ old('attention_message') }}" 
-                                autocomplete="attention_message" 
-                                >
-                    
+                        {{-- Attention Message--}}
+                        <textarea rows="3" cols="50"
+                            id="summary-ckeditor2"
+                            name="attention_message"                                                                     {{-- TEXT --}}
+                            type="attention_message" 
+                            class="form-control @error('attention_message') is-invalid @enderror" 
+                            caption="attention_message" 
+                            value="" 
+                            autocomplete="attention_message">
+                            {{ old('attention_message') }}
+                        </textarea>
+
                         @error('attention_message')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                            <span class="text-danger" role="alert">{{ $message }}</span>
                         @enderror
                     </div>
 
@@ -114,4 +114,5 @@
     </form>
 
 </div>
+
 @endsection

@@ -30,7 +30,7 @@ class AlacarteController extends Controller
     public function store()
     {
         $data = request()->validate([
-            'caption' => 'nullable',
+            'caption' => 'nullable|string|max:100',
             'image' => ['image', 'required', 'mimes:png,jpeg,jpg', 'max:1999'],
         ]);
 
@@ -63,7 +63,7 @@ class AlacarteController extends Controller
         $this->authorize('update', $alacarte);
         
         $data = request()->validate([
-            'caption' => '',
+            'caption' => 'nullable|string|max:100',
             'image' => ['image', 'mimes:png,jpeg,jpg', 'max:1999']
         ]);
 

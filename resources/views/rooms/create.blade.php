@@ -28,40 +28,37 @@
                                 autofocus>
 
                         @error('caption')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                            <span class="text-danger" role="alert">{{ $message }}</span>
                         @enderror
             
                     </div>  
                     
                     <div class="form-group grid-form-container">
-                        <label for="image" class="col-form-label font-weight-bold" id="grid-form-item1">Obrázok</label>
-                        <input type="file" class="form-control-file pb-3" id="grid-form-item2" name="image">
+                        <label for="image" class="col-form-label font-weight-bold" id="grid-form-item1">Obrázok<span class="text-danger"> *</span></label>
+                        <div>
+                            <input type="file" class="form-control-file pb-3" id="grid-form-item2" name="image">
 
-                        @error('image')
-                                <strong>{{ $message }}</strong>                       
-                        @enderror 
+                            @error('image')
+                                <span class="text-danger" role="alert">{{ $message }}</span>                       
+                            @enderror
+                        </div> 
                     </div>
 
                     <div class="form-group grid-form-container">
                         <label for="text" class="col-form-label font-weight-bold" id="grid-form-item1">Text</label>
 
-                        <textarea rows="3" cols="40"                                                            {{-- TEXT --}}
-                            name="text"
-                            id="grid-form-item2"
+                        <textarea rows="3" cols="50"
+                            id="summary-ckeditor"
+                            name="text"                                                                     {{-- TEXT --}}
                             type="text" 
                             class="form-control @error('text') is-invalid @enderror" 
                             caption="text" 
                             value="" 
-                            autocomplete="text">
-                            {{ old('text') }}
+                            autocomplete="text">{{ old('text') }}
                         </textarea>
 
                         @error('text')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                            <span class="text-danger" role="alert">{{ $message }}</span>
                         @enderror
             
                     </div>

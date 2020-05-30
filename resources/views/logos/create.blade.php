@@ -23,7 +23,7 @@
                     @enderror
                 </div>
 
-                <div class="form-group grid-form-container">
+                {{-- <div class="form-group grid-form-container">
                     <label for="caption1" class="col-form-label font-weight-bold" id="grid-form-item1">Veľký titulok</label>
                     <input type="text"
                         name="caption1"
@@ -50,15 +50,19 @@
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
-                </div>
+                </div> --}}
                 <div class="form-group grid-form-container pb-4">
                     <label for="caption3" class="col-form-label font-weight-bold" id="grid-form-item1">Titulok</label>
-                    <input type="text"
-                            name="caption3"
-                            id="grid-form-item2"
-                            class="form-control  @error('caption3') is-invalid @enderror"
-                            value="{{ old('caption3') }}"
-                            autofocus>
+                    <textarea rows="3" cols="50"
+                        id="summary-ckeditor"
+                        name="caption3"                                                                     {{-- TEXT --}}
+                        type="caption3" 
+                        class="form-control @error('caption3') is-invalid @enderror" 
+                        caption="caption3" 
+                        value="" 
+                        autocomplete="caption3">
+                        {{ old('caption3') }}
+                    </textarea>
                     @error('caption3')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>

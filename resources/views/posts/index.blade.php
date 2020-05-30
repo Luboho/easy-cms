@@ -43,7 +43,7 @@
                                     <div class="pl-4 pr-2">
                                         <h2 class=" font-weight-bold text-break">{{ $logo->caption1 }}</h2>
                                         <h3 class="">{{ $logo->caption2 }}</h3>
-                                        <h3 class=" font-italic">{{ $logo->caption3 }}</h3>
+                                        <h3 class=" font-italic">{!! $logo->caption3 !!}</h3>
                                     </div>
                                     <img src="/storage/{{ $logo->image }}" style="max-height: 150px;" class="pl-2 pr-2 pb-2 rounded-circle">
                                 </div>
@@ -75,9 +75,9 @@
                                 @if(!empty($post->image))<div class="pr-2 float-left "><img src="/storage/{{ $post->image }}" class="w-100 rounded shadow"></div>         
                                 @endif
                                 {{-- Text --}}
-                                <div class="p-3">
+                                <div class="">
             
-                                    <div class="row border-bottom border-secondary justify-content-end p-2">
+                                    <div class="row p-2 justify-content-end">
                                         @can('update', $post)
                                             {{-- <div class="ml-5">
                                                 <h3><p>{{ $post->user->username ?? '' }}</p></h3>
@@ -97,11 +97,11 @@
                                             </form>
                                         @endcan
                                     </div>
-                                    @if(!empty($post->attention_message))<h2 class="text-warning bg-dark rounded text-center p-3">{{ $post->attention_message}}</h2>@endif
+                                    @if(!empty($post->attention_message)){{--<h2 class="text-warning bg-dark rounded text-center p-3">--}}<div class="attention">{!! $post->attention_message !!}</div>{{--</h2>--}}@endif
                                     {{--Caption--}}
                                     <div class="mt-3 pt-2 pl-2 "><p class="font-weight-bold">{{ $post->caption }}</p></div>   
                                     {{--text--}}
-                                    <div><p style="text-align: justify;">{{ $post->text }}</p></div> 
+                                    <div><p style="text-align: justify;">{!! $post->text !!}</p></div> 
                                     <p class="p-1 align-self-end">
                                         {{--Create_at--}}
                                         {{ $post->created_at->format('d.m. Y') }}                                       
@@ -121,25 +121,25 @@
                 @if(preg_match('/page=[^1]/', $currentUrl))                                                 
                     @foreach($posts as $post)
     
-                        <div class="gallery-item align-self-baseline p-2">
+                        <div class="gallery-item align-items-stretch justify-content-between p-2" id="gallery">
+                            <div class="shadow">
+                                <a href="/posts/{{ $post->id }}" class="text-dark text-decoration-none">
 
-                            <div class="shadow ">
+                                    @if(!empty($post->attention_message)){{--<h2 class="text-warning bg-dark rounded text-center p-3">--}}<div class="attention">{!! $post->attention_message !!}</div>{{--</h2>--}}@endif
+
+                                    @if(!empty($post->image))<img src="/storage/{{ $post->image }}" class="rounded w-100">@endif 
                                 
-                            {{--Image--}}
-                            <a href="/posts/{{ $post->id }}">
-                                <img src="/storage/{{ $post->image }}"  class="rounded-top w-100">     
-                            </a>
-                            
-                            <div class="posts-bg p-2 d-flex justify-content-between rounded-bottom">
-                                
-                                {{--Caption--}}
-                                <p>{{ $post->caption }}</p>                                                   
-                                <p class="ml-2 align-self-end">
-                                    
-                                    {{--Create_at--}}
-                                    {{ $post->created_at->format('d.m. Y') }}                                       
-                                </p>
-                            </div>
+                                    <div class="posts-bg p-1 d-flex justify-content-between rounded-bottom">
+                                        
+                                        {{--Caption--}}
+                                        <div class="p-2 align-items-end">{{ $post->caption }}</div>
+                                         {{--Create_at--}}                                     
+                                        <div class="ml-2 p-2 align-items-end">
+                                            {{ $post->created_at->format('d.m. Y') }}                                       
+                                        </div>
+                                    </div>
+                                </a>
+
                             </div>
                         </div>
                     @endforeach
@@ -156,7 +156,7 @@
                                 <div class="shadow">
                                     <a href="/posts/{{ $post->id }}" class="text-dark text-decoration-none">
 
-                                        @if(!empty($post->attention_message))<h2 class="text-warning bg-dark rounded text-center p-3">{{ $post->attention_message}}</h2>@endif
+                                        @if(!empty($post->attention_message)){{--<h2 class="text-warning bg-dark rounded text-center p-3">--}}<div class="attention">{!! $post->attention_message !!}</div>{{--</h2>--}}@endif
 
                                         @if(!empty($post->image))<img src="/storage/{{ $post->image }}" class="rounded w-100">@endif 
                                     

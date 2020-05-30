@@ -29,9 +29,9 @@ class RoomsController extends Controller
     public function store(Room $room)
     {
         $data = request()->validate([
-            'caption' => '',
+            'caption' => 'nullable|string|max:15000',
             'image' => ['image','required', 'mimes:png,jpeg,jpg', 'max:1999'],
-            'text' => '',    
+            'text' => 'nullable|string|max:15000',    
         ]);
 
         $imagePath = request('image')->store('uploads', 'public');
@@ -58,9 +58,9 @@ class RoomsController extends Controller
     {
         $this->authorize('update', $room);
         $data = request()->validate([
-            'caption' => '',
+            'caption' => 'string|max:15000',
             'image' => ['image', 'mimes:png,jpeg,jpg', 'max:1999'],
-            'text' => '',
+            'text' => 'string|max:15000',
         ]);
 
         if (request('image')){

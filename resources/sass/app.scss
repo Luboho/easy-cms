@@ -32,14 +32,23 @@ body {
         font-size: 0.9rem;
     }
 }
-    
+    .btn-container {
+        padding: 0.5em;
+        background-color: rgba(202, 199, 199, 0.685);
+        border-radius: 4px;
+        display: inline-block;
+    }
+    .attention {
+        background-color: rgba(202, 24, 24, 0.383);
+        border-radius: 4px;
+        padding: 0.5rem;
+    } 
     // Pagination
     .page-item.active .page-link {
         z-index: 3;
         color: #fff;
         font-size: 1.1rem;
         background-color: #9e9d9d;
-        border: #464545;
       }
       .page-link {
         color: #414141;
@@ -55,11 +64,17 @@ body {
         background-color: rgba(212, 208, 208, 0.424);
         color: rgb(80, 79, 79);
         border-radius: 4px;
+
+        p {
+            text-align: justify;
+            padding-right: 0.5rem;
+        }
     }
 
     button {
         background: none;
         border: none;
+
     }
     #navbar {
         background-color: rgb(231, 208, 166);

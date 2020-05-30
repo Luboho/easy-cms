@@ -33,9 +33,16 @@
                     
                         <div class="d-flex justify-content-end" >   
                             @can('isHeadAdmin')
-                                <a href="{{ route('company.create') }}" >    
-                                    <button type="submit"><i class="fa fa-edit edit-icon"></i></button>
-                                </a>
+                                @if(empty($company))
+                                    <a href="{{ route('company.create') }}" >    
+                                        <button type="submit"><i class="fa fa-edit edit-icon"></i></button>
+                                    </a>
+                                @else 
+                                    <a href="contact/company/{{ $company->id }}/edit" >    
+                                        <button type="submit"><i class="fa fa-edit edit-icon"></i></button>
+                                    </a>
+                                @endif
+
                             @endcan
                         </div>
                         <div class="row d-flex p-1 justify-content-between m-auto">   
@@ -57,7 +64,7 @@
 
                             <div class="p-3">
                             <h4 class="pt-2 pb-2 justify-content-center font-weight-bold">Otvorené</h4>
-                                <div class="ml-2">{{ $company->openHours }}</div>
+                                <div class="ml-2">{!! $company->openHours !!}</div>
                             </div>
                         </div>
                     @endforeach

@@ -17,9 +17,9 @@ class CreateLogosTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->string('image');
-            $table->string('caption1')->nullable();
-            $table->string('caption2')->nullable();
-            $table->string('caption3')->nullable();
+            $table->text('caption1')->nullable();
+            $table->text('caption2')->nullable();
+            $table->text('caption3')->nullable();
             $table->timestamps();
 
             $table->index('user_id');

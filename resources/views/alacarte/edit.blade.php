@@ -21,19 +21,17 @@
                         <label for="caption" class="col-form-label font-weight-bold" id="grid-form-item1">Titulok</label>  {{-- CAPTION--}} 
 
                         <input id="caption" 
-                                name="caption"
-                                id="grid-form-item2"
-                                type="text" 
-                                class="form-control @error('caption') is-invalid @enderror" 
-                                caption="caption" 
-                                value="{{ old('caption') ?? $alacarte->caption }}" 
-                                autocomplete="caption" 
-                                autofocus>
+                            name="caption"
+                            id="grid-form-item2"
+                            type="text" 
+                            class="form-control @error('caption') is-invalid @enderror" 
+                            caption="caption" 
+                            value="{{ old('caption') ?? $alacarte->caption }}" 
+                            autocomplete="caption" 
+                            autofocus>
 
                         @error('caption')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                            <span class="text-danger" role="alert">{{ $message }}</span>
                         @enderror
                     </div>  
                     

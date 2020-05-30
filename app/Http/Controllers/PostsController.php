@@ -61,8 +61,7 @@ class PostsController extends Controller
     public function update(User $user, Post $post)
     {
         $this->authorize('update', $post);
-
-        if(!empty(request('image'))){
+        if(!empty($post->image)){
             if(file_exists(storage_path('app/public/'.$post->image))){
                 unlink(storage_path('app/public/'.$post->image));
             }
@@ -94,10 +93,10 @@ class PostsController extends Controller
     private function validateRequest()
     {
         $data = request()->validate([
-            'attention_message' => 'string',
-            'caption' => 'string',
+            'attention_message' => 'string|max:15000',
+            'caption' => 'nullable|string',
             'image' => ['image', 'mimes:png,jpeg,jpg', 'max:1999'],
-            'text' => 'string|max:500',
+            'text' => 'nullable|string|max:15000',
         ]);
 
         if (request('image')){

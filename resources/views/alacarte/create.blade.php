@@ -37,12 +37,14 @@
                 </div>  
                 
                 <div class="form-group grid-form-container">
-                    <label for="image" class="col-form-label font-weight-bold" id="grid-form-item1">Obrázok</label>     {{--Image--}}
-                    <input type="file" class="form-control-file pb-3" id="grid-form-item2" name="image">
-
-                    @error('image')
-                            <strong>{{ $message }}</strong>                       
-                    @enderror 
+                    <label for="image" class="col-form-label font-weight-bold" id="grid-form-item1">Obrázok <span class="text-danger">*</span></label>     {{--Image--}}
+                    <div>
+                        <input type="file" class="form-control-file pb-3" id="grid-form-item2" name="image">
+                    
+                        @error('image')
+                            <span class="text-danger" role="alert">{{ $message }}</span>                       
+                        @enderror
+                    </div> 
                 </div>
 
                 <div class="pt-1 text-center">

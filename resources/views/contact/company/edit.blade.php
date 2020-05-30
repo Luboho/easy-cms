@@ -27,9 +27,7 @@
                             autocomplete="mobile"
                             autofocus>
                         @error('mobile')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                            <span class="text-danger" role="alert">{{ $message }}</span>
                         @enderror     
                     
                     </div>
@@ -45,9 +43,7 @@
                             autocomplete="phone"
                             autofocus>
                         @error('phone')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                            <span class="text-danger" role="alert">{{ $message }}</span>
                         @enderror     
                     
                     </div>
@@ -63,9 +59,7 @@
                             autocomplete="facebook"
                             autofocus>
                         @error('facebook')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                            <span class="text-danger" role="alert">{{ $message }}</span>
                         @enderror     
                     
                     </div>
@@ -73,17 +67,16 @@
                     <div class="form-group grid-form-container">
 
                         <label for="openHours" class="col-form-lable font-weight-bold" id="grid-form-item1">Otvorené</label>
-                        <input type="text"
+                        <textarea rows="3" cols="50"
                             name="openHours"
                             class="form-control @error('openHours') is-invalid @enderror"
-                            id="grid-form-item2"
-                            value="{{ old('openHours') ?? $company->openHours }}"
-                            autocomplete="openHours"
-                            autofocus>
+                            id="summary-ckeditor"
+                            value=""
+                            autofocus
+                            autocomplete="openHours">{{ old('openHours') ?? $company->openHours }}
+                        </textarea>
                         @error('openHours')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                            <span class="text-danger" role="alert">{{ $message }}</span>
                         @enderror     
                     
                     </div>
@@ -99,9 +92,7 @@
                             autocomplete="name"
                             autofocus>
                         @error('name')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                            <span class="text-danger" role="alert">{{ $message }}</span>
                         @enderror     
                     
                     </div>
@@ -117,9 +108,7 @@
                             autocomplete="street"
                             autofocus>
                         @error('street')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                            <span class="text-danger" role="alert">{{ $message }}</span>
                         @enderror     
                     
                     </div>
@@ -135,9 +124,7 @@
                             autocomplete="city"
                             autofocus>
                         @error('city')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                            <span class="text-danger" role="alert">{{ $message }}</span>
                         @enderror     
                     
                     </div>

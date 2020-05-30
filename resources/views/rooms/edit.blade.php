@@ -30,9 +30,7 @@
                                 autofocus>
 
                         @error('caption')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                            <span class="text-danger" role="alert">{{ $message }}</span>
                         @enderror
             
                     </div>  
@@ -50,21 +48,18 @@
                     <div class="form-group grid-form-container">
                         <label for="text" class="col-form-label font-weight-bold" id="grid-form-item1">Text</label>     {{-- TEXT --}}
 
-                        <textarea rows="3" cols="40"
-                            name="text"
-                            id="grid-form-item2"
+                        <textarea rows="3" cols="50"
+                            id="summary-ckeditor"
+                            name="text"                                                                     {{-- TEXT --}}
                             type="text" 
                             class="form-control @error('text') is-invalid @enderror" 
                             caption="text" 
                             value="" 
-                            autocomplete="text">
-                            {{ old('text') ?? $room->text }}
+                            autocomplete="text">{{ old('text') ?? $room->text }}
                         </textarea>
 
                         @error('text')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                            <span class="text-danger" role="alert">{{ $message }}</span>
                         @enderror
             
                     </div>

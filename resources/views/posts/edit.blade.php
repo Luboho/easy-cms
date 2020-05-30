@@ -22,14 +22,17 @@
                         <div class="form-group grid-form-container">
                             <label for="attention_message" class="col-md-4 col-form-label font-weight-bold" id="grid-form-item1">Text</label>
 
-                            <textarea cols="40" rows="3"                                                              {{-- TEXT--}}
-                                name="attention_message"
-                                id="grid-form-item2"
-                                caption="attention_message"
-                                class="form-control @error('attention_message') is-invalid @enderror"
-                                value=""
-                                autocomplete="attention_message">{{ old('attention_message') ?? $post->attention_message }}
-                            </textarea>
+                            {{-- Attention Message--}}
+                        <textarea rows="3" cols="50"
+                            id="summary-ckeditor2"
+                            name="attention_message"                                                                     {{-- TEXT --}}
+                            type="attention_message" 
+                            class="form-control @error('attention_message') is-invalid @enderror" 
+                            caption="attention_message" 
+                            value="" 
+                            autocomplete="attention_message">
+                            {{ old('attention_message') ?? $post->attention_message }}
+                        </textarea>
 
                             @error('attention_message')
                                 <span class="invalid-feedback" role="alert">
@@ -73,14 +76,15 @@
                         <div class="form-group grid-form-container">
                             <label for="text" class="col-form-label font-weight-bold" id="grid-form-item1">Text</label>
 
-                            <textarea cols="40" rows="3"                                                              {{-- TEXT--}}
-                                name="text"
-                                id="grid-form-item2"
-                                caption="text"
-                                class="form-control @error('text') is-invalid @enderror"
-                                value=""
-                                autocomplete="text">{{ old('text') ?? $post->text }}
-                            </textarea>
+                        <textarea rows="3" cols="50"
+                            id="summary-ckeditor"
+                            name="text"                                                                     {{-- TEXT --}}
+                            type="text" 
+                            class="form-control @error('text') is-invalid @enderror" 
+                            caption="text" 
+                            value="" 
+                            autocomplete="text">{{ old('text') ?? $post->text }}
+                        </textarea>
 
                             @error('text')
                                 <span class="invalid-feedback" role="alert">
