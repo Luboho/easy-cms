@@ -10,7 +10,7 @@
     <title>@yield('title', config('app.name'))</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script> 
+    <script src="{{ asset('js/app.js') }}"></script> {{-- !!! Defer atribute to use Vue. --}}
     <script src="https://use.fontawesome.com/eda50d2248.js"></script>
 
     <!-- Fonts -->

@@ -6376,7 +6376,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.up-down {\n    position:fixed;\n    z-index: 100;\n    top: 74%;\n    right: 5px;\n}\n.up-down button {\n    background-color: rgba(5, 4, 4, 0.63);\n    border: 1px solid silver;\n    box-shadow:snow;\n    transition-property: background-color;\n    transition-delay: 2s;\n    transition-duration: 2s;\n    border-radius: 4px;\n}\n.up-down button:hover {\n        background-color: black;\n}\n.up-btn>a, .down-btn>a {\n    opacity: 0.5;\n    font: normal bold 2em/100% Arial;\n    color: rgb(254, 240, 90);\n    transition: opacity 1s;\n}\n.up-btn>a:hover, .down-btn>a:hover {\n    opacity: 1;\n    text-decoration: none;\n}\n@media only screen and (max-width: 500px) {\n.up-btn a, .down-btn a {\n        font-size: 1em;\n}\n}\n\n", ""]);
+exports.push([module.i, "\n.up-down {\n    position:fixed;\n    z-index: 100;\n    top: 74%;\n    right: 5px;\n}\n.up-down button {\n    background-color: rgba(5, 4, 4, 0.63);\n    border: 1px solid silver;\n    box-shadow:snow;\n    transition-property: background-color;\n    /* transition-delay: 0.5s; */\n    transition-duration: 0.5s;\n    border-radius: 4px;\n}\n.up-down button:hover {\n        background-color: black;\n}\n.up-btn>a, .down-btn>a {\n    opacity: 0.5;\n    font: normal bold 2em/100% Arial;\n    color: rgb(254, 240, 90);\n    transition: opacity 1s;\n}\n.up-btn>a:hover, .down-btn>a:hover {\n    opacity: 1;\n    text-decoration: none;\n}\n@media only screen and (max-width: 500px) {\n.up-btn a, .down-btn a {\n        font-size: 1em;\n}\n}\n\n", ""]);
 
 // exports
 

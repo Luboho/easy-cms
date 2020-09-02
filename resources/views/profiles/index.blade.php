@@ -35,7 +35,6 @@
                             </th>
                         </tr>
                     @foreach($users as $user)
-
                         <tr class="border border-secondary">
                             <td class="p-2 border border-secondary">{{ $user->username }}</td>
                             <td class="p-2 border border-secondary">{{ $user->email }}</td>
@@ -49,9 +48,9 @@
                                         
                                         @if($user->role == 'head_admin')
                                             @can('isHeadAdmin')
-                                                <div class="">
+                                                <div class="d-flex justify-content-center">
                                                     @if (Route::has('password.request'))
-                                                        <a class="btn btn-link" href="{{ route('password.request') }}">
+                                                        <a class="btn btn-link mr-2" href="{{ route('password.request') }}">
                                                             <i class="fa fa-edit edit-icon"></i>
                                                         </a>
                                                     @endif
@@ -74,7 +73,6 @@
                                 @endcan
                             </td>
                         </tr>
-
                     @endforeach
 
                 </table>

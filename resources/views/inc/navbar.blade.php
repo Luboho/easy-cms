@@ -1,16 +1,26 @@
 <nav class="navbar navbar-expand-md navbar-light shadow-md" id="navbar">
     <div class="container">
-        <a class="navbar-brand" href="{{ url('/') }}">
-            <div>   
-                @if(Helper::getLogoGlobally()->isEmpty())
-                    <img src="{{ url('storage/default-pics/defaultLogo.jpg') }}" style="max-height:50px" class="align-content-center rounded-circle">
-                @else
-                    @foreach(Helper::getLogoGlobally() as $logo)
-                        <img src="/storage/{{ $logo->image }}" style="max-height:50px" class="align-content-center rounded-circle">
+        
+        {{--NAVBAR LOGO--}}
+        <ul class="navbar-nav ml-0">
+            <a class="navbar-brand" href="{{ url('/') }}">
+                <li class="nav-item">
+                    @if(Helper::getLogoGlobally()->isEmpty())
+                        <img src="{{ url('storage/default-pics/defaultLogo.jpg') }}" style="max-height:50px" class="align-content-center rounded-circle">
+                    @else
+                        @foreach(Helper::getLogoGlobally() as $logo)
+                            <img src="/storage/{{ $logo->image }}" style="max-height:50px" class="align-content-center rounded-circle">
+                        @endforeach
+                    @endif
+                </li>
+                <li class="nav-item">
+                {{-- Company Name --}}
+                    @foreach(Helper::CompanyData() as $companyName)
+                        <div class="font-weight-bold text-secondary">{{ $companyName->name }}</div>
                     @endforeach
-                @endif
-            </div>
-        </a>
+                </li>
+            </a>
+        </ul>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
@@ -47,7 +57,7 @@
                         <!-- New Post | DropDown-->
                         <li class="nav-item ">
                             <div class="btn-group">
-                                <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <button type="button" class="btn btn-warning dropdown-toggle text-secondary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Nový príspevok
                                 </button>
                                 <div class="dropdown-menu">
@@ -77,7 +87,7 @@
                         @can('isHeadAdmin')
                             <li class="nav-item ">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <button type="button" class="btn btn-warning dropdown-toggle text-secondary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Užívatelia
                                     </button>
                                     <div class="dropdown-menu">
@@ -88,7 +98,7 @@
                             </li>
                         @endcan
 
-                        <li class="nav-item">
+                        <li class="nav-item ">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 <strong>{{ Auth::user()->username }}</strong> 
                                 <span class="caret"></span>
@@ -96,7 +106,7 @@
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('logout') }}"
-                                onclick="event.preventDefault();
+                                   onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();">
                                     Odhlásiť
                                 </a>
@@ -104,13 +114,12 @@
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     @csrf
                                 </form>
-                             </li>
-
-                        </div>
+                            </div>
+                        </li>
                     </li>
                 @endguest
             </ul>
+        
         </div>
-
     </div>
 </nav>

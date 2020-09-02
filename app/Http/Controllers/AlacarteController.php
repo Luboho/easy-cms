@@ -17,7 +17,7 @@ class AlacarteController extends Controller
 
     public function index(Alacarte $alacarte)
     {
-        $alacartes = Alacarte::all();
+        $alacartes = Alacarte::paginate(6);
 
         return view('alacarte.index', compact('alacartes'));
     }
@@ -69,7 +69,7 @@ class AlacarteController extends Controller
 
        if (request('image')){
             $imagePath = request('image')->store('uploads', 'public');
-            $image = Image::make(public_path("storage/{$imagePath}"))->fit(650, 800);
+            $image = Image::make(public_path("storage/{$imagePath}"))->fit(600, 800);
             $image->save();
 
             $imageArray = ['image' => $imagePath];

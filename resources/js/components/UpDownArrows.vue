@@ -37,8 +37,8 @@
         border: 1px solid silver;
         box-shadow:snow;
         transition-property: background-color;
-        transition-delay: 2s;
-        transition-duration: 2s;
+        /* transition-delay: 0.5s; */
+        transition-duration: 0.5s;
         border-radius: 4px;
     } 
         .up-down button:hover {

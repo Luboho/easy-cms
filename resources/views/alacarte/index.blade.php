@@ -9,44 +9,35 @@
        
         <ul class="col-12">
 
-            @foreach($alacartes as $alacarte)
+            <h4 class="p-2 font-weight-bold text-secondary">Menu lístok</h4>
+            <article class="row d-flex justify-content-between align-items-end">    
+                @foreach($alacartes as $alacarte)
+                    <div class="gallery-item mb-4 p-1 even-odd shadow" id="gallery">
+                        <div class="shadow">
+                            <a href="/alacarte/{{ $alacarte->id }}" class="text-dark text-decoration-none">
 
-                <li class="even-odd m-3 p-3 shadow" style="border-radius: 10px">
+                                <div class="p-1 justify-content-between align-content-between rounded-bottom">
+                                    
+                                    {{--Caption--}}
+                                    <div class="p-2">{{ $alacarte->caption }}</div>
+                                    {{--Created_at--}}                                     
+                                    {{-- <div class="ml-2 p-2 align-items-end">
+                                        {{ $alacarte->created_at->format('d.m. Y') }}                                       
+                                    </div> --}}
+                                </div>
+                                @if(!empty($alacarte->image))<img src="/storage/{{ $alacarte->image }}" class="rounded w-100">@endif 
+                            
+                            </a>
 
-                    <div class="d-flex justify-content-between mr-3">
-                        <h2 class="mt-3 font-weight-bold">{{ $alacarte->caption }}</h2>       {{--Caption--}}
-
-                        <div class="row d-flex align-self-center justify-content-end">
-                            @can('update', $alacarte)
-                                {{-- <div class="ml-5">                                    
-                                    <h3><p>{{ $alacarte->user->username }}</p></h3>
-                                </div> --}}
-
-                                <a href="/alacarte/{{ $alacarte->id }}/edit" >     {{-- Edit Button--}}
-                                    <button type="submit"><i class="fa fa-edit edit-icon"></i></button>
-                                </a>
-                            @endcan
-
-                            @can('delete', $alacarte)                                            
-                            <form action="/alacarte/{{ $alacarte->id }} " method="POST">
-                                @method('DELETE')
-                                @csrf
-                                                                                                    {{--Delete Button--}}
-                                <button type="submit" title="Zmazať príspevok"><i class="fa fa-trash delete-icon"></i></button>
-                            </form>
-                            @endcan
                         </div>
-
                     </div>
-
-                        <img src="/storage/{{ $alacarte->image }}" class="w-100 rounded shadow">    {{-- Image--}}
-
-                </li>
-
-            @endforeach
+                @endforeach
+            </article>
 
         </ul>
-
+        <div class="row col-12">
+            <span class="row ml-auto mr-auto">{{ $alacartes->links() }}</span>
+        </div>
     </div>
 @else
     <p>Žiadne príspevky sa nenašli</p>

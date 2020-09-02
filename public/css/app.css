@@ -10964,7 +10964,6 @@ a.text-dark:focus {
 
 .post-title img {
   max-height: 160px;
-  border-radius: 4px;
 }
 
 .article-news-container {
@@ -11112,7 +11111,7 @@ div.li-spacer {
 }
 
 .even-odd:nth-child(odd) {
-  background-color: #c5c3c3;
+  background-color: rgba(218, 213, 213, 0.842);
   border-radius: 4px;
 }
 

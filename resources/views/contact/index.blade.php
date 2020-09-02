@@ -12,26 +12,22 @@
     @endif
 
     <div class="container">                                                            
-        <div class="row">
-                
-            <div class="col-9 offset-2 m-auto offset-2 card-header align-items-center p-2">
-                <span class="ml-3">Kontaktné údaje</span>
-            </div>
-            <div class="card-body col-9 m-auto offset-2">
+        <div class="shadow">        
+            <div class="card-header d-flex justify-content-between mt-3">
+                <h3>Kontaktné údaje</h3>
 
-                @if($companyData->isEmpty())
-                    <div class="d-flex justify-content-end" >   
+                {{-- Edit button --}}
+                <div class="mt-1" >   
+                    @if($companyData->isEmpty())
                         @can('isHeadAdmin')
                             <a href="{{ route('company.create') }}" >    
                                 <button type="submit"><i class="fa fa-edit edit-icon"></i></button>
                             </a>
                         @endcan
-                    </div>
-                @else
+                    @else
                     {{-- Contact Company Data--}}
                     @foreach(Helper::companyData() as $company)
                     
-                        <div class="d-flex justify-content-end" >   
                             @can('isHeadAdmin')
                                 @if(empty($company))
                                     <a href="{{ route('company.create') }}" >    
@@ -43,12 +39,15 @@
                                     </a>
                                 @endif
 
-                            @endcan
-                        </div>
+                        @endcan
+                </div>
+            </div> {{-- end Company data header/ Edit button --}}
+        
+            <div class="card-body">
+
                         <div class="row d-flex p-1 justify-content-between m-auto">   
                             <div class="p-3">
                             
-
                             <h4 class="pt-2 pb-2 justify-content-center font-weight-bold">Kontakt</h4>
                                 <div class="ml-2">{{ $company->mobile }}</div>
                                 <div class="ml-2">{{ $company->phone }}</div>
@@ -69,9 +68,8 @@
                         </div>
                     @endforeach
                 @endif
-            </div>        
-        </div>
-
+            </div>
+        </div>        
     </div>
 
 @endsection
