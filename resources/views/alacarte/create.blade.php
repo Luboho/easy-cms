@@ -10,11 +10,11 @@
         @csrf
         <div class="row">
 
-            <div class="col-9 offset-2 m-auto offset-2 card-header align-items-center p-2">
+            <div class="col-12 m-auto card-header align-items-center p-2">
                 <span>Príspevok do menu lístka</span>
             </div>
 
-            <div class="card-body col-9 m-auto offset-2">
+            <div class="card-body col-12 m-auto">
 
                 <div class="form-group grid-form-container">
                     <label for="caption" class="col-form-label font-weight-bold" id="grid-form-item1">Titulok</label>      {{--Caption--}}

@@ -56,8 +56,8 @@
                        
                         <!-- New Post | DropDown-->
                         <li class="nav-item ">
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-warning dropdown-toggle text-secondary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div class="btn-group dropdown">
+                                <button type="button" class="btn btn-warning dropdown-toggle text-secondary" data-toggle="dropdown" >
                                     Nový príspevok
                                 </button>
                                 <div class="dropdown-menu">

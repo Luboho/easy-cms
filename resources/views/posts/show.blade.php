@@ -10,9 +10,9 @@
     <div class="alert alert-info">{{ Session::get('message') }}</div>
 @endif
 
-        <div class="row mr-auto ml-auto ">
+        <div class="row mr-auto ml-auto  p-1">
         
-            <div class="text-background mb-3 w-100 p-1">
+            <div class="text-background mb-3 w-100">
                 <div class="card-header">
                         
                     <div class="d-flex flex-wrap-reverse pt-2">

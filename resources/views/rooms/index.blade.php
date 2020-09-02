@@ -11,10 +11,10 @@
 @endif
 
 @foreach($rooms as $room)    
-    <div class="row mr-auto ml-auto even-odd  col-10 offset-1 mb-3  p-1 ">
+    <div class="row mr-auto ml-auto col-11 offset-1 mb-3">
     
         <div class="text-background w-100">
-                <div class="card-header even-odd">
+                <div class="card-header">
                     <div class="d-flex flex-wrap-reverse pt-2">
                         {{--Caption--}}
                         <h5 class="mr-auto pl-2 font-weight-bold">{{ $room->caption }}</h4>

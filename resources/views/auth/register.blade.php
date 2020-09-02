@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-12">
             <div class="card">
                 <div class="card-header">Registrácia</div>
 
@@ -56,10 +56,12 @@
                         <div class="form-group row">
                             <label for="role" class="col-md-4 col-form-label text-md-right">Profil</label>
 
-                            <select class="form-control col-md-6 ml-1 @error('role') is-invalid @enderror" name="role" size="1" >
-                                {{-- <option value="user">Užívateľ --}}
-                                <option value="admin">Administrátor                                
-                            </select>
+                            <div class="col-md-6">
+                                <select class="form-control @error('role') is-invalid @enderror" name="role" size="1" >
+                                    <option class="hidden">
+                                    {{-- <option value="user">Užívateľ --}}
+                                    <option value="admin">Administrátor                                
+                                </select>
                                 
                                 @error('role')
                                     <span class="invalid-feedback" role="alert">
@@ -67,6 +69,7 @@
                                     </span>
                                 @enderror
                             </div>
+                        </div>
 
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">Heslo</label>

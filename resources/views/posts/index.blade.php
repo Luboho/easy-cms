@@ -70,7 +70,7 @@
                             @if($loop->iteration > 3)
                                 @break 
                             @endif
-                            <div class="text-background mb-3 w-100 p-1">
+                            <div class="text-background mb-3 w-100">
                                 <div class="card-header d-flex justify-content-between">
                                     {{--Caption--}}
                                     <h4 class="font-weight-bold">{{ $post->caption }}</h4>

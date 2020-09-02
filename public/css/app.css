@@ -10984,14 +10984,13 @@ a.text-dark:focus {
 }
 
 .card-header {
-  background-color: rgba(214, 211, 211, 0.746);
+  background-color: #e6d1a8;
   width: 100%;
   font-weight: bolder;
 }
 
 .card-body {
-  background-color: rgba(241, 238, 238, 0.746);
-  border: 0.75px solid rgba(214, 211, 211, 0.746);
+  background-color: rgba(230, 209, 168, 0.281);
   border-radius: 0 0 4px 4px;
   padding: 3em;
 }
@@ -11026,7 +11025,6 @@ body p {
 }
 
 .attention {
-  background-color: rgba(202, 24, 24, 0.383);
   border-radius: 4px;
   padding: 0.5rem;
 }
