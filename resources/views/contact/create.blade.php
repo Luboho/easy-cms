@@ -10,7 +10,7 @@
                     <p class="ml-sm-n4 font-weight-bold">Napíšte nám</p> 
 
                     <div class="form-group row">
-                        <label for="name" class="mt-3 col-md-4 col-form-label">Meno</label>
+                        <label for="name" class="mt-3 col-md-4 col-form-label">Meno *</label>
 
                         <input type="text" 
                             name="name" 
@@ -22,7 +22,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="email" class="col-md-4 col-form-label">Email</label>
+                        <label for="email" class="col-md-4 col-form-label">Email *</label>
 
                         <input type="text" 
                             name="email" 
@@ -34,7 +34,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="message" class="col-md-4 col-form-label">Správa</label>
+                        <label for="message" class="col-md-4 col-form-label">Správa *</label>
 
                         <textarea  
                             name="message" 
