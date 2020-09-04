@@ -10,49 +10,33 @@
     <div class="alert alert-info">{{ Session::get('message') }}</div>
 @endif
 
-        <div class="container posts-container col-12">
-            <header>  
-                <div class="">
-                    
-                    <div class="card-header text-right">
-                        {{-- LOGO--}}
-                        @if(Helper::getLogoGlobally()->isEmpty())                                                  
-                            
-                            @can('isHeadAdmin')
-                                <a href="{{ route('logos.create') }}">                         {{--Create Button--}}    
-                                    <button type="submit"><i class="edit-icon fa fa-edit"></i></button>
-                                </a>
-                            @endcan
-                            <img src="{{ url('storage/default-pics/defaultLogo.jpg') }}">
-                        @else 
-                        {{-- Logo & Captions --}}
-                        @foreach(Helper::getLogoGlobally() as $logo)                                         
-                            {{--Edit Button--}}
-                            @can('isHeadAdmin')
-                                <a href="/logos/{{ $logo->id }}/edit">    
-                                    <button type="submit">
-                                        <i class="edit-icon fa fa-edit"></i>
-                                    </button> 
-                                </a>
-                            @endcan
-                    </div>
-                    {{-- end Buttons --}}
-                        <div class="post-title text-background">
-                            
-                            <div class="d-flex justify-content-center row col-12">
-                                <div class="pl-4 pr-2">
-                                    <h2 class=" font-weight-bold text-break">{{ $logo->caption1 }}</h2>
-                                    <h3 class="">{{ $logo->caption2 }}</h3>
-                                    <h3 class=" font-italic">{!! $logo->caption3 !!}</h3>
-                                </div>
-                                <img src="/storage/{{ $logo->image }}" style="max-height: 150px;" class="pl-2 pr-2 pb-2 -circle">
-                            </div>
-                    @endforeach
-                                
-                    @endif
-                                
+        <div>
+            <header class="container posts-container col-12">  
+                    {{-- Logo & Captions --}}
+                    @foreach(Helper::getLogoGlobally() as $logo)                                         
+                    {{--Edit Button--}}
+                    @can('isHeadAdmin')
+                        <div class="card-header text-right">
+                            <a href="/logos/{{ $logo->id }}/edit">    
+                                <button type="submit">
+                                    <i class="edit-icon fa fa-edit"></i>
+                                </button> 
+                            </a>
                         </div>
-                </div>
+                    @endcan
+                        {{-- end Buttons --}}
+                        <div class="card-body welcome-container justify-content-center post-title col-12">
+                            
+                                <div class="pl-4 pr-2">
+                                    <h2 class="font-weight-bold text-break">{{ $logo->caption1 }}</h2>
+                                    <h3 class="">{{ $logo->caption2 }}</h3>
+                                    <h3 class="">{!! $logo->caption3 !!}</h3>
+                                </div>
+                                <div class="text-center">
+                                    <img src="/storage/{{ $logo->image }}" style="max-height: 150px; max-width:180px;" class=" rounded-circle">
+                                </div>
+                        </div>
+                    @endforeach
             </header>
                 {{-- LOOP 1.2.3.iterations | 1.paggination--}}
             <div>

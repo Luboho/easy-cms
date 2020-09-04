@@ -6,6 +6,11 @@
     h3 p {
         font-size: 1rem;
     }
+
+    .welcome-container {
+        display: block;
+        
+    }
     .article {
         width: 100%;
         margin-left: auto;
@@ -58,7 +63,9 @@
         padding: 1em !important;
         }
     }
-
+    .welcome-container {
+        display: flex;
+    }
     .room-image {
         width: 75%;
     }
@@ -93,6 +100,11 @@
 
 /*-------- DESKTOP ---------------------- */
 @media only screen and (min-width: 801px) {
+
+    .welcome-container {
+        display: flex;
+    }
+
     .gallery-item {
         width: 30%;
         min-height: 30%;
@@ -106,5 +118,6 @@
     .room-image {
         width: 50%;
     }
+
 
 }
