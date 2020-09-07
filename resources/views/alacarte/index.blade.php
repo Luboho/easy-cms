@@ -40,7 +40,7 @@
         </div>
     </div>
 @else
-    <p>Žiadne príspevky sa nenašli</p>
+    <no-posts></no-posts>
 @endif
 
 @endsection

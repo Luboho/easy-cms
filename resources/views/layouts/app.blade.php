@@ -10,7 +10,7 @@
     <title>@yield('title', config('app.name'))</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script> {{-- !!! Defer atribute to use Vue. --}}
+    <script src="{{ asset('js/app.js') }}" defer></script> {{-- !!! Defer atribute to use Vue. --}}
     <script src="https://use.fontawesome.com/eda50d2248.js"></script>
 
     <!-- Fonts -->
@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/676fd051d4.css">
 
 </head>
-<body>
+<body onload="ckeditor()">
     <div id="app">
         
         <div id="up">
@@ -86,8 +86,10 @@
 
         <script src="//cdn.ckeditor.com/4.14.1/full/ckeditor.js"></script>
         <script>
-            CKEDITOR.replace( 'summary-ckeditor' );
-            CKEDITOR.replace( 'summary-ckeditor2' );
+            function ckeditor() {
+                CKEDITOR.replace( 'summary-ckeditor' );
+                CKEDITOR.replace( 'summary-ckeditor2' );
+            }
         </script>
         
     </div>

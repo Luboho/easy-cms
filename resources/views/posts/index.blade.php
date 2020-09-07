@@ -174,7 +174,7 @@
         </div>
 
     @else
-        <p> Príspevky nenájdené.</p>
+        <no-posts></no-posts>
     @endif
 
 @endsection
