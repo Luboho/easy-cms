@@ -65,7 +65,7 @@
                                                         <i class="fa fa-edit edit-icon"></i>
                                                     </a>
                                                 @endif --}}
-                                                <div class="d-flex justify-content-center"><button type="submit" class="" title="Zmazať príspevok"><i class="fa fa-trash delete-icon"></i></button></div>
+                                                <div class="d-flex justify-content-center"><button type="submit" class="" title="Zmazať príspevok"><i id="trash-confirm" class="fa fa-trash delete-icon"></i></button></div>
                                             </div>
                                         @endif
                                         

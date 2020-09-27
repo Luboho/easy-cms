@@ -36,7 +36,7 @@
                                 @method('DELETE')
                                 @csrf
 
-                                <button type="submit" title="Zmazať príspevok"><i class="fa fa-trash delete-icon"></i></button>
+                                <button type="submit" title="Zmazať príspevok"><i id="trash-confirm" class="fa fa-trash delete-icon"></i></button>
                             </form>
                         @endcan
                     </div>

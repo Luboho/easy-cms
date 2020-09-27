@@ -24,6 +24,8 @@ Vue.component('up-down', require('./components/UpDownArrows.vue').default);
 Vue.component('no-posts', require('./components/NoPostsImage.vue').default);
 
 
+ 
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

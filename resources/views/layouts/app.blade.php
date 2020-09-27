@@ -84,6 +84,8 @@
         <up-down></up-down>                                             {{--UP & DOWN Arrows--}}
 
 
+        @include('inc.scripts')
+
         <script src="//cdn.ckeditor.com/4.14.1/full/ckeditor.js"></script>
         <script>
             function ckeditor() {
