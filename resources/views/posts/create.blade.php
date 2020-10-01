@@ -5,6 +5,8 @@
 @section('content')
 <div class="container">
 
+    @include('inc.messages')
+    
     <form action="{{ route('posts.store') }}" enctype="multipart/form-data" method="post">  
         @csrf
         <div class="row">
@@ -21,7 +23,7 @@
                     <input id="grid-form-item2" 
                             name="caption"
                             type="text" 
-                            class="form-control  @error('caption') is-invalid @enderror" 
+                            class="form-control  @error('caption') @enderror" 
                             caption="caption" 
                             value="{{ old('caption') }}" 
                             autocomplete="caption"
@@ -51,7 +53,7 @@
                         id="summary-ckeditor"
                         name="text"                                                                     {{-- TEXT --}}
                         type="text" 
-                        class="form-control @error('text') is-invalid @enderror" 
+                        class="form-control @error('text') @enderror" 
                         caption="text" 
                         value="" 
                         autocomplete="text">

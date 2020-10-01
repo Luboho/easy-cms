@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Logo;
 use App\Post;
 use App\User;
-use App\Logo;
+use Illuminate\Support\Arr;
+use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Storage;
 
@@ -42,8 +43,13 @@ class PostsController extends Controller
         // $image = Image::make(public_path("storage/{$imagePath}"))->fit(250, 200);
         // $image->save();
 
+        if(isset(request()->image) || isset(request()->caption) || isset(request()->text) ) {
+            auth()->user()->post()->create($this->validateRequest());       // priv. fnc. below
+        } else {
+            session()->flash('denied', "Vyplňte aspoň jeden údaj.");
+            return back();
+        }
 
-        auth()->user()->post()->create($this->validateRequest());       // priv. fnc. below
 
         return redirect('/');
     }

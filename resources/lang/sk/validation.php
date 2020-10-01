@@ -68,7 +68,7 @@ return [
     'numeric'              => ':attribute musí byť číslo.',
     'present'              => ':attribute pole musí byť aktuálne.',
     'regex'                => ':attribute formát je neplatný.',
-    'required'             => ':attribute pole je povinné.',
+    'required'             => ' Povinné pole.',
     'required_if'          => ':attribute pole je povinné ak :other je :value.',
     'required_unless'      => ':attribute pole je povinné pokiaľ :other je v :values.',
     'required_with'        => ':attribute pole je povinné ak :values je aktuálna.',

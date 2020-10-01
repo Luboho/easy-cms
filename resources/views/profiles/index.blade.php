@@ -5,17 +5,17 @@
 
 @section('content')
 
-@include('inc.messages')
 
-    @if (Session::has('message'))
 
-        <div class="alert alert-info">{{ Session::get('message') }}</div>
+<div class="container">
     
-    @endif
-
-
-        <div class="container">
-
+    @include('inc.messages')
+    
+        @if (Session::has('message'))
+    
+            <div class="alert alert-info">{{ Session::get('message') }}</div>
+        
+        @endif
             
             <table class="col-12 border border-black pt-3 align-items-center nowrap ml-2 card-body">
                 <p class="col-12 card-header align-items-center nowrap ml-2">Registrovaní Užívatelia</p>

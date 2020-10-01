@@ -10952,6 +10952,32 @@ a.text-dark:focus {
   font-size: 1.25em !important;
 }
 
+.alert-danger {
+  color: #ed2816e9;
+  font-weight: 600;
+  text-align: center;
+  text-shadow: gray;
+  background-color: #f03c3c1c;
+  border: 2px solid #ed2816;
+}
+
+.alert-danger hr {
+  border-top-color: #c21a17;
+}
+
+.alert-success {
+  color: #1db15bec;
+  font-weight: 600;
+  text-align: center;
+  text-shadow: gray;
+  background-color: #51ac511b;
+  border: 2px solid #1db15bec;
+}
+
+.alert-success hr {
+  border-top-color: #b3e8ca;
+}
+
 .post-title {
   padding: 1em;
   background-color: rgba(200, 200, 200, 0.623);

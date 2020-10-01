@@ -13,6 +13,10 @@ use Illuminate\Auth\Events\Registered;
 
 class RegisterController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /*
     |--------------------------------------------------------------------------
     | Register Controller

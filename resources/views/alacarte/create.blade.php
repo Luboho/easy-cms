@@ -22,6 +22,7 @@
                     <input id="grid-container2" 
                             name="caption"
                             type="text" 
+                            onclick="clearAlert()"
                             class="form-control @error('caption') is-invalid @enderror" 
                             caption="caption" 
                             value="{{ old('caption') }}" 
@@ -42,7 +43,7 @@
                         <input type="file" class="form-control-file pb-3" id="grid-form-item2" name="image">
                     
                         @error('image')
-                            <span class="text-danger" role="alert">{{ $message }}</span>                       
+                            <div class="text-danger" id="alert" role="alert">{{ $message }}</div>                       
                         @enderror
                     </div> 
                 </div>
@@ -56,5 +57,4 @@
         </div>
     </form>
 </div>
-        
 @endsection
