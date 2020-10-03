@@ -1,5 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Lora|Roboto+Mono&display=swap);@charset "UTF-8";
 
+.text-danger {
+  color: #e3342f !important;
+  text-shadow: 1px 1px 1px black;
+}
+
 /*!
  * Bootstrap v4.5.0 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors

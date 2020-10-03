@@ -21,6 +21,7 @@
                 </li>
             </a>
         </ul>
+        {{-- End Navbar Logo --}}
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
@@ -57,7 +58,7 @@
                         <!-- New Post | DropDown-->
                         <li class="nav-item ">
                             <div class="btn-group dropdown">
-                                <button type="button" class="btn btn-warning dropdown-toggle text-secondary" data-toggle="dropdown" >
+                                <button type="button" class="btn btn-warning dropdown-toggle text-secondary" id="new-post" data-toggle="dropdown" >
                                     Nový príspevok
                                 </button>
                                 <div class="dropdown-menu">

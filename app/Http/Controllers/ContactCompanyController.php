@@ -33,12 +33,22 @@ class ContactCompanyController extends Controller
 
     public function store(User $user)
     {
-           
-        auth()->user()->company()->create($this->validateRequest());        // fnc.above
-
-        session()->flash('success', 'Dáta boli vložené.');
+        if(isset(request()->mobile) || isset(request()->phone) || isset(request()->facebook) ||
+            isset(request()->openHours) || isset(request()->name) || isset(request()->street) ||
+                isset(request()->city) ) {
+            auth()->user()->company()->create($this->validateRequest());       // priv. fnc. below
+        } else {
+            session()->flash('denied', "Vyplňte aspoň jeden údaj.");
+            return back();
+        }
 
         return redirect('/');
+        
+        // auth()->user()->company()->create($this->validateRequest());        // fnc.above
+
+        // session()->flash('success', 'Dáta boli vložené.');
+
+        // return redirect('/');
     }
 
     public function edit(User $user, Company $company)
@@ -49,10 +59,22 @@ class ContactCompanyController extends Controller
     public function update(User $user, Company $company)
     {
         
-        auth()->user()->company()->update($this->validateRequest());        // fnc.above
+        if(!empty(request()->mobile) || !empty(request()->phone) || !empty(request()->facebook) ||
+            !empty(request()->openHours) || !empty(request()->name) || !empty(request()->street) ||
+                !empty(request()->city) ) {
+                    auth()->user()->company()->update($this->validateRequest());        // fnc.above
+        } else {
+            session()->flash('denied', "Vyplňte aspoň jeden údaj.");
+            return back();
+        }
 
-        session()->flash('success', 'Údaje boli upravené.');
-        return redirect("/contact");
+        return redirect('/');
+
+
+        // auth()->user()->company()->update($this->validateRequest());        // fnc.above
+
+        // session()->flash('success', 'Údaje boli upravené.');
+        // return redirect("/contact");
     }
 
     private function validateRequest()

@@ -10,8 +10,8 @@
     <div class="alert alert-info">{{ Session::get('message') }}</div>
 @endif
 
-        <div>
-            <header class="container posts-container col-12">  
+        <div class="container">
+            <header class="col-12">  
                     {{-- Logo & Captions --}}
                     @foreach(Helper::getLogoGlobally() as $logo)                                         
                     {{--Edit Button--}}
@@ -39,7 +39,7 @@
                     @endforeach
             </header>
                 {{-- LOOP 1.2.3.iterations | 1.paggination--}}
-            <div>
+            <div class="">
     @if(count($posts) > 0)                                  
                 @php                                       
                     $currentUrl = url()->full(); 
@@ -174,7 +174,9 @@
         </div>
 
     @else
-        <no-posts></no-posts>
+        <a href="{{ route('posts.create') }}">
+            <no-posts></no-posts>
+        </a>
     @endif
 
 @endsection

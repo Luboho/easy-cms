@@ -5,6 +5,15 @@
 @section('content')
 
     <div class="container">
+
+
+        @include('inc.messages')
+
+        @if (Session::has('message'))
+            <div class="alert alert-info">{{ Session::get('message') }}</div>
+        @endif
+
+
         <form action="{{ action('ContactCompanyController@update', $company->id ) }}" enctype="multipart/form-data" method="post">
             @csrf
             @method('PATCH')

@@ -6,6 +6,7 @@ use Intervention\Image\Facades\Image;
 use App\Room;
 use App\User;
 use Illuminate\Http\Request;
+use PostValidator;
 
 class RoomsController extends Controller
 {
@@ -28,21 +29,7 @@ class RoomsController extends Controller
 
     public function store(Room $room)
     {
-        $data = request()->validate([
-            'caption' => 'nullable|string|max:15000',
-            'image' => ['image','required', 'mimes:png,jpeg,jpg', 'max:1999'],
-            'text' => 'nullable|string|max:15000',    
-        ]);
-
-        $imagePath = request('image')->store('uploads', 'public');
-        $image = Image::make(public_path("storage/{$imagePath}"))->resize(450, 350);
-        $image->save();
-
-        auth()->user()->room()->create([
-            'caption' => $data['caption'],
-            'image' => $imagePath,
-            'text' => $data['text'],
-        ]);
+        auth()->user()->room()->create(PostValidator::validateRequest());
 
         session()->flash('success', 'Príspevok bol úspešne pridaný.');
 
@@ -57,19 +44,20 @@ class RoomsController extends Controller
     public function update(User $user, Room $room)
     {
         $this->authorize('update', $room);
-        $data = request()->validate([
-            'caption' => 'string|max:15000',
-            'image' => ['image', 'mimes:png,jpeg,jpg', 'max:1999'],
-            'text' => 'string|max:15000',
-        ]);
 
-        if (request('image')){
-            $imagePath = request('image')->store('uploads', 'public');
-            $image = Image::make(public_path("storage/{$imagePath}"))->resize(450, 350);
-            $image->save();
+        // $data = request()->validate([
+        //     'caption' => 'string|max:15000',
+        //     'image' => ['image', 'mimes:png,jpeg,jpg', 'max:1999'],
+        //     'text' => 'string|max:15000',
+        // ]);
 
-            $imageArray = ['image' => $imagePath];
-        }
+        // if (request('image')){
+        //     $imagePath = request('image')->store('uploads', 'public');
+        //     $image = Image::make(public_path("storage/{$imagePath}"))->resize(450, 350);
+        //     $image->save();
+
+        //     $imageArray = ['image' => $imagePath];
+        // }
 
         if(!empty(request('image'))){
             if(file_exists(storage_path('app/public/'.$room->image))){
@@ -77,10 +65,7 @@ class RoomsController extends Controller
             }
         }
 
-        $room->update(array_merge(
-            $data,
-            $imageArray ?? []
-        ));
+        $room->update(array_merge(PostValidator::validateRequest()));
 
         session()->flash('success', 'Príspevok bol úspešne upravený.');
         return redirect('/rooms');

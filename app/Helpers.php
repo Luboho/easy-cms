@@ -3,7 +3,9 @@
 namespace App\HelperClass;
 
 use App\Logo;
+use App\Post;
 use App\Company;
+use Intervention\Image\Facades\Image;
 
 class Helper
 {

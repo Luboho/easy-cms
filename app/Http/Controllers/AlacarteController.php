@@ -29,19 +29,7 @@ class AlacarteController extends Controller
 
     public function store()
     {
-        $data = request()->validate([
-            'caption' => 'nullable|string|max:100',
-            'image' => ['image', 'required', 'mimes:png,jpeg,jpg', 'max:1999'],
-        ]);
-
-        $imagePath = request('image')->store('uploads', 'public');
-        $image = Image::make(public_path("storage/{$imagePath}"))->fit(600, 800);
-        $image->save();
-
-        auth()->user()->alacarte()->create([
-            'caption' => $data['caption'],
-            'image' => $imagePath,
-        ]);
+        auth()->user()->alacarte()->create($this->validateRequest());
 
         session()->flash('success', 'Príspevok bol úspešne pridaný.');
 
@@ -81,10 +69,7 @@ class AlacarteController extends Controller
             }
         }
 
-        $alacarte->update(array_merge(
-            $data,
-            $imageArray ?? []
-        ));
+        $alacarte->update(array_merge($this->validateRequest()));
 
         session()->flash('success', 'Príspevok bol upravený.');
 
@@ -105,5 +90,26 @@ class AlacarteController extends Controller
         session()->flash('success', 'Príspevok bol zmazaný.');
 
         return redirect('/alacarte');  
+    }
+
+    private function validateRequest()
+    {
+        $data = request()->validate([
+            'caption' => 'nullable|string|max:100',
+            'image' => ['image', 'mimes:png,jpeg,jpg', 'max:1999']
+        ]);
+
+        if (request('image')){
+            $imagePath = request('image')->store('uploads', 'public');
+            $image = Image::make(public_path("storage/{$imagePath}"))->fit(600, 800);
+            $image->save();
+
+            $imageArray = ['image' => $imagePath];
+        }
+
+        return $validatedArray = array_merge(
+            $data,
+            $imageArray ?? []
+        );
     }
 }

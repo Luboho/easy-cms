@@ -44,7 +44,7 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">E-Mailová adresa</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email"  class="form-control  @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}"  autocomplete="email">
+                                <input id="email"  class="form-control  @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}"  autocomplete="email">
 
                                 @error('email')
                                     <div class="invalid-feedback" role="alert">

@@ -9,6 +9,8 @@ use Illuminate\Support\Arr;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Storage;
+use Helper;
+use PostValidator;
 
 
 class PostsController extends Controller
@@ -32,24 +34,12 @@ class PostsController extends Controller
 
     public function store()
     {
-        // $data = request()->validate([
-        //     'attention_message' => '',
-        //     'caption' => '',
-        //     'image' => ['image', 'mimes:png,jpeg,jpg', 'max:1999'],
-        //     'text' => '',
-        // ]);
-
-        // $imagePath = request('image')->store('uploads', 'public');
-        // $image = Image::make(public_path("storage/{$imagePath}"))->fit(250, 200);
-        // $image->save();
-
         if(isset(request()->image) || isset(request()->caption) || isset(request()->text) ) {
-            auth()->user()->post()->create($this->validateRequest());       // priv. fnc. below
+            auth()->user()->post()->create(PostValidator::validateRequest());       // PostValidator class
         } else {
             session()->flash('denied', "Vyplňte aspoň jeden údaj.");
             return back();
         }
-
 
         return redirect('/');
     }
@@ -67,14 +57,17 @@ class PostsController extends Controller
     public function update(User $user, Post $post)
     {
         $this->authorize('update', $post);
-        if(!empty($post->image)){
+
+        if(!empty(request('image'))){
             if(file_exists(storage_path('app/public/'.$post->image))){
                 unlink(storage_path('app/public/'.$post->image));
             }
         }
 
-        $post->update($this->validateRequest());            // priv. fnc. below
+        $post->update(PostValidator::validateRequest());       // PostValidator class
 
+
+        session()->flash('success', 'Príspevok bol úspešne upravený.');
         return redirect('/');
     }
 
@@ -96,28 +89,28 @@ class PostsController extends Controller
         return redirect('/');
     }
 
-    private function validateRequest()
-    {
-        $data = request()->validate([
-            'attention_message' => 'string|max:15000',
-            'caption' => 'nullable|string',
-            'image' => ['image', 'mimes:png,jpeg,jpg', 'max:1999'],
-            'text' => 'nullable|string|max:15000',
-        ]);
+    // private function validateRequest()
+    // {
+    //     $data = request()->validate([
+    //         'attention_message' => 'string|max:15000',
+    //         'caption' => 'nullable|string',
+    //         'image' => ['image', 'mimes:png,jpeg,jpg', 'max:1999'],
+    //         'text' => 'nullable|string|max:15000',
+    //     ]);
 
-        if (request('image')){
-            $imagePath = request('image')->store('uploads', 'public');
-            $image = Image::make(public_path("storage/{$imagePath}"))->resize(450, 350);
-            $image->save();
+    //     if (request('image')){
+    //         $imagePath = request('image')->store('uploads', 'public');
+    //         $image = Image::make(public_path("storage/{$imagePath}"))->resize(450, 350);
+    //         $image->save();
 
-            $imageArray = ['image' => $imagePath];
-        }
+    //         $imageArray = ['image' => $imagePath];
+    //     }
 
-        return $validatedArray = array_merge(
-            $data,
-            $imageArray ?? []
-        );
-    }
+    //     return $validatedArray = array_merge(
+    //         $data,
+    //         $imageArray ?? []
+    //     );
+    //}
 
     
 }

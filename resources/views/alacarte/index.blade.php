@@ -40,7 +40,9 @@
         </div>
     </div>
 @else
+<a href="{{ route('alacarte.create') }}">
     <no-posts></no-posts>
+</a>
 @endif
 
 @endsection
