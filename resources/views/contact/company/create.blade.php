@@ -67,7 +67,7 @@
                         <textarea rows="3" cols="50"
                             name="openHours"
                             class="form-control @error('openHours') is-invalid @enderror"
-                            id="summary-ckeditor"
+                            id="editor"
                             value="{{ old('openHours') }}"
                             autocomplete="openHours"
                             autofocus>

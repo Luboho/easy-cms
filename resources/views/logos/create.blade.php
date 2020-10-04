@@ -54,7 +54,7 @@
                 <div class="form-group grid-form-container pb-4">
                     <label for="caption3" class="col-form-label font-weight-bold" id="grid-form-item1">Titulok</label>
                     <textarea rows="3" cols="50"
-                        id="summary-ckeditor"
+                        id="editor"
                         name="caption3"                                                                     {{-- TEXT --}}
                         type="caption3" 
                         class="form-control @error('caption3') is-invalid @enderror" 

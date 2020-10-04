@@ -54,21 +54,6 @@
                     
                 @else
                     <li class="nav-item dropdown">
-                       
-                        <!-- New Post | DropDown-->
-                        <li class="nav-item p-1">
-                            <div class="btn-group dropdown">
-                                <button type="button" class="btn btn-dark dropdown-toggle text-dark" id="new-post" data-toggle="dropdown" >
-                                    Nový príspevok
-                                </button>
-                                <div class="dropdown-menu">
-                                    <a href="{{ route('posts.create') }}" class="dropdown-item">Nástenka</a>
-                                    <a href="{{ route('alacarte.create') }}" class="dropdown-item">Menu</a>
-                                    <a href="{{ route('rooms.create') }}" class="dropdown-item">Priestory</a>
-                                </div>
-                            </div>
-                        </li>
-                        <!-- End New Post-->
                         
                         {{-- Users DropDown--}}
                         <li class="nav-item">
@@ -84,11 +69,26 @@
                             <a class="nav-link" href="{{ route('contact.index') }}">Kontakt</a>
                         </li>
 
+                        <!-- New Post | DropDown-->
+                        <li class="nav-item p-1">
+                            <div class="btn-group dropdown">
+                                <button type="button" class="btn dropdown-toggle" id="new-post" data-toggle="dropdown" >
+                                    Nový príspevok
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a href="{{ route('posts.create') }}" class="dropdown-item">Nástenka</a>
+                                    <a href="{{ route('alacarte.create') }}" class="dropdown-item">Menu</a>
+                                    <a href="{{ route('rooms.create') }}" class="dropdown-item">Priestory</a>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- End New Post-->
+
                         <!-- Users | New User -->
                         @can('isHeadAdmin')
                             <li class="nav-item p-1 ">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-dark dropdown-toggle text-dark" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Užívatelia
                                     </button>
                                     <div class="dropdown-menu">
@@ -101,7 +101,7 @@
 
                         <li class="nav-item p-1">
                             <div class="btn-group">
-                            <button id="navbarDropdown" class="border-dark btn dropdown-toggle text-dark" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <button id="navbarDropdown" class="text-dark btn dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 <strong>{{ Auth::user()->username }}</strong> 
                                 <span class="caret"></span>
                             </button>

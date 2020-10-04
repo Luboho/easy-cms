@@ -49,6 +49,7 @@
         opacity: 0.5;
         font: normal bold 2em/100% Arial;
         color: rgb(89, 88, 79);
+        text-shadow: 2px 2px 2px whitesmoke;
         transition: opacity 1s;
     }
     .up-btn>a:hover, .down-btn>a:hover {

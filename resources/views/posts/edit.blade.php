@@ -24,7 +24,7 @@
 
                             {{-- Attention Message--}}
                         <textarea rows="3" cols="50"
-                            id="summary-ckeditor2"
+                            id="editor"
                             name="attention_message"                                                                     {{-- TEXT --}}
                             type="attention_message" 
                             class="form-control @error('attention_message') is-invalid @enderror" 
@@ -77,7 +77,7 @@
                             <label for="text" class="col-form-label font-weight-bold" id="grid-form-item1">Text</label>
 
                         <textarea rows="3" cols="50"
-                            id="summary-ckeditor"
+                            id="editor"
                             name="text"                                                                     {{-- TEXT --}}
                             type="text" 
                             class="form-control @error('text') is-invalid @enderror" 

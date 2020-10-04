@@ -50,7 +50,7 @@
                     <label for="text" class="col-form-label font-weight-bold" id="grid-form-item1">Text</label>
     
                     <textarea rows="3" cols="50"
-                        id="summary-ckeditor"
+                        id="editor"
                         name="text"                                                                     {{-- TEXT --}}
                         type="text" 
                         class="form-control @error('text') @enderror" 
@@ -76,7 +76,7 @@
     </form>
 
     {{-- Attention Message Form--}}
-    <form action="{{ route('posts.store') }}" class="pt-5" method="post">
+    {{-- <form action="{{ route('posts.store') }}" class="pt-5" method="post">
         @csrf
         
         <div class="row">
@@ -89,10 +89,9 @@
 
                     <div class="form-group grid-form-container">
                         <label for="attention_message" class="col-form-label text-white font-weight-bold" id="grid-form-item1">Upozornenie</label>
-                        {{-- Attention Message--}}
                         <textarea rows="3" cols="50"
-                            id="summary-ckeditor2"
-                            name="attention_message"                                                                     {{-- TEXT --}}
+                            id="editor"
+                            name="attention_message"                                                                   
                             type="attention_message" 
                             class="form-control @error('attention_message') is-invalid @enderror" 
                             caption="attention_message" 
@@ -113,7 +112,7 @@
                 </div>
         </div>
 
-    </form>
+    </form> --}}
 
 </div>
 

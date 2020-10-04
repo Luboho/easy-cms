@@ -12,6 +12,8 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script> {{-- !!! Defer atribute to use Vue. --}}
     <script src="https://use.fontawesome.com/eda50d2248.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -22,9 +24,10 @@
     <link href="{{ asset('css/responsive.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/676fd051d4.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/summernote.css">
 
 </head>
-<body onload="ckeditor()">
+<body>
     <div id="app">
         
         <div id="up">
@@ -82,16 +85,6 @@
         </footer>
 
         <up-down></up-down>                                             {{--UP & DOWN Arrows--}}
-
-
-        
-        <script src="//cdn.ckeditor.com/4.14.1/full/ckeditor.js"></script>
-        <script>
-            function ckeditor() {
-                CKEDITOR.replace( 'summary-ckeditor' );
-                CKEDITOR.replace( 'summary-ckeditor2' );
-            }
-        </script>
         
         @include('inc.scripts')
     </div>

@@ -21,7 +21,7 @@
                     @if($companyData->isEmpty())
                         @can('isHeadAdmin')
                             <a href="{{ route('company.create') }}" >    
-                                <button type="submit"><i class="fa fa-edit edit-icon"></i></button>
+                                <i class="fa fa-edit edit-icon"></i>
                             </a>
                         @endcan
                     @else
@@ -31,11 +31,11 @@
                             @can('isHeadAdmin')
                                 @if(empty($company))
                                     <a href="{{ route('company.create') }}" >    
-                                        <button type="submit"><i class="fa fa-edit edit-icon"></i></button>
+                                        <i class="fa fa-edit edit-icon"></i>
                                     </a>
                                 @else 
                                     <a href="contact/company/{{ $company->id }}/edit" >    
-                                        <button type="submit"><i class="fa fa-edit edit-icon"></i></button>
+                                        <i class="fa fa-edit edit-icon"></i>
                                     </a>
                                 @endif
 

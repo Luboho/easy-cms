@@ -29,7 +29,7 @@
                                 </div> --}}
                             {{-- Edit Button--}}
                                 <a href="/rooms/{{ $room->id }}/edit" >    
-                                    <button type="submit"><i class="fa fa-edit edit-icon"></i></button>
+                                    <i class="fa fa-edit edit-icon"></i>
                                 </a>
                             @endcan
                             {{--Delete Button--}}
@@ -38,7 +38,7 @@
                                     @method('DELETE')
                                     @csrf
 
-                                    <button type="submit" title="Zmazať príspevok"><i id="trash-confirm" class="fa fa-trash delete-icon"></i></button>
+                                    <button style="background:none;" type="submit" title="Zmazať príspevok"><i id="trash-confirm" class="fa fa-trash delete-icon"></i></button>
                                 </form>
                             @endcan
                         </div>

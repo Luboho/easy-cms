@@ -35,3 +35,7 @@ Vue.component('no-posts', require('./components/NoPostsImage.vue').default);
 const app = new Vue({
     el: '#app',
 });
+
+$(document).ready(function() {
+    $('#editor').summernote();
+});

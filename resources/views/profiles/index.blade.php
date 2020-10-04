@@ -27,7 +27,7 @@
                             <th class="p-2">
                                 @can('isHeadAdmin')
                                     <div class="d-flex justify-content-center">
-                                            <button href="{{ route('register') }}" class="create-user-icon " type="submit" title="Nový Užívateľ"><i class="p-1 fa fa-user-plus"></i></button>
+                                            <a href="{{ route('register') }}" class="create-user-icon" type="submit" title="Nový Užívateľ"><i class="p-1 fa fa-user-plus"></i></a>
                                     </div>
                                 @endcan
                             </th>
@@ -63,7 +63,7 @@
                                                         <i class="fa fa-edit edit-icon"></i>
                                                     </a>
                                                 @endif --}}
-                                                <div class="d-flex justify-content-center"><button type="submit" class="" title="Zmazať príspevok"><i id="trash-confirm" class="fa fa-trash delete-icon"></i></button></div>
+                                                <div class="d-flex justify-content-center"><button type="submit" style="background:none;" title="Zmazať príspevok"><i id="trash-confirm" class="fa fa-trash delete-icon"></i></button></div>
                                             </div>
                                         @endif
                                         

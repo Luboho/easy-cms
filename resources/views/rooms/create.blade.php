@@ -48,7 +48,7 @@
                         <label for="text" class="col-form-label font-weight-bold" id="grid-form-item1">Text</label>
 
                         <textarea rows="3" cols="50"
-                            id="summary-ckeditor"
+                            id="editor"
                             name="text"                                                                     {{-- TEXT --}}
                             type="text" 
                             class="form-control @error('text') is-invalid @enderror" 
