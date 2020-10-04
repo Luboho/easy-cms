@@ -18,9 +18,7 @@
                     @can('isHeadAdmin')
                         <div class="card-header text-right">
                             <a href="/logos/{{ $logo->id }}/edit">    
-                                <button type="submit">
-                                    <i class="edit-icon fa fa-edit"></i>
-                                </button> 
+                                    <button><i class="edit-icon fa fa-edit"></i></button>
                             </a>
                         </div>
                     @endcan

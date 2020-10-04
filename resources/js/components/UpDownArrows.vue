@@ -48,7 +48,7 @@
     .up-btn>a, .down-btn>a {
         opacity: 0.5;
         font: normal bold 2em/100% Arial;
-        color: rgb(254, 240, 90);
+        color: rgb(89, 88, 79);
         transition: opacity 1s;
     }
     .up-btn>a:hover, .down-btn>a:hover {

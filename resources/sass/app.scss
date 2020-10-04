@@ -32,6 +32,15 @@ body {
     p {
         font-size: 0.9rem;
     }
+    /* turn it off completely */
+select:active, select:hover {
+    outline: none
+  }
+  
+  /* make it red instead (with with same width and style) */
+  select:active, select:hover {
+    outline-color: red
+  }
 }
     .btn-container {
         padding: 0.5em;
@@ -71,11 +80,6 @@ body {
         }
     }
 
-    button {
-        background: none;
-        border: none;
-
-    }
     #navbar {
         background-color: rgb(231, 208, 166);
         border-radius: 4px;

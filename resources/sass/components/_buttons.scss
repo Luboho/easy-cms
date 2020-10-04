@@ -1,18 +1,47 @@
+button {
+    outline: none !important;
+    background-color: #dcbc80 !important;
+    border-style: none !important;
+    border-radius: 5px !important;
+    text-align: center !important;
+    vertical-align: middle;
+}
+
+button:hover {background-color: rgba(245, 229, 8, 0.679) !important;
+    box-shadow: 0 4px rgb(55, 53, 53) !important;
+}
+
+button:active {
+  background-color: #d8b45a !important;
+  box-shadow: 0 2px rgb(89, 84, 84) !important;
+  transform: translateY(3px) !important;    
+}
+
 .edit-icon {
     margin-left: 10px;
     color: rgb(8, 8, 8) !important;
     font-size: 1.25em !important;
     text-shadow: 2px 2px 1px rgb(248, 232, 11);
+    text-align: center !important;
+    margin-left: auto;
+    margin-right: auto;
+
 }
 
 .delete-icon {
     margin-right: 7px;
     color: rgb(192, 19, 19) !important;
-    font-size: 1.4em !important;
+    font-size: 1.55em !important;
+    text-align: center !important;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .create-user-icon {
     color: rgb(44, 209, 15) !important;
     text-shadow: 1px 1px 1px black, -1px 1px 1px black ;
     font-size: 1.25em !important;
+    text-align: center !important;
+    margin-left: auto;
+    margin-right: auto;
 }

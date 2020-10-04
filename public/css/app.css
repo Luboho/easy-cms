@@ -10938,23 +10938,52 @@ a.text-dark:focus {
   }
 }
 
+button {
+  outline: none !important;
+  background-color: #dcbc80 !important;
+  border-style: none !important;
+  border-radius: 5px !important;
+  text-align: center !important;
+  vertical-align: middle;
+}
+
+button:hover {
+  background-color: rgba(245, 229, 8, 0.679) !important;
+  box-shadow: 0 4px #373535 !important;
+}
+
+button:active {
+  background-color: #d8b45a !important;
+  box-shadow: 0 2px #595454 !important;
+  transform: translateY(3px) !important;
+}
+
 .edit-icon {
   margin-left: 10px;
   color: #080808 !important;
   font-size: 1.25em !important;
   text-shadow: 2px 2px 1px #f8e80b;
+  text-align: center !important;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .delete-icon {
   margin-right: 7px;
   color: #c01313 !important;
-  font-size: 1.4em !important;
+  font-size: 1.55em !important;
+  text-align: center !important;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .create-user-icon {
   color: #2cd10f !important;
   text-shadow: 1px 1px 1px black, -1px 1px 1px black;
   font-size: 1.25em !important;
+  text-align: center !important;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .alert-danger {
@@ -11032,6 +11061,8 @@ body {
   margin-right: auto;
   border-left: 0.8px solid rgba(189, 121, 33, 0.301);
   border-right: 0.8px solid rgba(189, 121, 33, 0.301);
+  /* turn it off completely */
+  /* make it red instead (with with same width and style) */
 }
 
 body .container {
@@ -11046,6 +11077,16 @@ body .py-4 {
 
 body p {
   font-size: 0.9rem;
+}
+
+body select:active,
+body select:hover {
+  outline: none;
+}
+
+body select:active,
+body select:hover {
+  outline-color: red;
 }
 
 .btn-container {
@@ -11087,11 +11128,6 @@ img {
 .text-background p {
   text-align: justify;
   padding-right: 0.5rem;
-}
-
-button {
-  background: none;
-  border: none;
 }
 
 #navbar {

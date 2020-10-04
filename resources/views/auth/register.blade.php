@@ -59,9 +59,9 @@
 
                             <div class="col-md-6">
                                 <select  class="form-control  @error('role') is-invalid @enderror" name="role" size="1" >
-                                    <option class="hidden">
+                                    <option class="hidden" >
                                     {{-- <option value="user">Užívateľ --}}
-                                    <option value="admin">Administrátor                                
+                                    <option class="bg-red" value="admin">Administrátor                                
                                 </select>
                                 
                                 @error('role')

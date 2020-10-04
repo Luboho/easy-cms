@@ -16,7 +16,7 @@
                 <li class="nav-item">
                 {{-- Company Name --}}
                     @foreach(Helper::CompanyData() as $companyName)
-                        <div class="font-weight-bold text-secondary">{{ $companyName->name }}</div>
+                        <div class="font-weight-bold text-dark">{{ $companyName->name }}</div>
                     @endforeach
                 </li>
             </a>
@@ -56,9 +56,9 @@
                     <li class="nav-item dropdown">
                        
                         <!-- New Post | DropDown-->
-                        <li class="nav-item ">
+                        <li class="nav-item p-1">
                             <div class="btn-group dropdown">
-                                <button type="button" class="btn btn-warning dropdown-toggle text-secondary" id="new-post" data-toggle="dropdown" >
+                                <button type="button" class="btn btn-dark dropdown-toggle text-dark" id="new-post" data-toggle="dropdown" >
                                     Nový príspevok
                                 </button>
                                 <div class="dropdown-menu">
@@ -86,9 +86,9 @@
 
                         <!-- Users | New User -->
                         @can('isHeadAdmin')
-                            <li class="nav-item ">
+                            <li class="nav-item p-1 ">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-warning dropdown-toggle text-secondary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <button type="button" class="btn btn-dark dropdown-toggle text-dark" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Užívatelia
                                     </button>
                                     <div class="dropdown-menu">
@@ -99,9 +99,9 @@
                             </li>
                         @endcan
 
-                        <li class="nav-item ml-1">
+                        <li class="nav-item p-1">
                             <div class="btn-group">
-                            <button id="navbarDropdown" class="btn btn-outline-warning dropdown-toggle text-secondary" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <button id="navbarDropdown" class="border-dark btn dropdown-toggle text-dark" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 <strong>{{ Auth::user()->username }}</strong> 
                                 <span class="caret"></span>
                             </button>

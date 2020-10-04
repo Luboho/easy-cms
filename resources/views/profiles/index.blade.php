@@ -27,9 +27,7 @@
                             <th class="p-2">
                                 @can('isHeadAdmin')
                                     <div class="d-flex justify-content-center">
-                                        <a href="{{ route('register') }}" class="">
-                                            <button class="create-user-icon" type="submit" title="Nový Užívateľ"><i class="fa fa-user-plus"></i></button>
-                                        </a>
+                                            <button href="{{ route('register') }}" class="create-user-icon " type="submit" title="Nový Užívateľ"><i class="p-1 fa fa-user-plus"></i></button>
                                     </div>
                                 @endcan
                             </th>
@@ -50,9 +48,9 @@
                                             @can('isHeadAdmin')
                                                 <div class="d-flex justify-content-center">
                                                     @if (Route::has('password.request'))
-                                                        <a class="btn btn-link mr-2" href="{{ route('password.request') }}">
+                                                        <button class="btn btn-link mr-2" href="{{ route('password.request') }}">
                                                             <i class="fa fa-edit edit-icon"></i>
-                                                        </a>
+                                                        </button>
                                                     @endif
                                                 </div>
                                             @endcan
