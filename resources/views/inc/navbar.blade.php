@@ -70,9 +70,9 @@
                         </li>
 
                         <!-- New Post | DropDown-->
-                        <li class="nav-item p-1">
+                        <li class="nav-item">
                             <div class="btn-group dropdown">
-                                <button type="button" class="btn dropdown-toggle" id="new-post" data-toggle="dropdown" >
+                                <button type="button" class="btn dropdown-toggle font-weight-bold pt-2" id="new-post" data-toggle="dropdown" >
                                     Nový príspevok
                                 </button>
                                 <div class="dropdown-menu">
@@ -86,9 +86,9 @@
 
                         <!-- Users | New User -->
                         @can('isHeadAdmin')
-                            <li class="nav-item p-1 ">
+                            <li class="nav-item">
                                 <div class="btn-group">
-                                    <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <button type="button" class="btn dropdown-toggle font-weight-bold pt-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Užívatelia
                                     </button>
                                     <div class="dropdown-menu">
@@ -99,9 +99,9 @@
                             </li>
                         @endcan
 
-                        <li class="nav-item p-1">
+                        <li class="nav-item">
                             <div class="btn-group">
-                            <button id="navbarDropdown" class="text-dark btn dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <button id="navbarDropdown" class="text-dark btn dropdown-toggle pt-2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 <strong>{{ Auth::user()->username }}</strong> 
                                 <span class="caret"></span>
                             </button>

@@ -48,7 +48,7 @@
                         @enderror     
                     </div>
                     <div class="form-group row">
-                        <button type="submit" class="border btn btn-dark">Poslať správu</button>
+                        <button type="submit" class="border btn">Poslať správu</button>
                     </div>
                     
                 </div>

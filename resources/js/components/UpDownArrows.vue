@@ -33,22 +33,18 @@
         right: 5px;
     }
     .up-down button {
-        background-color: rgba(5, 4, 4, 0.63);
-        border: 1px solid silver;
-        box-shadow:snow;
+        /* background-color: rgba(5, 4, 4, 0.63); */
         transition-property: background-color;
         /* transition-delay: 0.5s; */
         transition-duration: 0.5s;
         border-radius: 4px;
     } 
-        .up-down button:hover {
-            background-color: black;
-        }
+        
     
     .up-btn>a, .down-btn>a {
         opacity: 0.5;
         font: normal bold 2em/100% Arial;
-        color: rgb(89, 88, 79);
+        color: rgb(58, 58, 57);
         text-shadow: 2px 2px 2px whitesmoke;
         transition: opacity 1s;
     }
