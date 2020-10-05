@@ -28,9 +28,11 @@
                                     <h3><p>{{ $room->user->username ?? '' }}</p></h3>
                                 </div> --}}
                             {{-- Edit Button--}}
-                                <a href="/rooms/{{ $room->id }}/edit" >    
-                                    <i class="fa fa-edit edit-icon"></i>
-                                </a>
+                                <button style="background:none;">
+                                    <a href="/rooms/{{ $room->id }}/edit" >    
+                                        <i class="fa fa-edit edit-icon"></i>
+                                    </a>
+                                </button>
                             @endcan
                             {{--Delete Button--}}
                             @can('delete', $room)

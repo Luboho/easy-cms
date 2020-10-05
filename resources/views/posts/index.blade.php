@@ -17,9 +17,9 @@
                     {{--Edit Button--}}
                     @can('isHeadAdmin')
                         <div class="card-header text-right">
-                            <a href="/logos/{{ $logo->id }}/edit">    
+                            <button type="submit" style="background:none;" href="/logos/{{ $logo->id }}/edit">    
                                 <i class="edit-icon fa fa-edit"></i>
-                            </a>
+                            </button>
                         </div>
                     @endcan
                         {{-- end Buttons --}}
@@ -62,9 +62,11 @@
                                                 <h3><p>{{ $post->user->username ?? '' }}</p></h3>
                                             </div> --}}
                                         {{-- Edit Button--}}
-                                            <a href="/posts/{{ $post->id }}/edit" >    
-                                                <i class="fa fa-edit edit-icon"></i>
-                                            </a>
+                                            <button style="background:none;">
+                                                <a href="/posts/{{ $post->id }}/edit" >    
+                                                    <i class="fa fa-edit edit-icon"></i>
+                                                </a>
+                                            </button>
                                         @endcan
             
                                         @can('delete', $post){{--Delete Button--}}

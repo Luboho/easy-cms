@@ -29,9 +29,11 @@
                                     <h3><p>{{ $alacarte->user->username ?? '' }}</p></h3>
                                 </div> --}}
                             {{-- Edit Button--}}
+                            <button style="background:none;">
                                 <a href="/alacarte/{{ $alacarte->id }}/edit" >    
                                     <i class="fa fa-edit edit-icon"></i>
                                 </a>
+                            </button>
                             @endcan
 
                             @can('delete', $alacarte){{--Delete Button--}}

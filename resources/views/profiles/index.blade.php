@@ -48,9 +48,9 @@
                                             @can('isHeadAdmin')
                                                 <div class="d-flex justify-content-center">
                                                     @if (Route::has('password.request'))
-                                                        <button class="btn btn-link mr-2" href="{{ route('password.request') }}">
+                                                        <a href="{{ route('password.request') }}">
                                                             <i class="fa fa-edit edit-icon"></i>
-                                                        </button>
+                                                        </a>
                                                     @endif
                                                 </div>
                                             @endcan

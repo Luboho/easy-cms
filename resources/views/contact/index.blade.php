@@ -20,9 +20,11 @@
                 <div class="mt-1" >   
                     @if($companyData->isEmpty())
                         @can('isHeadAdmin')
-                            <a href="{{ route('company.create') }}" >    
-                                <i class="fa fa-edit edit-icon"></i>
-                            </a>
+                            <button style="background:none;">
+                                <a href="{{ route('company.create') }}" >    
+                                    <i class="fa fa-edit edit-icon"></i>
+                                </a>
+                            </button>
                         @endcan
                     @else
                     {{-- Contact Company Data--}}
@@ -30,13 +32,17 @@
                     
                             @can('isHeadAdmin')
                                 @if(empty($company))
-                                    <a href="{{ route('company.create') }}" >    
-                                        <i class="fa fa-edit edit-icon"></i>
-                                    </a>
+                                    <button style="background:none;">
+                                        <a href="{{ route('company.create') }}" >    
+                                            <i class="fa fa-edit edit-icon"></i>
+                                        </a>
+                                    </button>
                                 @else 
-                                    <a href="contact/company/{{ $company->id }}/edit" >    
-                                        <i class="fa fa-edit edit-icon"></i>
-                                    </a>
+                                    <button style="background:none;">
+                                        <a href="contact/company/{{ $company->id }}/edit" >    
+                                            <i class="fa fa-edit edit-icon"></i>
+                                        </a>
+                                    </button>
                                 @endif
 
                         @endcan

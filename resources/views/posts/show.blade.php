@@ -25,9 +25,11 @@
                                     <h3><p>{{ $post->user->username ?? '' }}</p></h3>
                                 </div> --}}
                             {{-- Edit Button--}}
-                                <a href="/posts/{{ $post->id }}/edit" >
-                                    <i class="fa fa-edit edit-icon"></i>
-                                </a>
+                                <button style="background:none;">
+                                    <a href="/posts/{{ $post->id }}/edit" >
+                                        <i class="fa fa-edit edit-icon"></i>
+                                    </a>
+                                </button>
                             @endcan
                             {{--Delete Button--}}
                             @can('delete', $post)
