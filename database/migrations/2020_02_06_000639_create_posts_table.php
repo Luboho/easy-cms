@@ -19,7 +19,6 @@ class CreatePostsTable extends Migration
             $table->string('caption')->nullable();
             $table->string('image')->nullable();
             $table->text('text')->nullable();
-            $table->text('attention_message')->nullable();
             $table->timestamps();
 
             $table->index('user_id');

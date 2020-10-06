@@ -75,45 +75,6 @@
         </div>
     </form>
 
-    {{-- Attention Message Form--}}
-    {{-- <form action="{{ route('posts.store') }}" class="pt-5" method="post">
-        @csrf
-        
-        <div class="row">
-
-            <div class="col-12 m-auto card-header align-items-center p-2">
-                <span class="ml-3">Upozornenie na nástenku</span>
-            </div>
-        
-                <div class="card-body col-12 bg-danger">
-
-                    <div class="form-group grid-form-container">
-                        <label for="attention_message" class="col-form-label text-white font-weight-bold" id="grid-form-item1">Upozornenie</label>
-                        <textarea rows="3" cols="50"
-                            id="editor"
-                            name="attention_message"                                                                   
-                            type="attention_message" 
-                            class="form-control @error('attention_message') is-invalid @enderror" 
-                            caption="attention_message" 
-                            value="" 
-                            autocomplete="attention_message">
-                            {{ old('attention_message') }}
-                        </textarea>
-
-                        @error('attention_message')
-                            <span class="text-danger" role="alert">{{ $message }}</span>
-                        @enderror
-                    </div>
-
-                        <div class="text-center pt-3">
-                            <button type="submit" class="btn btn-warning">Pridať príspevok</button>
-                        </div>
-                        
-                </div>
-        </div>
-
-    </form> --}}
-
 </div>
 
 @endsection

@@ -10,40 +10,40 @@
                     <p class="ml-sm-n4 font-weight-bold">Napíšte nám</p> 
 
                     <div class="form-group row">
-                        <label for="name" class="mt-3 col-md-4 col-form-label">Meno *</label>
+                        <label for="contact-us-name" class="mt-3 col-md-4 col-form-label">Meno *</label>
 
                         <input type="text" 
-                            name="name" 
-                            class="form-control @error('name') is-invalid @enderror bg-secondary text-light" 
-                            value="{{ old('name') }}">
-                        @error('name')
+                            name="contact-us-name" 
+                            class="form-control @error('contact-us-name') is-invalid @enderror bg-secondary text-light" 
+                            value="{{ old('contact-us-name') }}">
+                        @error('contact-us-name')
                             <span class="text-danger" role="alert">{{ $message }}</span>
                         @enderror      
                     </div>
 
                     <div class="form-group row">
-                        <label for="email" class="col-md-4 col-form-label">Email *</label>
+                        <label for="contact-us-email" class="col-md-4 col-form-label">Email *</label>
 
                         <input type="text" 
-                            name="email" 
-                            class="form-control @error('email') is-invalid @enderror bg-secondary text-light" 
-                            value="{{ old('email') }}">
-                        @error('email')
+                            name="contact-us-email" 
+                            class="form-control @error('contact-us-email') is-invalid @enderror bg-secondary text-light" 
+                            value="{{ old('contact-us-email') }}">
+                        @error('contact-us-email')
                             <span class="text-danger" role="alert">{{ $message }}</span>
                         @enderror   
                     </div>
 
                     <div class="form-group row">
-                        <label for="message" class="col-md-4 col-form-label">Správa *</label>
+                        <label for="contact-us-message" class="col-md-4 col-form-label">Správa *</label>
 
                         <textarea  
-                            name="message" 
+                            name="contact-us-message" 
                             rows="3"
                             cols="30"
-                            class="form-control @error('message') is-invalid @enderror bg-secondary text-light" 
-                            value="{{ old('message') }}">
+                            class="form-control @error('contact-us-message') is-invalid @enderror bg-secondary text-light" 
+                            value="{{ old('contact-us-message') }}">
                         </textarea>
-                        @error('message')
+                        @error('contact-us-message')
                             <span class="text-danger" role="alert">{{ $message }}</span>
                         @enderror     
                     </div>

@@ -30,9 +30,9 @@ class ContactFormController extends Controller
     public function store()
     {
         $data = request()->validate([
-            'name' => 'required|string',
-            'email' => 'required|email',
-            'message' => 'required|string',
+            'contact-us-name' => 'required|string',
+            'contact-us-email' => 'required|email',
+            'contact-us-message' => 'required|string',
         ]);
 
         Mail::to('test@test.com')->send(new ContactFormMail($data));

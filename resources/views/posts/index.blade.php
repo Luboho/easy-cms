@@ -11,14 +11,14 @@
 @endif
 
         <div class="container">
-            <header class="col-12">  
+            <header class="border-bottom pb-4">  
                     {{-- Logo & Captions --}}
                     @foreach(Helper::getLogoGlobally() as $logo)                                         
                     {{--Edit Button--}}
                     @can('isHeadAdmin')
                         <div class="card-header text-right">
-                            <button type="submit" style="background:none;" href="/logos/{{ $logo->id }}/edit">    
-                                <i class="edit-icon fa fa-edit"></i>
+                            <button type="submit" style="background:none;"><a href="/logos/{{ $logo->id }}/edit">    
+                                <i class="edit-icon fa fa-edit"></i></a>
                             </button>
                         </div>
                     @endcan
@@ -26,9 +26,8 @@
                         <div class="card-body welcome-container justify-content-center post-title col-12">
                             
                                 <div class="pl-4 pr-2">
-                                    <h2 class="font-weight-bold text-break">{{ $logo->caption1 }}</h2>
-                                    <h3 class="">{{ $logo->caption2 }}</h3>
-                                    <h3 class="">{!! $logo->caption3 !!}</h3>
+                                    <h2 class="font-weight-bold text-break">{{ $logo->text }}</h2>
+                                    
                                 </div>
                                 <div class="text-center">
                                     <img src="/storage/{{ $logo->image }}" style="max-height: 150px; max-width:180px;" class=" rounded-circle">
@@ -37,7 +36,7 @@
                     @endforeach
             </header>
                 {{-- LOOP 1.2.3.iterations | 1.paggination--}}
-            <div class="">
+            <div>
     @if(count($posts) > 0)                                  
                 @php                                       
                     $currentUrl = url()->full(); 
@@ -61,15 +60,15 @@
                                             {{-- <div class="ml-5">
                                                 <h3><p>{{ $post->user->username ?? '' }}</p></h3>
                                             </div> --}}
-                                        {{-- Edit Button--}}
+                                    {{-- Edit Button--}}
                                             <button style="background:none;">
                                                 <a href="/posts/{{ $post->id }}/edit" >    
                                                     <i class="fa fa-edit edit-icon"></i>
                                                 </a>
                                             </button>
                                         @endcan
-            
-                                        @can('delete', $post){{--Delete Button--}}
+                                    {{--Delete Button--}}
+                                        @can('delete', $post)
                                             <form action="/posts/{{ $post->id }} " method="POST">
                                                 @method('DELETE')
                                                 @csrf
@@ -83,14 +82,11 @@
                                 @if(!empty($post->image))<div class="pr-2 float-left "><img src="/storage/{{ $post->image }}" class="w-100  shadow"></div>         
                                 @endif
                                 {{-- Text --}}
-                                <div class="">
+                                <div class="ml-2">
             
-                                    
-                                    @if(!empty($post->attention_message)){{--<h2 class="text-warning bg-dark  text-center p-3">--}}<div class="attention">{!! $post->attention_message !!}</div>{{--</h2>--}}@endif
-                                      
                                     {{--text--}}
                                     <div><p style="text-align: justify;">{!! $post->text !!}</p></div> 
-                                    <p class="p-1 align-self-end">
+                                    <p class="align-self-end">
                                         {{--Create_at--}}
                                         {{ $post->created_at->format('d.m. Y') }}                                       
                                     </p>  
@@ -112,8 +108,6 @@
                         <div class="gallery-item align-items-stretch justify-content-between p-2" id="gallery">
                             <div class="shadow">
                                 <a href="/posts/{{ $post->id }}" class="text-dark text-decoration-none">
-
-                                    @if(!empty($post->attention_message)){{--<h2 class="text-warning bg-dark  text-center p-3">--}}<div class="attention">{!! $post->attention_message !!}</div>{{--</h2>--}}@endif
 
                                     @if(!empty($post->image))<img src="/storage/{{ $post->image }}" class=" w-100">@endif 
                                 
@@ -143,8 +137,6 @@
 
                                 <div class="shadow">
                                     <a href="/posts/{{ $post->id }}" class="text-dark text-decoration-none">
-
-                                        @if(!empty($post->attention_message)){{--<h2 class="text-warning bg-dark  text-center p-3">--}}<div class="attention">{!! $post->attention_message !!}</div>{{--</h2>--}}@endif
 
                                         @if(!empty($post->image))<img src="/storage/{{ $post->image }}" class=" w-100">@endif 
                                     

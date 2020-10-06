@@ -10962,7 +10962,7 @@ button:active {
 }
 
 .edit-icon {
-  padding: 0.3em 0.2em 0 0.2em;
+  padding: 0.3em 0.1em 0 0.2em;
   background-color: #dcbc8006 !important;
   color: #080808 !important;
   font-size: 1.6em !important;
@@ -10974,11 +10974,11 @@ button:active {
 
 .delete-icon {
   cursor: pointer;
-  padding: 0.2em;
+  padding: 0.25em 0 0 0;
   background: none !important;
   margin-right: 7px;
   color: #c01313 !important;
-  font-size: 1.55em !important;
+  font-size: 1.6em !important;
   text-align: center !important;
   margin-left: auto;
   margin-right: auto;
@@ -11052,6 +11052,7 @@ button:active {
 
 .card-header {
   background-color: #e6d1a8;
+  background-image: linear-gradient(to top right, #eee7d7, #e2b43e, #e6d1a8);
   width: 100%;
   font-weight: bolder;
 }
@@ -11139,6 +11140,7 @@ img {
 
 #navbar {
   background-color: #e7d0a6;
+  background-image: linear-gradient(to top right, #eee7d7, #e2b43e, #e6d1a8);
   border-radius: 4px;
 }
 

@@ -27,48 +27,20 @@
                         <strong>{{ $message }}</strong>
                     @enderror
                 </div>
-
-                {{-- <div class="form-group grid-form-container">
-                    <label for="caption1" class="col-form-label font-weight-bold" id="grid-form-item1">Veľký titulok</label>
-                    <input type="text"
-                        name="caption1"
-                        id="grid-form-item2"
-                        class="form-control @error('caption1') is-invalid @enderror"
-                        value="{{ old('caption1') ?? $logo->caption1 }}"
-                        autofocus>
-                    @error('caption1')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                </div>
-                <div class="form-group grid-form-container">
-                    <label for="caption2" class="col-form-label font-weight-bold" id="grid-form-item1">Titulok</label>
-                    <input type="text"
-                        name="caption2"
-                        id="grid-form-item2"
-                        class="form-control @error('caption2') is-invalid @enderror"
-                        value="{{ old('caption2') ?? $logo->caption2 }}"
-                        autofocus>
-                    @error('caption2')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                </div> --}}
+            {{-- Text --}}
                 <div class="form-group grid-form-container pb-4">
-                    <label for="caption3" class="col-form-label font-weight-bold" id="grid-form-item1">Titulok</label>
+                    <label for="text" class="col-form-label font-weight-bold" id="grid-form-item1">Titulok</label>
                     <textarea rows="3" cols="50"
                         id="editor"
-                        name="caption3"                                                                     {{-- TEXT --}}
-                        type="caption3" 
-                        class="form-control @error('caption3') is-invalid @enderror" 
-                        caption="caption3" 
+                        name="text"                                                                     
+                        type="text" 
+                        class="form-control @error('text') is-invalid @enderror" 
+                        caption="text" 
                         value="" 
-                        autocomplete="caption3">
-                        {{ old('caption3') ?? $logo->caption3 }}
+                        autocomplete="text">
+                        {{ old('text') ?? $logo->text }}
                     </textarea>
-                    @error('caption3')
+                    @error('text')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>

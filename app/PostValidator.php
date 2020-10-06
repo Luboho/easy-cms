@@ -8,7 +8,6 @@ class PostValidator
     public static function validateRequest()
     {
         $data = request()->validate([
-            'attention_message' => 'string|max:15000',
             'caption' => 'nullable|string',
             'image' => ['image', 'mimes:png,jpeg,jpg', 'max:1999'],
             'text' => 'nullable|string|max:15000',

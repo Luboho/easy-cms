@@ -15,7 +15,7 @@ class LogosTableSeeder extends Seeder
         Logo::create([
             'user_id' => 1,
             'image' => 'default-pics/defaultLogo.jpg',
-            'caption3' => '<h2>Dobrý deň.</h2><br> <h3>&nbsp;&nbsp;&nbsp;&nbsp;Som vaša webová aplikácia.<br> Po prihlásení a stlačení ikony ceruzky môžete upravovať pôvodné príspevky. </h3>'
+            'text' => '<h2>Dobrý deň.</h2><br> <h3>&nbsp;&nbsp;&nbsp;&nbsp;Som vaša webová aplikácia.<br> Po prihlásení a stlačení ikony ceruzky môžete upravovať pôvodné príspevky. </h3>'
         ]);
     }
 }

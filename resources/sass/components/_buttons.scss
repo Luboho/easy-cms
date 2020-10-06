@@ -19,7 +19,7 @@ button:active {
 }
 
 .edit-icon {
-    padding: 0.3em 0.2em 0 0.2em;
+    padding: 0.3em 0.1em 0 0.2em;
     background-color: #dcbc8006 !important;
     color: rgb(8, 8, 8) !important;
     font-size: 1.6em !important;
@@ -32,11 +32,12 @@ button:active {
 
 .delete-icon {
     cursor: pointer;
-    padding: 0.2em;
+    padding: 0.25em 0 0 0;
+
     background: none !important;
     margin-right: 7px;
     color: rgb(192, 19, 19) !important;
-    font-size: 1.55em !important;
+    font-size: 1.60em !important;
     text-align: center !important;
     margin-left: auto;
     margin-right: auto;

@@ -88,29 +88,5 @@ class PostsController extends Controller
 
         return redirect('/');
     }
-
-    // private function validateRequest()
-    // {
-    //     $data = request()->validate([
-    //         'attention_message' => 'string|max:15000',
-    //         'caption' => 'nullable|string',
-    //         'image' => ['image', 'mimes:png,jpeg,jpg', 'max:1999'],
-    //         'text' => 'nullable|string|max:15000',
-    //     ]);
-
-    //     if (request('image')){
-    //         $imagePath = request('image')->store('uploads', 'public');
-    //         $image = Image::make(public_path("storage/{$imagePath}"))->resize(450, 350);
-    //         $image->save();
-
-    //         $imageArray = ['image' => $imagePath];
-    //     }
-
-    //     return $validatedArray = array_merge(
-    //         $data,
-    //         $imageArray ?? []
-    //     );
-    //}
-
     
 }
