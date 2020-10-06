@@ -26,7 +26,7 @@
                         <div class="card-body welcome-container justify-content-center post-title col-12">
                             
                                 <div class="pl-4 pr-2">
-                                    <h2 class="font-weight-bold text-break">{{ $logo->text }}</h2>
+                                    <h2 class="font-weight-bold text-break">{!! $logo->text !!}</h2>
                                     
                                 </div>
                                 <div class="text-center">
