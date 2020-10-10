@@ -10,19 +10,7 @@ use Illuminate\Auth\Notifications\ResetPassword as ResetPasswordNotification;
 
 class User extends Authenticatable
 {
-    use Notifiable;
-
-    
-    /**
-     * Send the password reset notification.
-     *
-     * @param  string  $token
-     * @return void
-     */
-    public function sendPasswordResetNotification($token)
-    {
-        $this->notify(new MailResetPasswordNotification($token));
-    }    
+    use Notifiable;   
 
     /**
      * The attributes that are mass assignable.
@@ -30,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'username', 'email', 'role', 'password',
+        'name', 'username', 'email', 'role', 'password', 'verification_code'
     ];
 
     /**

@@ -2,6 +2,12 @@
 
 @section('content')
 <div class="container">
+
+    @include('inc.messages')
+
+    @if (Session::has('message'))
+        <div class="alert alert-info">{{ Session::get('message') }}</div>
+    @endif
     <div class="row justify-content-center">
         <div class="col-12">
             <div class="card">
@@ -44,7 +50,7 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">E-Mailová adresa</label>
 
                             <div class="col-md-6">
-                                <input id="email"  class="form-control  @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}"  autocomplete="email">
+                                <input id="email"  class="form-control  @error('email') is-invalid @enderror" name="email" value="{{ request('email') }}" readonly autocomplete="email">
 
                                 @error('email')
                                     <div class="invalid-feedback" role="alert">

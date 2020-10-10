@@ -34,7 +34,7 @@
                     </div>  
                     
                     <div class="form-group grid-form-container">
-                        <label for="image" class="col-form-label font-weight-bold" id="grid-form-item1">Obrázok<span class="text-danger"> *</span></label>
+                        <label for="image" class="col-form-label font-weight-bold" id="grid-form-item1">Obrázok <span class="text-danger"> * </span></label>
                         <div>
                             <input type="file" class="form-control-file pb-3" id="grid-form-item2" name="image">
 

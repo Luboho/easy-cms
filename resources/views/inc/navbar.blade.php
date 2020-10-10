@@ -93,7 +93,7 @@
                                     </button>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" href="{{ route('profiles.index') }}">Užívatelia</a>
-                                        <a class="dropdown-item" href="{{ route('register') }}">Nový Užívateľ</a>
+                                        <a class="dropdown-item" href="{{ route('invitation.create') }}">Nový Užívateľ</a>
                                     </div>
                                 </div>
                             </li>

@@ -6,7 +6,13 @@
 
 @if(count($alacartes) > 0)
     <div class="container">
-       
+    
+        @include('inc.messages')
+
+        @if (Session::has('message'))
+            <div class="alert alert-info">{{ Session::get('message') }}</div>
+        @endif
+
         <ul class="col-12">
 
             <h4 class="p-2 font-weight-bold text-secondary">Menu lístok</h4>

@@ -12,7 +12,6 @@
 */
 
 
-
 Auth::routes();
 
 Route::get('layouts/app', 'NavLogoController@getNavLogo')->name('nav');
@@ -56,4 +55,9 @@ Route::delete('/rooms/{room}', 'RoomsController@destroy')->name('rooms.destroy')
 
 Route::get('/profiles', 'ProfilesController@index')->middleware('can:isHeadAdmin')->name('profiles.index');
 Route::delete('/profiles/{user}', 'ProfilesController@destroy')->middleware('can:isHeadAdmin')->name('profile.destroy');
+
+Route::get('/verify', [App\Http\Controllers\Auth\RegisterController::class, 'verifyUser'])->name('verify.user');
+
+Route::get('/invitation/create', 'InvitationController@create')->name('invitation.create');
+Route::post('/invitation', 'InvitationController@store')->name('invitation.store');
 

@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\User;
+use App\Invitation;
+use Illuminate\Http\Request;
 
 class ProfilesController extends Controller
 {
@@ -23,9 +24,15 @@ class ProfilesController extends Controller
     {
         $this->authorize('delete', $user);
 
-        $user->delete();
+        if($user !== null){
+            $userInvitation = Invitation::where('email', $user->email)->delete();
+            $user->delete();
 
-        session()->flash('success', 'Užívateľ bol zmazaný.');
-        return redirect('/profiles');
+            session()->flash('success', 'Užívateľ bol zmazaný.');
+            return redirect('/profiles');
+        } else {
+            session()->flash('denied', 'Hoplá. Užívateľ nebol odstránený. Skúste to prosím znova.');
+            return redirect('/profiles');
+        }
     }
 }
