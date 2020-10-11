@@ -18,7 +18,7 @@
             <h4 class="p-2 font-weight-bold text-secondary">Menu lístok</h4>
             <article class="row d-flex justify-content-between align-items-end">    
                 @foreach($alacartes as $alacarte)
-                    <div class="gallery-item mb-4 p-1 even-odd shadow" id="gallery">
+                    <div class="gallery-item mb-4 p-1 even-odd text-background shadow" id="gallery">
                         <div class="shadow">
                             <a href="/alacarte/{{ $alacarte->id }}" class="text-dark text-decoration-none">
 

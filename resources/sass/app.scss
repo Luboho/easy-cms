@@ -71,9 +71,12 @@ select:active, select:hover {
         height: 100%;
     } 
     .text-background {
-        background-color: rgba(212, 208, 208, 0.424);
+        background-color: rgba(255, 254, 254, 0.424);
         color: rgb(80, 79, 79);
         border-radius: 4px;
+        -webkit-box-shadow: 13px 14px 5px -8px rgba(0,0,0,0.75);
+        -moz-box-shadow: 13px 14px 5px -8px rgba(0,0,0,0.75);
+        box-shadow: 13px 14px 5px -8px rgba(0,0,0,0.75);
 
         p {
             text-align: justify;

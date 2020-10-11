@@ -11128,9 +11128,10 @@ img {
 }
 
 .text-background {
-  background-color: rgba(212, 208, 208, 0.424);
+  background-color: rgba(255, 254, 254, 0.424);
   color: #504f4f;
   border-radius: 4px;
+  box-shadow: 13px 14px 5px -8px rgba(0, 0, 0, 0.75);
 }
 
 .text-background p {
