@@ -1,5 +1,5 @@
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
-<img src="public/storage/default-pics/defaultLogo.jpg">
+<img src="https://drive.google.com/file/d/1LroeBLBUVzU5h3wlo7HThDMXyJQvuAkd/view?usp=sharing">
 
 
 <p align="center">
