@@ -15,9 +15,9 @@ Simple CMS system build on Laravel framework. For better experience just try it.
 
 After installing it, run command: "$ php artisan EasyCms:install" to empty database and all remaining posts.   
 
-![Easy CMS ](<img src="https://github.com/Luboho/easy-cms/tree/master/storage/app/public/default-pics/index.png">)
+![alt Easy CMS ](<img src="https://github.com/Luboho/easy-cms/tree/master/storage/app/public/default-pics/index.png?raw=true">)
 
 <br>
 
-![Easy CMS ](https://github.com/Luboho/easy-cms/tree/master/storage/app/public/default-pics/upload.png?raw=true)
+![alt Easy CMS ](storage/app/public/default-pics/upload.png?raw=true)
 
