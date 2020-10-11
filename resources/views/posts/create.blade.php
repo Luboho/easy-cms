@@ -23,14 +23,14 @@
                     <input id="grid-form-item2" 
                             name="caption"
                             type="text" 
-                            class="form-control  @error('caption') @enderror" 
+                            class="form-control  @error('caption') is-invalid @enderror" 
                             caption="caption" 
                             value="{{ old('caption') }}" 
                             autocomplete="caption"
                             autofocus>
 
                     @error('caption')
-                        <span class="invalid-feedback" role="alert">
+                        <span class="invalid-feedback" id="grid-form-item4" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
@@ -39,11 +39,14 @@
                 
                 <div class="grid-form-container pt-3 form-group">
                     <label for="image" class="col-form-label font-weight-bold" id="grid-form-item1">Obrázok</label>     {{--- Image --}}
-                    <input type="file" class="form-control-file pb-3" id="grid-form-item2" name="image">
+                    <input type="file" class="form-control-file pb-3 @error('image') is-invalid @enderror" id="grid-form-item2" name="image">
 
                     @error('image')
-                            <strong>{{ $message }}</strong>                       
-                    @enderror 
+                        <span class="invalid-feedback" id="grid-form-item4" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+
                 </div>
 
                 <div class="grid-form-container form-group ">
@@ -53,7 +56,7 @@
                         id="editor"
                         name="text"                                                                     {{-- TEXT --}}
                         type="text" 
-                        class="form-control @error('text') @enderror" 
+                        class="form-control @error('text') is-invalid @enderror" 
                         caption="text" 
                         value="" 
                         autocomplete="text">
@@ -61,7 +64,7 @@
                     </textarea>
 
                     @error('text')
-                        <span class="invalid-feedback" role="alert">
+                        <span class="invalid-feedback" id="grid-form-item4" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror

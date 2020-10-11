@@ -12,7 +12,7 @@
             <div class="row">
                 
                 <div class="col-12 m-auto card-header align-items-center p-2">
-                    <span class="ml-3">Upraviť príspevok priestorov reštaurácie</span class="ml-3">
+                    <span class="ml-3">Upraviť príspevok menu lístka</span class="ml-3">
                 </div>
                 
                 <div class="card-body col-12 m-auto">
@@ -31,17 +31,21 @@
                             autofocus>
 
                         @error('caption')
-                            <span class="text-danger" role="alert">{{ $message }}</span>
+                            <span class="invalid-feedback" id="grid-form-item4" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
                         @enderror
                     </div>  
                     
                     <div class="form-group grid-form-container">
                         {{-- <label for="image" class="col-form-label font-weight-bold" id="grid-form-item1">Obrázok</label> I M A G E- --}}
-                        <input type="file" class="form-control-file pb-3 align-self-center" id="grid-form-item2" name="image">
+                        <input type="file" class="form-control-file pb-3 align-self-center @error('image') is-invalid @enderror" id="grid-form-item2" name="image">
 
-                        <img src="/storage/{{ $alacarte->image }}" id="grid-form-item1" class="w-50 h-auto rounded shadow">
+                        <img src="/storage/{{ $alacarte->image }}" id="grid-form-item1" class="w-50 h-auto rounded shadow ">
                         @error('image')
-                                <strong>{{ $message }}</strong>                       
+                            <span class="invalid-feedback" id="grid-form-item4">
+                                <strong>{{ $message }}</strong>            
+                            </span>           
                         @enderror 
                     </div>
 

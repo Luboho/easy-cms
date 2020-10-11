@@ -24,7 +24,9 @@
                     <img src="/storage/{{ $logo->image }}" id="grid-form-item1" class="w-50 h-auto rounded shadow">
 
                     @error('image')
-                        <strong>{{ $message }}</strong>
+                        <span class="invalid-feedback" id="grid-form-item4">
+                            <strong>{{ $message }}</strong>
+                        </span>
                     @enderror
                 </div>
             {{-- Text --}}
@@ -41,7 +43,7 @@
                         {{ old('text') ?? $logo->text }}
                     </textarea>
                     @error('text')
-                        <span class="invalid-feedback" role="alert">
+                        <span class="invalid-feedback" id="grid-form-item4" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror

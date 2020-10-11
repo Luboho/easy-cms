@@ -15,7 +15,7 @@
 
 .text-danger {
   color: #e3342f !important;
-  text-shadow: 1px 1px 1px black;
+  text-shadow: 1px 1px 1px white;
 }
 
 /*!
@@ -11207,7 +11207,7 @@ div.li-spacer {
   color: #443e3e;
   display: grid;
   grid-template-columns: 30% 70%;
-  grid-template-areas: "article-item1 article-item2";
+  grid-template-areas: "article-item1 article-item2" ". article-item4";
   justify-items: start;
 }
 
@@ -11220,6 +11220,17 @@ div.li-spacer {
 .grid-form-container #grid-form-item2 {
   justify-self: start;
   grid-area: article-item2;
+}
+
+.grid-form-container #grid-form-item3 {
+  justify-self: end;
+  grid-area: article-item3;
+  margin-right: 2rem;
+}
+
+.grid-form-container #grid-form-item4 {
+  justify-self: start;
+  grid-area: article-item4;
 }
 
 footer .container {

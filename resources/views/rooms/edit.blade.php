@@ -30,7 +30,9 @@
                                 autofocus>
 
                         @error('caption')
-                            <span class="text-danger" role="alert">{{ $message }}</span>
+                            <span class="invalid-feedback" id="grid-form-item4" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
                         @enderror
             
                     </div>  
@@ -39,9 +41,11 @@
                         {{-- <label for="image" class="col-form-label font-weight-bold">Obrázok</label> Image --}}
                         <input type="file" class="form-control-file pb-3 align-self-center" id="grid-form-item2" name="image">
 
-                        <img src="/storage/{{ $room->image }}" id="grid-form-item1" class="w-50 h-auto rounded shadow">
+                        <img src="/storage/{{ $room->image }}" id="grid-form-item1" class="w-50 h-auto rounded shadow @error('image') is-invalid @enderror">
                         @error('image')
-                                <strong>{{ $message }}</strong>                       
+                            <span class="invalid-feedback" id="grid-form-item4">
+                                <strong>{{ $message }}</strong>            
+                            </span>           
                         @enderror 
                     </div>
 
@@ -59,7 +63,9 @@
                         </textarea>
 
                         @error('text')
-                            <span class="text-danger" role="alert">{{ $message }}</span>
+                            <span class="invalid-feedback" id="grid-form-item4" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
                         @enderror
             
                     </div>

@@ -80,13 +80,13 @@ class ContactCompanyController extends Controller
     private function validateRequest()
     {
         return request()->validate([
-            'mobile' => 'nullable|string|max:150',
-            'phone' => 'nullable|string|max:150',
-            'facebook' => 'nullable|string|max:150',
+            'mobile' => 'nullable|string|max:15',
+            'phone' => 'nullable|string|max:15',
+            'facebook' => 'nullable|string|max:30',
             'openHours' => 'nullable|string|max:15000',
-            'name' => 'nullable|string|max:150',
-            'street' => 'nullable|string|max:150',
-            'city' => 'nullable|string|max:150', 
+            'name' => 'nullable|string|max:50',
+            'street' => 'nullable|string|max:50',
+            'city' => 'nullable|string|max:50', 
         ]);
     }
 }

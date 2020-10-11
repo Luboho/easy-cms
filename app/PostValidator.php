@@ -2,14 +2,15 @@
 namespace App\ValidatorClass;
 
 use Intervention\Image\Facades\Image;
+use File;
 
 class PostValidator
 {
     public static function validateRequest()
     {
         $data = request()->validate([
-            'caption' => 'nullable|string',
-            'image' => ['image', 'mimes:png,jpeg,jpg', 'max:1999'],
+            'caption' => 'nullable|string|max:200',
+            'image' => ['image', 'mimes:png,jpeg,jpg', 'max:10000'],
             'text' => 'nullable|string|max:15000',
         ]);
 

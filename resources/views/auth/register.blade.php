@@ -96,7 +96,13 @@
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">Potvrdenie hesla</label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="password"  class="form-control " name="password_confirmation"  autocomplete="new-password">
+                                <input id="password-confirm" type="password"  class="form-control @error('password_confirmation') is-invalid @enderror" name="password_confirmation"  autocomplete="new-password">
+
+                                @error('password_confirmation')
+                                    <div class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </div>
+                                @enderror
                             </div>
                         </div>
 

@@ -29,7 +29,7 @@
                             autocomplete="caption">
 
                         @error('caption')
-                            <span class="invalid-feedback" role="alert">
+                            <span class="invalid-feedback" id="grid-form-item4" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror  
@@ -40,9 +40,11 @@
                         {{-- <label for="image" class="col-form-label font-weight-bold" id="grid-form-item1">Obrázok</label> IMAGE --}}
                         <input type="file" class="form-control-file pb-3 align-self-center" id="grid-form-item2" name="image">
                         
-                        <img src="/storage/{{ $post->image }}" id="grid-form-item1" class="w-50 rounded h-auto shadow">
+                        <img src="/storage/{{ $post->image }}" id="grid-form-item1" class="w-50 rounded h-auto shadow @error('image') is-invalid @enderror">
                         @error('image')
-                            <strong>{{ $message }}</strong>
+                            <span class="invalid-feedback" id="grid-form-item4">
+                                <strong>{{ $message }}</strong>
+                            </span>
                         @enderror
                     </div>
 
@@ -60,7 +62,7 @@
                     </textarea>
 
                         @error('text')
-                            <span class="invalid-feedback" role="alert">
+                            <span class="invalid-feedback" id="grid-form-item4" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror

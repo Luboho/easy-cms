@@ -68,7 +68,7 @@ return [
     'numeric'              => ':attribute musí byť číslo.',
     'present'              => ':attribute pole musí byť aktuálne.',
     'regex'                => ':attribute formát je neplatný.',
-    'required'             => ' Povinné pole.',
+    'required'             => 'Údaj :attribute je povinný.',
     'required_if'          => ':attribute pole je povinné ak :other je :value.',
     'required_unless'      => ':attribute pole je povinné pokiaľ :other je v :values.',
     'required_with'        => ':attribute pole je povinné ak :values je aktuálna.',
@@ -102,6 +102,7 @@ return [
     'custom' => [
         'attribute-name' => [
             'rule-name' => 'custom-message',
+            'image' => 'obrázok'
         ],
     ],
 
@@ -116,6 +117,20 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'image' => 'Obrázok',
+        'caption' => 'Titulok',
+        'phone' => 'Telefón',
+        'facebook' => 'Facebook',
+        'name' => 'Meno',
+        'street' => 'Ulica',
+        'city' => 'Mesto',
+        'email' => 'Email',
+        'password' => 'Heslo',
+        'text' => 'Text',
+        'username' => 'Meno',
+        'role' => 'profil'
+
+    ],
 
 ];

@@ -19,38 +19,12 @@
                     <input type="file" class="form-control-file pb-3 @error('image') is-invalid @enderror" id="grid-form-item2" name="image">
 
                     @error('image')
-                        <strong>{{ $message }}</strong>
+                        <span class="invalid-feedback" id="grid-form-item4">
+                            <strong>{{ $message }}</strong>
+                        </span>
                     @enderror
                 </div>
 
-                {{-- <div class="form-group grid-form-container">
-                    <label for="caption1" class="col-form-label font-weight-bold" id="grid-form-item1">Veľký titulok</label>
-                    <input type="text"
-                        name="caption1"
-                        id="grid-form-item2"
-                        class="form-control @error('caption1') is-invalid @enderror"
-                        value="{{ old('caption1') }}"
-                        autofocus>
-                    @error('caption1')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                </div>
-                <div class="form-group grid-form-container">
-                    <label for="caption2" class="col-form-label font-weight-bold" id="grid-form-item1">Titulok</label>
-                    <input type="text"
-                        name="caption2"
-                        id="grid-form-item2"
-                        class="form-control @error('caption2') is-invalid @enderror"
-                        value="{{ old('caption2') }}"
-                        autofocus>
-                    @error('caption2')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                </div> --}}
                 <div class="form-group grid-form-container pb-4">
                     <label for="caption3" class="col-form-label font-weight-bold" id="grid-form-item1">Titulok</label>
                     <textarea rows="3" cols="50"
@@ -64,7 +38,7 @@
                         {{ old('caption3') }}
                     </textarea>
                     @error('caption3')
-                        <span class="invalid-feedback" role="alert">
+                        <span class="invalid-feedback" id="grid-form-item4" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror

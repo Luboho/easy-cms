@@ -27,8 +27,10 @@
                             autocomplete="mobile"
                             autofocus>
                         @error('mobile')
-                            <span class="text-danger" role="alert">{{ $message }}</span>
-                        @enderror     
+                            <span class="invalid-feedback" id="grid-form-item4" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror  
                     </div>
 
                     <div class="form-group grid-form-container">
@@ -41,7 +43,9 @@
                             autocomplete="phone"
                             autofocus>
                         @error('phone')
-                            <span class="text-danger" role="alert">{{ $message }}</span>
+                            <span class="invalid-feedback" id="grid-form-item4" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
                         @enderror
                     </div>
 
@@ -56,7 +60,9 @@
                             autocomplete="facebook"
                             autofocus>
                         @error('facebook')
-                            <span class="text-danger" role="alert">{{ $message }}</span>
+                            <span class="invalid-feedback" id="grid-form-item4" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
                         @enderror     
                     
                     </div>
@@ -73,7 +79,9 @@
                             autofocus>
                         </textarea>
                         @error('openHours')
-                            <span class="text-danger" role="alert">{{ $message }}</span>
+                            <span class="invalid-feedback" id="grid-form-item4" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
                         @enderror     
                     
                     </div>
@@ -89,7 +97,9 @@
                             autocomplete="name"
                             autofocus>
                         @error('name')
-                            <span class="text-danger" role="alert">{{ $message }}</span>
+                            <span class="invalid-feedback" id="grid-form-item4" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
                         @enderror     
                     
                     </div>
@@ -105,7 +115,9 @@
                             autocomplete="street"
                             autofocus>
                         @error('street')
-                            <span class="text-danger" role="alert">{{ $message }}</span>
+                            <span class="invalid-feedback" id="grid-form-item4" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
                         @enderror     
                     
                     </div>
@@ -121,7 +133,9 @@
                             autocomplete="city"
                             autofocus>
                         @error('city')
-                            <span class="text-danger" role="alert">{{ $message }}</span>
+                            <span class="invalid-feedback" id="grid-form-item4" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
                         @enderror     
                     
                     </div>
