@@ -17,7 +17,9 @@
                             class="form-control @error('contact-us-name') is-invalid @enderror bg-secondary text-light" 
                             value="{{ old('contact-us-name') }}">
                         @error('contact-us-name')
-                            <span class="invalid-feedback" role="alert">{{ $message }}</span>
+                            <span class="invalid-feedback bg-light" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
                         @enderror      
                     </div>
 
@@ -29,7 +31,9 @@
                             class="form-control @error('contact-us-email') is-invalid @enderror bg-secondary text-light" 
                             value="{{ old('contact-us-email') }}">
                         @error('contact-us-email')
-                            <span class="invalid-feedback" role="alert">{{ $message }}</span>
+                            <span class="invalid-feedback bg-light" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
                         @enderror   
                     </div>
 
@@ -44,7 +48,9 @@
                             value="{{ old('contact-us-message') }}">
                         </textarea>
                         @error('contact-us-message')
-                            <span class="invalid-feedback" role="alert">{{ $message }}</span>
+                            <span class="invalid-feedback bg-light" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
                         @enderror     
                     </div>
                     <div class="form-group row">

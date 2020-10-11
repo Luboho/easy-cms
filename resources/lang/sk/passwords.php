@@ -15,7 +15,7 @@ return [
 
     'password' => 'Heslo musí obsahovať najmenej 6 znakov potvrdenie musí súhlasiť.',
     'reset' => 'Vaše heslo bolo resetované!',
-    'sent' => 'Na váš email sme vám odoslali heslo resetujúci odkaz!',
+    'sent' => 'Na email sme vám odoslali heslo resetujúci odkaz!',
     'token' => 'Tento heslo resetujúci token je neplatný.',
     'user' => "Nevieme nájsť užívateľa s takouto emailovou adresou.",
 

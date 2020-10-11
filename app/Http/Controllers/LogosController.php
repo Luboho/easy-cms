@@ -58,7 +58,7 @@ class LogosController extends Controller
     {
          $data = request()->validate([
             'image' => ['image', 'mimes:png,jpeg,jpg', 'max:10000'],
-            'text' => 'nullable|string|max:15000'
+            'text' => 'nullable|string|max:1000'
         ]);
 
         if (request('image')){

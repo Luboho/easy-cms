@@ -129,7 +129,12 @@ return [
         'password' => 'Heslo',
         'text' => 'Text',
         'username' => 'Meno',
-        'role' => 'profil'
+        'role' => 'profil',
+        'contact-us-name' => 'Meno',
+        'contact-us-email' => 'Email',
+        'contact-us-message' => 'Správa',
+        'mobile' => 'Mobil',
+        'openHours' => 'Otváracie hodiny'
 
     ],
 
