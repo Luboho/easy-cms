@@ -30,7 +30,7 @@
                                     
                                 </div>
                                 <div class="text-center">
-                                    @if($logo->image === null)<img src="/storage/{{ $logo->image }}" style="max-height: 150px; max-width:180px;" class=" rounded-circle">
+                                    @if($logo->image !== null)<img src="/storage/{{ $logo->image }}" style="max-height: 150px; max-width:180px;" class=" rounded-circle">
                                     @endif
                                 </div>
 

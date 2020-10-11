@@ -43,8 +43,8 @@ class LogosController extends Controller
                 unlink(storage_path('app/public/'.$logo->image));
             } 
         }   // Image
-        if(!empty(request('image'))){
-            if(file_exists(storage_path('app/public/'.$logo->image))){
+        if(!empty(request('image'))){ 
+            if(file_exists(storage_path('app/public/'.$logo->image)) && $logo->image !== "default-pics/defaultLogo.jpg"){
                 unlink(storage_path('app/public/'.$logo->image));
             } 
         }

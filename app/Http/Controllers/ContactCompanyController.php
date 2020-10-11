@@ -83,7 +83,7 @@ class ContactCompanyController extends Controller
             'mobile' => 'nullable|string|max:15',
             'phone' => 'nullable|string|max:15',
             'facebook' => 'nullable|string|max:30',
-            'openHours' => 'nullable|string|max:15',
+            'openHours' => 'nullable|string|max:300',
             'name' => 'nullable|string|max:50',
             'street' => 'nullable|string|max:50',
             'city' => 'nullable|string|max:50', 
