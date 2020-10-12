@@ -48,7 +48,7 @@
                 </div>
                 {{-- end buttons --}}
                 {{--Image--}}
-                @if(!empty($room->image))<div class="pr-2 float-left "><img src="/storage/{{ $room->image }}" class="w-100 shadow"></div>         
+                @if(!empty($room->image))<div class="pr-2 float-left  text-shadow"><img src="/storage/{{ $room->image }}" class="w-100"></div>         
                 @endif
                 {{-- Text --}}
                     

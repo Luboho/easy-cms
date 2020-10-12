@@ -12,7 +12,7 @@
     @endif
 
     <div class="container">                                                            
-        <div class="shadow">        
+        <div class="text-bakcground">        
             <div class="card-header d-flex justify-content-between mt-3">
                 <h3>Kontaktné údaje</h3>
 

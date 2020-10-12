@@ -19,7 +19,7 @@
             <article class="row d-flex justify-content-between align-items-end">    
                 @foreach($alacartes as $alacarte)
                     <div class="gallery-item mb-4 p-1 even-odd text-background shadow" id="gallery">
-                        <div class="shadow">
+                        <div class="text-background">
                             <a href="/alacarte/{{ $alacarte->id }}" class="text-dark text-decoration-none">
 
                                 <div class="p-1 justify-content-between align-content-between rounded-bottom">

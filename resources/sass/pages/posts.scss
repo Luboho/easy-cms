@@ -11,6 +11,10 @@
     }
 }
 
+.gallery-item:hover {
+    transform:scale(1.05);
+    transition: 500ms;
+}
 .article-news-container {
     margin-bottom: 2em;
     margin-left: auto;

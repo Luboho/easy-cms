@@ -137,7 +137,7 @@
 
                             <div class="gallery-item align-items-stretch justify-content-between p-2" id="gallery">
 
-                                <div class="shadow">
+                                <div class="text-background">
                                     <a href="/posts/{{ $post->id }}" class="text-dark text-decoration-none">
 
                                         @if(!empty($post->image))<img src="/storage/{{ $post->image }}" class=" w-100">@endif 
