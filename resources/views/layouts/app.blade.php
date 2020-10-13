@@ -26,11 +26,11 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/676fd051d4.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/summernote.css">
     {{-- FB share button with counter --}}
+    @yield('dynamic_meta')
     <meta property="og:url"           content="https://www.drevenica.ga" />
     <meta property="og:type"          content="website" />
-    <meta property="og:title"         content="Hello" />
-    <meta property="og:description"   content="Hello" />
-    <meta property="og:image"         content="#" />
+    <meta property="og:title"         content="Hello World" />
+    <meta property="og:image"         content="" />
     {{-- END of FB share button with counter --}}
 
 </head>

@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@section('dynamic_meta')
+    <meta property="og:description" content="Nové menu">
+
+@endsection
+
 @section('title', 'Nástenka príspevkov - galéria')
 
 @section('content')
