@@ -117,16 +117,17 @@
                 let postUrl = encodeURI(document.location.href);
                 let shareImg = encodeURI(document.querySelector('.share-img').getAttribute("src"));
                 let shareTitle = document.querySelector('#title').textContent;
-                let shareDescription = document.querySelector('#description');
+                let shareDescription = document.querySelector('#description').textContent;
 
-console.log(shareTitle);
 
                 // Replacing meta tags in head section with shared Url
                 let newMetaUrl = encodeURI(document.querySelector('meta[property="og:url"]').setAttribute("content", `${postUrl}`));
                 // Prevent double slash in root URI for image URL. 
                 let absoluteImgUrl = encodeURI(postUrl+shareImg).replace("//storage", "/storage");
                 let fbShareBtn = document.querySelector('.fb-share-button').setAttribute("data-href", postUrl);
-                let newMetaImage = encodeURI(document.querySelector('meta[property="og:image"]').setAttribute("content", `${absoluteImgUrl}`));
+                let newMetaTitle = document.querySelector('meta[property="og:title"]').setAttribute("content", `${shareTitle}`);
+                let newMetaDescription = document.querySelector('meta[property="og:description"]').setAttribute("content", `${shareDescription}`);
+                let newMetaImage = document.querySelector('meta[property="og:image"]').setAttribute("content", `${absoluteImgUrl}`);
 
         </script>
 
