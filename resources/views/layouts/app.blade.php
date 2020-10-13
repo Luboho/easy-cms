@@ -30,7 +30,7 @@
     <meta property="og:type"          content="website" />
     <meta property="og:title"         content="Hello" />
     <meta property="og:description"   content="Hello" />
-    <meta property="og:image"         content="" />
+    <meta property="og:image"         content="#" />
     {{-- END of FB share button with counter --}}
 
 </head>
@@ -116,6 +116,10 @@
 
                 let postUrl = encodeURI(document.location.href);
                 let shareImg = encodeURI(document.querySelector('.share-img').getAttribute("src"));
+                let shareTitle = document.querySelector('#title').textContent;
+                let shareDescription = document.querySelector('#description');
+
+console.log(shareTitle);
 
                 // Replacing meta tags in head section with shared Url
                 let newMetaUrl = encodeURI(document.querySelector('meta[property="og:url"]').setAttribute("content", `${postUrl}`));

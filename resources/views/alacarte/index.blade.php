@@ -25,7 +25,7 @@
                                 <div class="p-1 justify-content-between align-content-between rounded-bottom">
                                     
                                     {{--Caption--}}
-                                    <div class="p-2" id="caption">{{ $alacarte->caption }}</div>
+                                    <div class="p-2" id="title">{{ $alacarte->caption }}</div>
                                     {{--Created_at--}}                                     
                                     {{-- <div class="ml-2 p-2 align-items-end">
                                         {{ $alacarte->created_at->format('d.m. Y') }}                                       

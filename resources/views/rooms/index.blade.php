@@ -20,7 +20,7 @@
                 <div class="card-header">
                     <div class="d-flex flex-wrap-reverse pt-2">
                         {{--Caption--}}
-                        <h5 class="mr-auto pl-2 font-weight-bold">{{ $room->caption }}</h4>
+                        <h5 class="mr-auto pl-2 font-weight-bold" id="title">{{ $room->caption }}</h4>
                         {{-- Buttons --}}
                         <div class="row ml-auto">
                             @can('update', $room)
@@ -52,7 +52,7 @@
                 @endif
 
                 {{--text--}}
-                <div><p style="text-align: justify;">{!! $room->text !!}</p></div> 
+                <div><p style="text-align: justify;" id="description">{!! $room->text !!}</p></div> 
                 <p class="p-1 align-self-end">
                     {{--Create_at--}}
                     {{ $room->created_at->format('d.m. Y') }}                                       

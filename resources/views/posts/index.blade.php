@@ -56,7 +56,7 @@
                             <div class="text-background mb-3 w-100">
                                 <div class="card-header d-flex justify-content-between">
                                     {{--Caption--}}
-                                    <h4 class="font-weight-bold" id="caption">{{ $post->caption }}</h4>
+                                    <h4 class="font-weight-bold" id="title">{{ $post->caption }}</h4>
                                     <div class="row">
                                         @can('update', $post)
                                             {{-- <div class="ml-5">
@@ -88,7 +88,7 @@
                                 <div class="ml-2">
             
                                     {{--text--}}
-                                    <div><p style="text-align: justify;" id="caption">{!! $post->text !!}</p></div> 
+                                    <div><p style="text-align: justify;" id="description">{!! $post->text !!}</p></div> 
                                     <p class="align-self-end">
                                         {{--Create_at--}}
                                         {{ $post->created_at->format('d.m. Y') }}                                       

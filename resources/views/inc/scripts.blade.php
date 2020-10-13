@@ -63,7 +63,7 @@ const whatsappBtn = document.querySelector(".whatsapp-btn");
 function init() {
 
     let postUrl = encodeURI(document.location.href);
-    let postTitle = document.querySelector('#caption').textContent;
+    let postTitle = document.querySelector('#title').textContent;
     // let postImg = encodeURI(pinterestImg.src);
     let postImg = document.querySelector(".share-img").src;
             
@@ -92,7 +92,6 @@ function init() {
 };
 
 init();
-console.log(facebookBtn);
 //================================= END OF SOCIAL MEDIA SHARE LINKS ==========================================
 
                    

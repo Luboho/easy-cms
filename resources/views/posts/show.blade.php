@@ -17,7 +17,7 @@
 
                     <div class="d-flex flex-wrap-reverse pt-2">
                         {{--Caption--}}
-                        <h5 id="caption" class="mr-auto pl-2 font-weight-bold">{{ $post->caption }}</h4>
+                        <h5 id="title" class="mr-auto pl-2 font-weight-bold">{{ $post->caption }}</h4>
                         {{-- Buttons --}}
                         <div class="row ml-auto">
                             @can('update', $post)
@@ -50,7 +50,7 @@
                 {{-- Text --}}
                 
                     {{--text--}}
-                    <div><p style="text-align: justify;">{!! $post->text !!}</p></div>
+                    <div><p style="text-align: justify;" id="description">{!! $post->text !!}</p></div>
                     <p class="p-1 align-self-end">
                         {{--Create_at--}}
                         {{ $post->created_at->format('d.m. Y') }}
