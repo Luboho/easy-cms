@@ -11,6 +11,7 @@
 //Components
 @import 'components/buttons';
 @import 'components/messages';
+@import 'components/social-media';
 
 // Pages
 @import 'pages/posts';
@@ -30,6 +31,7 @@ body {
         min-height: 35rem;
         width: 100%;
     }
+    
     p {
         font-size: 0.9rem;
     }

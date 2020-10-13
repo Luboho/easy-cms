@@ -25,19 +25,26 @@
                                 <div class="p-1 justify-content-between align-content-between rounded-bottom">
                                     
                                     {{--Caption--}}
-                                    <div class="p-2">{{ $alacarte->caption }}</div>
+                                    <div class="p-2" id="caption">{{ $alacarte->caption }}</div>
                                     {{--Created_at--}}                                     
                                     {{-- <div class="ml-2 p-2 align-items-end">
                                         {{ $alacarte->created_at->format('d.m. Y') }}                                       
                                     </div> --}}
                                 </div>
-                                @if(!empty($alacarte->image))<img src="/storage/{{ $alacarte->image }}" class="rounded w-100">@endif 
+                                @if(!empty($alacarte->image))<img src="/storage/{{ $alacarte->image }}" class="rounded w-100 share-img">@endif 
                             
                             </a>
 
                         </div>
                     </div>
                 @endforeach
+
+                {{-- FB share/like button --}}
+                <div class="fb-share-button" 
+                    data-href="" 
+                    data-layout="button_count">
+                </div>
+                {{-- End FB of share/like button --}}
             </article>
 
         </ul>

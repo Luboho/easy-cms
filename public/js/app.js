@@ -6422,7 +6422,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.up-down {\n    position:fixed;\n    z-index: 100;\n    top: 74%;\n    right: 5px;\n}\n.up-down button {\n    /* background-color: rgba(5, 4, 4, 0.63); */\n    transition-property: background-color;\n    /* transition-delay: 0.5s; */\n    transition-duration: 0.5s;\n    border-radius: 4px;\n}\n.up-btn>a, .down-btn>a {\n    opacity: 0.5;\n    font: normal bold 2em/100% Arial;\n    color: rgb(58, 58, 57);\n    text-shadow: 2px 2px 2px whitesmoke;\n    transition: opacity 1s;\n}\n.up-btn>a:hover, .down-btn>a:hover {\n    opacity: 1;\n    text-decoration: none;\n}\n@media only screen and (max-width: 500px) {\n.up-btn a, .down-btn a {\n        font-size: 1em;\n}\n}\n\n", ""]);
+exports.push([module.i, "\n.up-down {\n    position:fixed;\n    z-index: 100;\n    top: 80%;\n    right:1%;\n}\n.up-down button {\n    /* background-color: rgba(5, 4, 4, 0.63); */\n    transition-property: background-color;\n    /* transition-delay: 0.5s; */\n    transition-duration: 0.5s;\n    border-radius: 3px;\n}\n.up-btn>a, .down-btn>a {\n    font: normal bold 2em/100% Arial;\n    color: rgba(58, 58, 57, 0.5);\n    text-shadow: 2px 2px 2px whitesmoke;\n    transition: opacity 1s;\n}\n.up-btn>a:hover, .down-btn>a:hover {\n    opacity: 1;\n    text-decoration: none;\n}\n@media only screen and (max-width: 500px) {\n.up-btn a, .down-btn a {\n        font-size: 1.7em;\n}\n}\n\n", ""]);
 
 // exports
 
@@ -48534,7 +48534,7 @@ var staticRenderFns = [
       _c("div", { staticClass: "up-down" }, [
         _c("p", [
           _c("button", { staticClass: "up-btn bt-lg" }, [
-            _c("a", { attrs: { href: "#up" } }, [
+            _c("a", { attrs: { href: "#up", title: "Hore" } }, [
               _c("i", { staticClass: "fa fa-angle-double-up" })
             ])
           ])
@@ -48542,7 +48542,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("p", [
           _c("button", { staticClass: "down-btn bt-lg" }, [
-            _c("a", { attrs: { href: "#down" } }, [
+            _c("a", { attrs: { href: "#down", title: "Dole" } }, [
               _c("i", { staticClass: "fa fa-angle-double-down" })
             ])
           ])

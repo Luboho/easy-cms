@@ -1,5 +1,5 @@
 <script>
-    // Confirm Remove button
+    // ================================ REMOVE BUTTON CONFIRMATION====================================
     window.onload = () => {
         document.querySelector('#trash-confirm').addEventListener('click', (e) => {
             const confirmation = confirm('Ste si istý?');
@@ -8,9 +8,10 @@
             }
         });
     };
+//================================== END OF REMOVE BUTTON CONFIRMATION====================================
 
 
-// Clear Input Validation Alerts.
+//=======================================CLEAR INPUT VALIDATON ALERTS======================================
         const inputElements = document.querySelectorAll('.is-invalid');
 
         inputElements.forEach(function(inputEl){
@@ -21,12 +22,82 @@
                 } 
             });
         });
+//==================================== END OF CLEAR INPUT VALIDATON ALERTS===========================
 
-// Clear Alert Messages
+
+
+//=====================================  CLEAR ALERT MESSAGES & CSS ====================================
+
     let msgs = document.querySelectorAll('.alert');
         
         msgs.forEach(function(msg){
             
             setTimeout(() => {document.querySelector('.messages').remove();}, 5000);
         }); 
+// ======================================== END OF CLEAR ALERT MESSAGES ==================================
+
+
+// ========================================SOCIAL MEDIA SHARE LINKS========================================
+
+// WhatsSpp
+// https://www.wa.me/?text=[post-title] [post-url]
+
+// Facebook
+// https://www.facebook.com/sharer.php?u=[post-url]
+
+// Twitter
+// https://twitter.com/share?url=[post-url]&text=[post-title]
+
+// Pinterest
+// https://pinterest.com/pin/create/bookmarklet/?media=[post-img]&url=[post-url]&is_video=[is_video]&description=[post-title]
+
+// LinkedIn
+//https://www.linkedin.com/shareArticle?url=[post-url]&title=[post-title]
+
+const facebookBtn = document.querySelector(".facebook-btn");
+const twitterBtn = document.querySelector(".twitter-btn");
+const pinterestBtn = document.querySelector(".pinterest-btn");
+const linkedinBtn = document.querySelector(".linkedin-btn");
+const whatsappBtn = document.querySelector(".whatsapp-btn");
+
+function init() {
+
+    let postUrl = encodeURI(document.location.href);
+    let postTitle = document.querySelector('#caption').textContent;
+    // let postImg = encodeURI(pinterestImg.src);
+    let postImg = document.querySelector(".share-img").src;
+            
+        
+    facebookBtn.setAttribute(
+        "href",
+        `https://www.facebook.com/sharer.php?u=${postUrl}`
+    );
+    twitterBtn.setAttribute(
+        "href",
+        `https://twitter.com/share?url=${postUrl}&text=${postTitle}`
+    );
+    pinterestBtn.setAttribute(
+        "href",
+        `https://pinterest.com/pin/create/bookmarklet/?media=${postImg}&url=${postUrl}&description=${postTitle}`
+    );
+    linkedinBtn.setAttribute(
+        "href",
+        `https://www.linkedin.com/shareArticle?url=${postUrl}&title=${postTitle}`
+    );
+    whatsappBtn.setAttribute(
+        "href",
+        `https://www.wa.me/?text=${postTitle} ${postUrl}`
+    );
+
+};
+
+init();
+console.log(facebookBtn);
+//================================= END OF SOCIAL MEDIA SHARE LINKS ==========================================
+
+                   
+
+
+
+
 </script>

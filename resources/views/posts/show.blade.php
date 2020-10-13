@@ -17,7 +17,7 @@
 
                     <div class="d-flex flex-wrap-reverse pt-2">
                         {{--Caption--}}
-                        <h5 class="mr-auto pl-2 font-weight-bold">{{ $post->caption }}</h4>
+                        <h5 id="caption" class="mr-auto pl-2 font-weight-bold">{{ $post->caption }}</h4>
                         {{-- Buttons --}}
                         <div class="row ml-auto">
                             @can('update', $post)
@@ -45,18 +45,22 @@
                 </div>
                 {{-- end buttons --}}
                 {{--Image--}}
-                @if(!empty($post->image))<div class="pr-2 float-left "><img src="/storage/{{ $post->image }}" class="w-100 shadow"></div>
+                @if(!empty($post->image))<div class="pr-2 float-left"><img src="/storage/{{ $post->image }}" class="w-100 shadow share-img"></div>
                 @endif
                 {{-- Text --}}
-
-
-
+                
                     {{--text--}}
                     <div><p style="text-align: justify;">{!! $post->text !!}</p></div>
                     <p class="p-1 align-self-end">
                         {{--Create_at--}}
                         {{ $post->created_at->format('d.m. Y') }}
                     </p>
+                    {{-- FB share/like button --}}
+                    <div class="fb-share-button" 
+                        data-href="" 
+                        data-layout="button_count">
+                    </div>
+                    {{-- End FB of share/like button --}}    
             </div>
 
         </div>

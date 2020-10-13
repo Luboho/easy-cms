@@ -26,7 +26,7 @@
                         <div class="card-body welcome-container justify-content-center post-title col-12">
                             
                                 <div class="pl-4 pr-2">
-                                    <h2 class="font-weight-bold text-break">{!! $logo->text !!}</h2>
+                                    <h2 class="font-weight-bold text-break" id="caption">{!! $logo->text !!}</h2>
                                     
                                 </div>
                                 <div class="text-center">
@@ -56,7 +56,7 @@
                             <div class="text-background mb-3 w-100">
                                 <div class="card-header d-flex justify-content-between">
                                     {{--Caption--}}
-                                    <h4 class="font-weight-bold">{{ $post->caption }}</h4>
+                                    <h4 class="font-weight-bold" id="caption">{{ $post->caption }}</h4>
                                     <div class="row">
                                         @can('update', $post)
                                             {{-- <div class="ml-5">
@@ -75,24 +75,32 @@
                                                 @method('DELETE')
                                                 @csrf
                 
-                                                <button style="background:none;" type="submit"><i id="trash-confirm" class="fa fa-trash delete-icon"></i></button>
+                                                <button style="background:none;" id="delete-btn" type="submit"><i id="trash-confirm" class="fa fa-trash delete-icon"></i></button>
                                             </form>
                                         @endcan
                                     </div>
                                 </div>
                                 {{--Image--}}
-                                @if(!empty($post->image))<div class="pr-2 float-left "><img src="/storage/{{ $post->image }}" class="w-100  shadow"></div>         
+                                @if(!empty($post->image))<div class="pr-2 float-left "><img src="/storage/{{ $post->image }}"  id="share-image" class="w-100 share-img shadow"></div>         
                                 @endif
+                                
                                 {{-- Text --}}
                                 <div class="ml-2">
             
                                     {{--text--}}
-                                    <div><p style="text-align: justify;">{!! $post->text !!}</p></div> 
+                                    <div><p style="text-align: justify;" id="caption">{!! $post->text !!}</p></div> 
                                     <p class="align-self-end">
                                         {{--Create_at--}}
                                         {{ $post->created_at->format('d.m. Y') }}                                       
-                                    </p>  
+                                    </p> 
+                                    
                                 </div>
+                                {{-- FB share/like button --}}
+                                <div class="fb-share-button" 
+                                    data-href="#" 
+                                    data-layout="button_count">
+                                </div>
+                                {{-- End FB of share/like button --}}
                             </div>
                        @endforeach
                         </div>
@@ -111,7 +119,7 @@
                             <div class="shadow">
                                 <a href="/posts/{{ $post->id }}" class="text-dark text-decoration-none">
 
-                                    @if(!empty($post->image))<img src="/storage/{{ $post->image }}" class=" w-100">@endif 
+                                    @if(!empty($post->image))<img src="/storage/{{ $post->image }}" class="share-img w-100">@endif 
                                 
                                     <div class="posts-bg p-1 d-flex justify-content-between -bottom">
                                         
@@ -140,7 +148,7 @@
                                 <div class="text-background">
                                     <a href="/posts/{{ $post->id }}" class="text-dark text-decoration-none">
 
-                                        @if(!empty($post->image))<img src="/storage/{{ $post->image }}" class=" w-100">@endif 
+                                        @if(!empty($post->image))<img src="/storage/{{ $post->image }}" class="share-img w-100">@endif 
                                     
                                         <div class="posts-bg p-1 d-flex justify-content-between -bottom">
                                             
@@ -165,6 +173,7 @@
             <div class="row col-12">
                 <span class="row ml-auto mr-auto">{{ $posts->links() }}</span>
             </div>
+
         </div>
 
     @else

@@ -72,6 +72,13 @@
                                 <div class="ml-2">{!! $company->openHours !!}</div>
                             </div>
                         </div>
+
+                        {{-- FB share/like button --}}
+                        <div class="fb-share-button" 
+                            data-href="" 
+                            data-layout="button_count">
+                        </div>
+                        {{-- End FB of share/like button --}}
                     @endforeach
                 @endif
             </div>

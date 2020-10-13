@@ -3,7 +3,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -14,9 +13,10 @@
     <script src="https://use.fontawesome.com/eda50d2248.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('storage/favicon/favicon.ico') }}">
     <!-- Styles -->
@@ -25,17 +25,33 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/676fd051d4.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/summernote.css">
+    {{-- FB share button with counter --}}
+    <meta property="og:url"           content="https://www.drevenica.ga" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="Hello" />
+    <meta property="og:description"   content="Hello" />
+    <meta property="og:image"         content="" />
+    {{-- END of FB share button with counter --}}
 
 </head>
+
 <body>
     <div id="app">
-        
         <div id="up">
             @include('inc.navbar')
         </div>
 
+        <div>
+            @include('inc.social-media')
+        </div>
+
         <main class="py-4">
             @yield('content')
+            <div id="fb-root"></div>
+
+            <up-down></up-down>  
+
+                                           {{--UP & DOWN Arrow buttons--}}
         </main>
         
         <footer id="down" class="bg-secondary">
@@ -84,9 +100,37 @@
             </div>
         </footer>
 
-        <up-down></up-down>                                             {{--UP & DOWN Arrows--}}
-        
         @include('inc.scripts')
-    </div>
+        
+         {{-- ================================FACEBOOOK SHARE/LIKE BUTTON ======================================= --}}
+        <script>
+            (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+                fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk')
+            );
+
+
+                let postUrl = encodeURI(document.location.href);
+                let shareImg = encodeURI(document.querySelector('.share-img').getAttribute("src"));
+
+                // Replacing meta tags in head section with shared Url
+                let newMetaUrl = encodeURI(document.querySelector('meta[property="og:url"]').setAttribute("content", `${postUrl}`));
+                // Prevent double slash in root URI for image URL. 
+                let absoluteImgUrl = encodeURI(postUrl+shareImg).replace("//storage", "/storage");
+                let fbShareBtn = document.querySelector('.fb-share-button').setAttribute("data-href", postUrl);
+                let newMetaImage = encodeURI(document.querySelector('meta[property="og:image"]').setAttribute("content", `${absoluteImgUrl}`));
+
+        </script>
+
+{{-- // =========================================EN OF FACEBOOK SHARE / LIKE BUTTON==================================== --}}
+
+ 
+</div> <!-- END OF ID APP -->
 </body>
 </html>
+
+        

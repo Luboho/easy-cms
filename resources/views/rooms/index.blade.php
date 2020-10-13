@@ -48,18 +48,23 @@
                 </div>
                 {{-- end buttons --}}
                 {{--Image--}}
-                @if(!empty($room->image))<div class="pr-2 float-left  text-shadow"><img src="/storage/{{ $room->image }}" class="w-100"></div>         
+                @if(!empty($room->image))<div class="pr-2 float-left  text-shadow"><img src="/storage/{{ $room->image }}" id="share-image" class="w-100 share-img"></div>         
                 @endif
-                {{-- Text --}}
-                    
 
-                    
                 {{--text--}}
                 <div><p style="text-align: justify;">{!! $room->text !!}</p></div> 
                 <p class="p-1 align-self-end">
                     {{--Create_at--}}
                     {{ $room->created_at->format('d.m. Y') }}                                       
                 </p> 
+
+                {{-- FB share/like button --}}
+                <div class="fb-share-button" 
+                    data-href="" 
+                    data-layout="button_count">
+                </div>
+            {{-- End FB of share/like button --}}
+            
             </div>
         </div>
     @endforeach

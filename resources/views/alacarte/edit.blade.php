@@ -41,7 +41,7 @@
                         {{-- <label for="image" class="col-form-label font-weight-bold" id="grid-form-item1">Obrázok</label> I M A G E- --}}
                         <input type="file" class="form-control-file pb-3 align-self-center @error('image') is-invalid @enderror" id="grid-form-item2" name="image">
 
-                        <img src="/storage/{{ $alacarte->image }}" id="grid-form-item1" class="w-50 h-auto rounded shadow ">
+                        <img src="/storage/{{ $alacarte->image }}" id="grid-form-item1" class="w-50 h-auto rounded shadow share-img">
                         @error('image')
                             <span class="invalid-feedback" id="grid-form-item4">
                                 <strong>{{ $message }}</strong>            

@@ -3,13 +3,13 @@
     <div class="up-down">
         <p>
             <button class="up-btn bt-lg">
-                <a href="#up"><i class="fa fa-angle-double-up"></i></a>
+                <a href="#up" title="Hore"><i class="fa fa-angle-double-up"></i></a>
             </button>
         </p>
 
         <p>
             <button class="down-btn bt-lg">
-                <a href="#down"><i class="fa fa-angle-double-down"></i></a>
+                <a href="#down" title="Dole"><i class="fa fa-angle-double-down"></i></a>
             </button>
         </p>
     </div>
@@ -29,22 +29,21 @@
     .up-down {
         position:fixed;
         z-index: 100;
-        top: 74%;
-        right: 5px;
+        top: 80%;
+        right:1%;
     }
     .up-down button {
         /* background-color: rgba(5, 4, 4, 0.63); */
         transition-property: background-color;
         /* transition-delay: 0.5s; */
         transition-duration: 0.5s;
-        border-radius: 4px;
+        border-radius: 3px;
     } 
         
     
     .up-btn>a, .down-btn>a {
-        opacity: 0.5;
         font: normal bold 2em/100% Arial;
-        color: rgb(58, 58, 57);
+        color: rgba(58, 58, 57, 0.5);
         text-shadow: 2px 2px 2px whitesmoke;
         transition: opacity 1s;
     }
@@ -55,7 +54,7 @@
 
     @media only screen and (max-width: 500px) {
         .up-btn a, .down-btn a {
-            font-size: 1em;
+            font-size: 1.7em;
         }
     }
     

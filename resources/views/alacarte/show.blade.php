@@ -16,7 +16,7 @@
                 <div class="row align-content-center container p-2">
                 {{--Caption--}}
                     <div class="d-flex mr-auto ml-1 mt-2 justify-content-between">
-                        <h4 class="font-weight-bold">{{ $alacarte->caption }}</h4>
+                        <h4 class="font-weight-bold"  id="caption">{{ $alacarte->caption }}</h4>
                         <h4 class="">
                             {{--Create_at--}}
                             {{-- {{ $alacarte->created_at->format('d.m. Y') }}                                        --}}
@@ -44,10 +44,20 @@
                                     <button style="background:none;" type="submit" title="Zmazať príspevok"><i id="trash-confirm" class="fa fa-trash delete-icon"></i></button>
                                 </form>
                             @endcan
+
                         </div>
-                </div>
+
+                        
+                        
+                    </div>
                     {{--Image--}}
-                    @if(!empty($alacarte->image))<div class="p-1"><img src="/storage/{{ $alacarte->image }}" class="w-100 rounded shadow mr-auto ml-auto"></div>         
+                    @if(!empty($alacarte->image))<div class="p-1"><img src="/storage/{{ $alacarte->image }}" class="w-100 rounded shadow mr-auto ml-auto share-img"></div>         
+                    {{-- FB share/like button --}}
+                    <div class="fb-share-button" 
+                            data-href="" 
+                            data-layout="button_count">
+                    </div>
+                    {{-- End FB of share/like button --}}
                     @endif
                     
             </div>

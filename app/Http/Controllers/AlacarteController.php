@@ -96,7 +96,7 @@ class AlacarteController extends Controller
     {
         $data = request()->validate([
             'caption' => 'nullable|string|max:100',
-            'image' => ['image', 'mimes:png,jpeg,jpg', 'required', 'max:1999']
+            'image' => ['image', 'mimes:png,jpeg,jpg', 'max:1999']
         ]);
 
         if (request('image')){
