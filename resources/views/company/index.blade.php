@@ -39,7 +39,7 @@
                                 </button>
                             @else 
                                 <button style="background:none;">
-                                    <a href="contact/company/{{ $company->id }}/edit" >    
+                                    <a href="/company/{{ $company->id }}/edit" >    
                                         <i class="fa fa-edit edit-icon"></i>
                                     </a>
                                 </button>
