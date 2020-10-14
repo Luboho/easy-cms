@@ -29,14 +29,12 @@ class ContactFormController extends Controller
 
     public function store()
     {
-        dd(env('MAIL_USERNAME'));
         $data = request()->validate([
             'contact-us-name' => 'required|string',
             'contact-us-email' => 'required|email',
             'contact-us-message' => 'required|string',
         ]);
-
-        Mail::to(config('MAIL_USERNAME'))->send(new ContactFormMail($data));
+        Mail::to(env('MAIL_USERNAME'))->send(new ContactFormMail($data));
 
         session()->flash('success', 'Vaša správa bola odoslaná.');
 
