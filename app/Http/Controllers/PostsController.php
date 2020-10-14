@@ -58,10 +58,8 @@ class PostsController extends Controller
     {
         $this->authorize('update', $post);
 
-        if(!empty(request('image'))){
-            if(file_exists(storage_path('app/public/'.$post->image))){
+        if(!empty(request('image') && file_exists(storage_path('app/public/'.$post->image)))){
                 unlink(storage_path('app/public/'.$post->image));
-            }
         }
 
         $post->update(PostValidator::validateRequest());       // PostValidator class

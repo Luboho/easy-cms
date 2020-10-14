@@ -64,7 +64,7 @@ class AlacarteController extends Controller
         }
 
         if(!empty(request('image'))){
-            if(file_exists(storage_path('app/public/'.$alacarte->image))){
+            if($alacarte->image !== null){
                 unlink(storage_path('app/public/'.$alacarte->image));
             }
         }
@@ -79,11 +79,11 @@ class AlacarteController extends Controller
     public function destroy(Alacarte $alacarte)
     {
         $this->authorize('delete', $alacarte);
-        
-        if(file_exists(storage_path('app/public/'.$alacarte->image))){
+
+        if($alacarte->image !== null){   // 
             unlink(storage_path('app/public/'.$alacarte->image));
             $alacarte->delete();
-        } elseif (!file_exists(storage_path('app/public/'.$alacarte->image))){
+        } else {
             $alacarte->delete();
         }
 

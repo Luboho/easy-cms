@@ -50,12 +50,6 @@
                     </div>
                 @endforeach
 
-                {{-- FB share/like button --}}
-                <div class="fb-share-button" 
-                    data-href="" 
-                    data-layout="button_count">
-                </div>
-                {{-- End FB of share/like button --}}
             </article>
 
         </ul>

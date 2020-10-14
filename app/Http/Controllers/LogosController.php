@@ -38,13 +38,13 @@ class LogosController extends Controller
         foreach($logos as $logoName){
            $fileForDelete = $logoName->image;
         }   // Background
-        if(!empty(request('background'))){
-            if(file_exists(storage_path('app/public/'.$logo->image))){
-                unlink(storage_path('app/public/'.$logo->image));
-            } 
-        }   // Image
+        // if(!empty(request('background'))){
+        //     if(file_exists(storage_path('app/public/'.$logo->image))){
+        //         unlink(storage_path('app/public/'.$logo->image));
+        //     } 
+       // }   // Image
         if(!empty(request('image'))){ 
-            if(file_exists(storage_path('app/public/'.$logo->image)) && $logo->image !== "default-pics/defaultLogo.jpg"){
+            if(file_exists(storage_path('app/public/'.$fileForDelete)) && $logo->image !== "default-pics/defaultLogo.jpg"){
                 unlink(storage_path('app/public/'.$logo->image));
             } 
         }
