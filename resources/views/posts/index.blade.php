@@ -57,7 +57,7 @@
                             <meta property="og:url"           content="{{ url()->current() }}" />
                             <meta property="og:type"          content="website" />
                             <meta property="og:title"         content="{{ $post->caption ?? '' }}" />
-                            <meta property="og:description"   content="{!! $post->text ?? '' !!}" />
+                            <meta property="og:description"   content="{!! strip_tags($post->text ?? '') !!}" />
                             <meta property="og:image"         content="{{ url()->current() }}/storage/{{ $post->image ?? '' }}" />
                         @endsection
                         {{-- END of Dynamic meta og tags for Share buttons --}}

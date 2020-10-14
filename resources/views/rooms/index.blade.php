@@ -20,7 +20,7 @@
         <meta property="og:url"           content="{{ url()->current() }}" />
         <meta property="og:type"          content="website" />
         <meta property="og:title"         content="{{ $room->caption ?? '' }}" />
-        <meta property="og:description"   content="{!! $room->text ?? '' !!}" />
+        <meta property="og:description"   content="{!! strip_tags($room->text ?? '') !!}" />
         <meta property="og:image"         content="{{ url()->current() }}/storage/{{ $room->image ?? '' }}" />
         @endsection
         {{-- END of Dynamic meta og tags for Share buttons --}}
