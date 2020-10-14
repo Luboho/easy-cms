@@ -29,6 +29,7 @@ class ContactFormController extends Controller
 
     public function store()
     {
+        dd(env('MAIL_USERNAME'));
         $data = request()->validate([
             'contact-us-name' => 'required|string',
             'contact-us-email' => 'required|email',
