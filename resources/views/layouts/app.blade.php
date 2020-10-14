@@ -3,6 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ config('app.name') }}, Reštaurácia, Slovenká kuchyňa" />
+    <meta name="keywords" content="Reštaurácia, Slovenská kuchyňa, Tradičné, Drevenica, Reštaurácia, Jedlo, Denné menu" />
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="google-site-verification" content="VDUIzjK5EaAI7KILfzUh4l8frflmDgkgB0cPrRkYYk0" />
@@ -56,6 +58,7 @@
                     <p><a href="{{ route('posts.show') }}#gallery" class="text-warning">Galéria</a></p>
                     <p><a href="{{ route('alacarte.index') }}" class="text-warning">Menu lístok</a></p>
                     <p><a href="{{ route('rooms.index') }}" class="text-warning">Priestory</a></p>
+                    <p><a href="{{ route('company.index') }}" class="text-warning">Kontakt</a>
                 </div>
 
                 @if(!empty(Helper::companyData()))
@@ -86,7 +89,7 @@
                 @endif
                     
                 <div class="contact-create pt-3" id="footer-section3">                                       {{-- Contact Form --}}
-                    @include('contact.create')
+                    @include('feedback.create')
                 </div>
 
                 <div class="row p-3 rounded" id="footer-section4" style="color:silver">          

@@ -37,14 +37,15 @@ Route::get('/alacarte/{alacarte}/edit', 'AlacarteController@edit')->name('alacar
 Route::patch('/alacarte/{alacarte}', 'AlacarteController@update')->name('alacarte.update');
 Route::delete('alacarte/{alacarte}', 'AlacarteController@destroy')->name('alacarte.destroy');
 
-Route::get('contact', 'ContactFormController@index')->name('contact.index');
-Route::get('contact/create', 'ContactFormController@create')->name('contact.create');
-Route::post('contact', 'ContactFormController@store')->name('contact.store');
+Route::get('feedback', 'ContactFormController@index')->name('feedback.index');
+Route::get('feedback/create', 'ContactFormController@create')->name('feedback.create');
+Route::post('feedback', 'ContactFormController@store')->name('feedback.store');
 
-Route::get('/contact/company/create', 'ContactCompanyController@create')->name('company.create');
-Route::post('/contact/company', 'ContactCompanyController@store')->name('company.store');
-Route::get('/contact/company/{company}/edit', 'ContactCompanyController@edit')->name('company.edit');
-Route::patch('/contact/company/{company}', 'ContactCompanyController@update')->name('company.update');
+Route::get('/company', 'ContactCompanyController@index')->name('company.index');
+Route::get('/company/create', 'ContactCompanyController@create')->name('company.create');
+Route::post('/company', 'ContactCompanyController@store')->name('company.store');
+Route::get('/company/{company}/edit', 'ContactCompanyController@edit')->name('company.edit');
+Route::patch('/company/{company}', 'ContactCompanyController@update')->name('company.update');
 
 Route::get('/rooms', 'RoomsController@index')->name('rooms.index');
 Route::get('/rooms/create', 'RoomsController@create')->name('rooms.create');

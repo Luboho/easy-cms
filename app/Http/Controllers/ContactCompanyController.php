@@ -13,7 +13,14 @@ class ContactCompanyController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth')->except(['index']);
+    }
+
+    public function index(User $user, Company $company)
+    {
+       $companyData = Company::all();
+
+        return view('company.index', compact('companyData', 'user'));  
     }
 
     public function create(Company $company)
@@ -21,12 +28,12 @@ class ContactCompanyController extends Controller
         $company = Company::all();
 
         if ( $company->isEmpty() && (Gate::allows('isHeadAdmin'))) {
-            return view('contact.company.create');
+            return view('company.create');
         }
         else
         {
             session()->flash('denied', 'Nemáte prístup, alebo firemné údaje už boli vytvorené. ');
-            return redirect('/contact');
+            return redirect('/company');
         }
 
     }
@@ -53,7 +60,7 @@ class ContactCompanyController extends Controller
 
     public function edit(User $user, Company $company)
     {
-        return view('contact.company.edit', compact('company', 'user'));
+        return view('company.edit', compact('company', 'user'));
     }
     
     public function update(User $user, Company $company)

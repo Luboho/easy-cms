@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Jedálny lístok')
+@section('title', 'Menu, A La Carte, Ponukový lístok, Jedálny lístok')
 
 @section('content')
 
@@ -15,7 +15,7 @@
 
         <ul class="col-12">
 
-            <h4 class="p-2 font-weight-bold text-secondary">Menu lístok</h4>
+            <h2 class="p-2 font-weight-bold text-secondary">Menu lístok</h4>
             <article class="row d-flex justify-content-between align-items-end">    
                 @foreach($alacartes as $alacarte)
 
@@ -42,7 +42,7 @@
                                         {{ $alacarte->created_at->format('d.m. Y') }}                                       
                                     </div> --}}
                                 </div>
-                                @if(!empty($alacarte->image))<img src="/storage/{{ $alacarte->image }}" class="rounded w-100 share-img">@endif 
+                                @if(!empty($alacarte->image))<img src="/storage/{{ $alacarte->image }}" class="rounded w-100 share-img" title="Jedálny/nápojový lístok">@endif 
                             
                             </a>
 

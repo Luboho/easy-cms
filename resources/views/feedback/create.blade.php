@@ -1,7 +1,7 @@
 {{-- Contact Form for Customers --}}
 @if(! session()->has('message'))
     
-        <form action="{{ route('contact.store') }}" method="POST">
+        <form action="{{ route('feedback.store') }}" method="POST">
         @csrf
         
             <div class="row">

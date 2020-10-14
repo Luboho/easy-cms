@@ -4,7 +4,7 @@
         {{--NAVBAR LOGO--}}
         <ul class="navbar-nav ml-0">
             <a class="navbar-brand" href="{{ url('/') }}">
-                <li class="nav-item">
+                <li class="text-center nav-item">
                     @if(Helper::getLogoGlobally()->isEmpty())
                         <img src="{{ url('storage/default-pics/defaultLogo.jpg') }}" style="max-height:50px" class="align-content-center rounded-circle">
                     @else
@@ -16,7 +16,7 @@
                 <li class="nav-item">
                 {{-- Company Name --}}
                     @foreach(Helper::CompanyData() as $companyName)
-                        <div class="font-weight-bold text-dark">{{ $companyName->name }}</div>
+                        <h1 style="font-size: 1em;" class="font-weight-bold text-dark">{{ $companyName->name }}</h1>
                     @endforeach
                 </li>
             </a>
@@ -34,7 +34,7 @@
             </ul>
 
             <!-- Right Side Of Navbar -->
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ml-auto d-flex flex-wrap">
                 <!-- Authentication Links -->
                 @guest
                     <li class="nav-item">
@@ -47,6 +47,9 @@
                         <a class="nav-link" href="{{ route('rooms.index') }}">Priestory</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="{{ route('company.index') }}">Kontakt</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ route('login') }}">
                             <img src="{{ asset('storage/default-pics/login.png') }}" class="ml-3 rounded-circle" style="max-width: 30px; height:auto;">
                         </a>
@@ -54,7 +57,6 @@
                     
                 @else
                     <li class="nav-item dropdown">
-                        
                         {{-- Users DropDown--}}
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/') }}">Domov</a>
@@ -66,7 +68,7 @@
                             <a class="nav-link" href="{{ route('rooms.index') }}">Priestory</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('contact.index') }}">Kontakt</a>
+                            <a class="nav-link" href="{{ route('company.index') }}">Kontakt</a>
                         </li>
 
                         <!-- New Post | DropDown-->
@@ -101,13 +103,13 @@
 
                         <li class="nav-item">
                             <div class="btn-group">
-                            <button id="navbarDropdown" class="text-dark btn dropdown-toggle pt-2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <button id="navbarDropdown" class=" btn dropdown-toggle pt-2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 <strong>{{ Auth::user()->username }}</strong> 
                                 <span class="caret"></span>
                             </button>
 
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                <a class="dropdown-item " href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();">
                                     Odhlásiť

@@ -10956,29 +10956,27 @@ button:hover {
 }
 
 button:active {
-  background-color: #d8b45a !important;
   box-shadow: 0 2px #595454 !important;
   transform: translateY(3px) !important;
 }
 
 .edit-icon {
   padding: 0.3em 0.1em 0 0.2em;
-  background-color: #dcbc8006 !important;
-  color: #080808 !important;
-  font-size: 1.6em !important;
-  text-shadow: 2px 2px 1px #f8e80b;
+  color: #101010 !important;
+  font-size: 1.61em !important;
   text-align: center !important;
+  margin-top: 0.1em;
   margin-left: auto;
   margin-right: auto;
 }
 
 .delete-icon {
   cursor: pointer;
-  padding: 0.25em 0 0 0;
+  padding: 0.3em 0 0 0;
   background: none !important;
   margin-right: 7px;
   color: #c01313 !important;
-  font-size: 1.6em !important;
+  font-size: 1.61em !important;
   text-align: center !important;
   margin-left: auto;
   margin-right: auto;
@@ -11120,6 +11118,11 @@ button:active {
   padding: 3em;
 }
 
+.transparent-bg {
+  background-color: rgba(174, 172, 172, 0.8);
+  border-radius: 3px;
+}
+
 body {
   max-width: 1200px;
   margin-left: auto;
@@ -11138,6 +11141,16 @@ body .container {
 body .py-4 {
   min-height: 35rem;
   width: 100%;
+}
+
+body .card-header h1,
+body .card-body h1 {
+  font-size: 1.5em;
+}
+
+body .card-header h3,
+body .card-body h3 {
+  font-size: 1.1em;
 }
 
 body p {

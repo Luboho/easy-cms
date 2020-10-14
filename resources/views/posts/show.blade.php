@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Nástenka')
+@section('title', 'Denná ponuka, Denné menu, Aktuálna ponuka')
 
 {{-- Dynamic meta og tags for Share buttons --}}
 @section('dynamic_meta')
@@ -22,12 +22,12 @@
     
         <div class="row mr-auto ml-auto  p-1">
 
-            <div class="text-background mb-3 w-100">
+            <div class="text-background w-100">
                 <div class="card-header">
 
-                    <div class="d-flex flex-wrap-reverse pt-2">
+                    <div class="d-flex flex-wrap-reverse">
                         {{--Caption--}}
-                        <h5 id="title" class="mr-auto pl-2 font-weight-bold">{{ $post->caption }}</h4>
+                        <h1 id="title" class="mr-auto pl-2 mt-1 font-weight-bold">{{ $post->caption }}</h1>
                         {{-- Buttons --}}
                         <div class="row ml-auto">
                             @can('update', $post)
@@ -55,7 +55,7 @@
                 </div>
                 {{-- end buttons --}}
                 {{--Image--}}
-                @if(!empty($post->image))<div class="pr-2 float-left"><img src="/storage/{{ $post->image }}" class="w-100 shadow share-img"></div>
+                @if(!empty($post->image))<div class="pr-2 float-left"><img src="/storage/{{ $post->image }}" class="w-100 shadow share-img" title="Ponuka"></div>
                 @endif
                 {{-- Text --}}
                 

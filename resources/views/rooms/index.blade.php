@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Nástenka')
+@section('title', 'Na prenájom, Stužková, Krstiny, Akcia, Svadba, Jubileum')
 
 @section('content')
 
@@ -11,7 +11,7 @@
 @endif
 
 <div class="container">
-    <h4 class="p-2 font-weight-bold text-secondary">Priestory na prenájom</h4>
+    <h2 class="p-2 font-weight-bold text-secondary">Priestory na prenájom</h2>
     @if(count($rooms) > 0)  
     @foreach($rooms as $room)  
 
@@ -32,7 +32,7 @@
                 <div class="card-header">
                     <div class="d-flex flex-wrap-reverse pt-2">
                         {{--Caption--}}
-                        <h5 class="mr-auto pl-2 font-weight-bold" id="title">{{ $room->caption }}</h4>
+                        <h1 class="mr-auto pl-2 pt-1 font-weight-bold" id="title">{{ $room->caption }}</h4>
                         {{-- Buttons --}}
                         <div class="row ml-auto">
                             @can('update', $room)

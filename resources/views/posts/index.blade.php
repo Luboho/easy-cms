@@ -2,7 +2,7 @@
 
 
 
-@section('title', 'Nástenka príspevkov - galéria')
+@section('title', 'Galéria pokrmov, Denná ponuka jedál, Aktuálna ponuka')
 
 @section('content')
 
@@ -27,11 +27,11 @@
                         <div class="card-body welcome-container justify-content-center post-title col-12">
                             
                                 <div class="pl-4 pr-2">
-                                    <h2 class="font-weight-bold text-break" id="caption">{!! $logo->text !!}</h2>
+                                    <h1 class="font-weight-bold text-break" id="caption">{!! $logo->text !!}</h1>
                                     
                                 </div>
                                 <div class="text-center">
-                                    @if($logo->image !== null)<img src="/storage/{{ $logo->image }}" style="max-height: 150px; max-width:180px;" class=" rounded-circle">
+                                    @if($logo->image !== null)<img src="/storage/{{ $logo->image }}" style="max-height: 150px; max-width:180px;" class="rounded-circle" title="">
                                     @endif
                                 </div>
 
@@ -68,7 +68,7 @@
                             <div class="text-background mb-3 w-100">
                                 <div class="card-header d-flex justify-content-between">
                                     {{--Caption--}}
-                                    <h4 class="font-weight-bold" id="title">{{ $post->caption }}</h4>
+                                    <h1 id="title" class="pl-2 mt-1 font-weight-bold">{{ $post->caption }}</h1>
                                     <div class="row">
                                         @can('update', $post)
                                             {{-- <div class="ml-5">
@@ -93,7 +93,7 @@
                                     </div>
                                 </div>
                                 {{--Image--}}
-                                @if(!empty($post->image))<div class="pr-2 float-left "><img src="/storage/{{ $post->image }}"  id="share-image" class="w-100 share-img shadow"></div>         
+                                @if(!empty($post->image))<div class="pr-2 float-left "><img src="/storage/{{ $post->image }}" id="share-image" class="w-100 share-img shadow" title="Ponuka"></div>         
                                 @endif
                                 
                                 {{-- Text --}}
@@ -131,7 +131,7 @@
                             <div class="shadow">
                                 <a href="/posts/{{ $post->id }}" class="text-dark text-decoration-none">
 
-                                    @if(!empty($post->image))<img src="/storage/{{ $post->image }}" class="share-img w-100">@endif 
+                                    @if(!empty($post->image))<img src="/storage/{{ $post->image }}" class="share-img w-100" title="Ponuka">@endif 
                                 
                                     <div class="posts-bg p-1 d-flex justify-content-between -bottom">
                                         
@@ -160,7 +160,7 @@
                                 <div class="text-background">
                                     <a href="/posts/{{ $post->id }}" class="text-dark text-decoration-none">
 
-                                        @if(!empty($post->image))<img src="/storage/{{ $post->image }}" class="share-img w-100">@endif 
+                                        @if(!empty($post->image))<img src="/storage/{{ $post->image }}" class="share-img w-100" title="Ponuka">@endif 
                                     
                                         <div class="posts-bg p-1 d-flex justify-content-between -bottom">
                                             

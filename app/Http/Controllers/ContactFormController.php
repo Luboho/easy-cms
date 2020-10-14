@@ -15,16 +15,16 @@ class ContactFormController extends Controller
         // $this->middleware('auth')->only(['edit', 'store']);
     }
     
-    public function index(User $user, Company $company)
-    {
-       $companyData = Company::all();
+    // public function index(User $user, Company $company)
+    // {
+    //    $companyData = Company::all();
 
-        return view('contact.index', compact('companyData', 'user'));  
-    }
+    //     return view('contact.index', compact('companyData', 'user'));  
+    // }
 
     public function create()
     {
-        return view('contact.create');   
+        return view('feedback.create');   
     }
 
     public function store()
@@ -45,6 +45,6 @@ class ContactFormController extends Controller
     public function edit(User $user, Company $company)
     {
 
-        return view('contact.edit', compact('company'));
+        return view('feedback.edit', compact('company'));
     }
 }

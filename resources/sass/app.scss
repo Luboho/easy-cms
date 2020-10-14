@@ -16,6 +16,8 @@
 // Pages
 @import 'pages/posts';
 @import 'pages/auth';
+@import 'pages/contact';
+
 
 body {
     max-width: 1200px;  
@@ -31,7 +33,15 @@ body {
         min-height: 35rem;
         width: 100%;
     }
-    
+    .card-header, .card-body {
+        h1 {
+            font-size: 1.5em;
+        }
+
+        h3 {
+            font-size: 1.1em;
+        }
+    }
     p {
         font-size: 0.9rem;
     }
