@@ -29,8 +29,8 @@
     @yield('dynamic_meta')
     <meta property="og:url"           content="https://www.drevenica.ga" />
     <meta property="og:type"          content="website" />
-    <meta property="og:title"         content="Hello World" />
-    <meta property="og:image"         content="" />
+    {{-- <meta property="og:description"   content="Hello" /> --}}
+    {{-- <meta property="og:image"         content="" /> --}}
     {{-- END of FB share button with counter --}}
 
 </head>
@@ -114,20 +114,20 @@
             );
 
 
-                let postUrl = encodeURI(document.location.href);
-                let shareImg = encodeURI(document.querySelector('.share-img').getAttribute("src"));
-                let shareTitle = document.querySelector('#title').textContent;
-                let shareDescription = document.querySelector('#description').textContent;
+                // let postUrl = encodeURI(document.location.href);
+                // let shareImg = encodeURI(document.querySelector('.share-img').getAttribute("src"));
+                // let shareTitle = document.querySelector('#title').textContent;
+                // let shareDescription = document.querySelector('#description').textContent;
 
 
-                // Replacing meta tags in head section with shared Url
-                let newMetaUrl = encodeURI(document.querySelector('meta[property="og:url"]').setAttribute("content", `${postUrl}`));
-                // Prevent double slash in root URI for image URL. 
-                let absoluteImgUrl = encodeURI(postUrl+shareImg).replace("//storage", "/storage");
-                let fbShareBtn = document.querySelector('.fb-share-button').setAttribute("data-href", postUrl);
-                let newMetaTitle = document.querySelector('meta[property="og:title"]').setAttribute("content", `${shareTitle}`);
-                let newMetaDescription = document.querySelector('meta[property="og:description"]').setAttribute("content", `${shareDescription}`);
-                let newMetaImage = document.querySelector('meta[property="og:image"]').setAttribute("content", `${absoluteImgUrl}`);
+                // // Replacing meta tags in head section with shared Url
+                // let newMetaUrl = encodeURI(document.querySelector('meta[property="og:url"]').setAttribute("content", `${postUrl}`));
+                // // Prevent double slash in root URI for image URL. 
+                // let absoluteImgUrl = encodeURI(postUrl+shareImg).replace("//storage", "/storage");
+                // let fbShareBtn = document.querySelector('.fb-share-button').setAttribute("data-href", postUrl);
+                // let newMetaTitle = document.querySelector('meta[property="og:title"]').setAttribute("content", `${shareTitle}`);
+                // // let newMetaDescription = document.querySelector('meta[property="og:description"]').setAttribute("content", `${shareDescription}`);
+                // let newMetaImage = document.querySelector('meta[property="og:image"]').setAttribute("content", `${absoluteImgUrl}`);
 
         </script>
 

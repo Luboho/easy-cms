@@ -1,9 +1,6 @@
 @extends('layouts.app')
 
-@section('dynamic_meta')
-    <meta property="og:description" content="Nové menu">
 
-@endsection
 
 @section('title', 'Nástenka príspevkov - galéria')
 
@@ -14,7 +11,6 @@
 @if (Session::has('message'))
     <div class="alert alert-info">{{ Session::get('message') }}</div>
 @endif
-
         <div class="container">
             <header class="border-bottom pb-4">  
                     {{-- Logo & Captions --}}
@@ -44,6 +40,7 @@
             </header>
                 {{-- LOOP 1.2.3.iterations | 1.paggination--}}
             <div>
+
     @if(count($posts) > 0)                                  
                 @php                                       
                     $currentUrl = url()->full(); 
@@ -55,6 +52,14 @@
                         <h2 class="pt-3 pb-1 text-center text-secondary">Aktuálne</h2>
                         <div class="row mr-auto ml-auto">
                         @foreach ($posts as $post)
+                        {{-- Dynamic meta og tags for Share buttons --}}
+                        @section('dynamic_meta')
+                            <meta property="og:title"         content="{{ $post->caption ?? '' }}" />
+                            <meta property="og:description"   content="{{ $post->text ?? '' }}" />
+                            <meta property="og:image"         content="{{ url()->current() }}/storage/{{ $post->image ?? '' }}" />
+                        @endsection
+                        {{-- END of Dynamic meta og tags for Share buttons --}}
+                        
                             @if($loop->iteration > 3)
                                 @break 
                             @endif
