@@ -35,7 +35,7 @@ class ContactFormController extends Controller
             'contact-us-message' => 'required|string',
         ]);
 
-        Mail::to('contact-us-email')->send(new ContactFormMail($data));
+        Mail::to(config('MAIL_USERNAME'))->send(new ContactFormMail($data));
 
         session()->flash('success', 'Vaša správa bola odoslaná.');
 
