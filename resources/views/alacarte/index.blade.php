@@ -18,6 +18,17 @@
             <h4 class="p-2 font-weight-bold text-secondary">Menu lístok</h4>
             <article class="row d-flex justify-content-between align-items-end">    
                 @foreach($alacartes as $alacarte)
+
+                    {{-- Dynamic meta og tags for Share buttons --}}
+                    @section('dynamic_meta')
+                    <meta property="og:url"           content="{{ url()->current() }}" />
+                    <meta property="og:type"          content="website" />
+                    <meta property="og:title"         content="{{ $alacarte->caption ?? '' }}" />
+                    <meta property="og:description"   content="{!! $alacarte->text ?? '' !!}" />
+                    <meta property="og:image"         content="{{ url()->current() }}/storage/{{ $alacarte->image ?? '' }}" />
+                    @endsection
+                    {{-- END of Dynamic meta og tags for Share buttons --}}
+
                     <div class="gallery-item mb-4 p-1 even-odd text-background shadow" id="gallery">
                         <div class="text-background">
                             <a href="/alacarte/{{ $alacarte->id }}" class="text-dark text-decoration-none">

@@ -2,6 +2,17 @@
 
 @section('title', 'Nástenka')
 
+{{-- Dynamic meta og tags for Share buttons --}}
+@section('dynamic_meta')
+<meta property="og:url"           content="{{ url()->current() }}" />
+<meta property="og:type"          content="website" />
+<meta property="og:title"         content="{{ $post->caption ?? '' }}" />
+<meta property="og:description"   content="{!! $post->text ?? '' !!}" />
+<meta property="og:image"         content="{{ url()->current() }}/storage/{{ $post->image ?? '' }}" />
+@endsection
+{{-- END of Dynamic meta og tags for Share buttons --}}
+
+
 @section('content')
 
 @include('inc.messages')
@@ -9,7 +20,7 @@
 @if (Session::has('message'))
     <div class="alert alert-info">{{ Session::get('message') }}</div>
 @endif
-
+    
         <div class="row mr-auto ml-auto  p-1">
 
             <div class="text-background mb-3 w-100">

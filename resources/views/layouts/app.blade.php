@@ -27,12 +27,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/summernote.css">
     {{-- FB share button with counter --}}
     @yield('dynamic_meta')
-    <meta property="og:url"           content="https://www.drevenica.ga" />
-    <meta property="og:type"          content="website" />
-    {{-- <meta property="og:description"   content="Hello" /> --}}
-    {{-- <meta property="og:image"         content="" /> --}}
-    {{-- END of FB share button with counter --}}
-
+    
 </head>
 
 <body>
@@ -49,9 +44,9 @@
             @yield('content')
             <div id="fb-root"></div>
 
+            {{--UP & DOWN Arrow buttons--}}
             <up-down></up-down>  
 
-                                           {{--UP & DOWN Arrow buttons--}}
         </main>
         
         <footer id="down" class="bg-secondary">
@@ -101,38 +96,7 @@
         </footer>
 
         @include('inc.scripts')
-        
-         {{-- ================================FACEBOOOK SHARE/LIKE BUTTON ======================================= --}}
-        <script>
-            (function(d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) return;
-                js = d.createElement(s); js.id = id;
-                js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
-                fjs.parentNode.insertBefore(js, fjs);
-                }(document, 'script', 'facebook-jssdk')
-            );
-
-
-                // let postUrl = encodeURI(document.location.href);
-                // let shareImg = encodeURI(document.querySelector('.share-img').getAttribute("src"));
-                // let shareTitle = document.querySelector('#title').textContent;
-                // let shareDescription = document.querySelector('#description').textContent;
-
-
-                // // Replacing meta tags in head section with shared Url
-                // let newMetaUrl = encodeURI(document.querySelector('meta[property="og:url"]').setAttribute("content", `${postUrl}`));
-                // // Prevent double slash in root URI for image URL. 
-                // let absoluteImgUrl = encodeURI(postUrl+shareImg).replace("//storage", "/storage");
-                // let fbShareBtn = document.querySelector('.fb-share-button').setAttribute("data-href", postUrl);
-                // let newMetaTitle = document.querySelector('meta[property="og:title"]').setAttribute("content", `${shareTitle}`);
-                // // let newMetaDescription = document.querySelector('meta[property="og:description"]').setAttribute("content", `${shareDescription}`);
-                // let newMetaImage = document.querySelector('meta[property="og:image"]').setAttribute("content", `${absoluteImgUrl}`);
-
-        </script>
-
-{{-- // =========================================EN OF FACEBOOK SHARE / LIKE BUTTON==================================== --}}
-
+ 
  
 </div> <!-- END OF ID APP -->
 </body>

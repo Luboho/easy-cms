@@ -14,6 +14,18 @@
     <h4 class="p-2 font-weight-bold text-secondary">Priestory na prenájom</h4>
     @if(count($rooms) > 0)  
     @foreach($rooms as $room)  
+
+        {{-- Dynamic meta og tags for Share buttons --}}
+        @section('dynamic_meta')
+        <meta property="og:url"           content="{{ url()->current() }}" />
+        <meta property="og:type"          content="website" />
+        <meta property="og:title"         content="{{ $room->caption ?? '' }}" />
+        <meta property="og:description"   content="{!! $room->text ?? '' !!}" />
+        <meta property="og:image"         content="{{ url()->current() }}/storage/{{ $room->image ?? '' }}" />
+        @endsection
+        {{-- END of Dynamic meta og tags for Share buttons --}}
+
+
         <div class="row mr-auto ml-auto mb-3">
             
             <div class="text-background w-100">

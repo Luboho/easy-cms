@@ -4,6 +4,17 @@
 
 @section('content')
 
+{{-- Dynamic meta og tags for Share buttons --}}
+@section('dynamic_meta')
+<meta property="og:url"           content="{{ url()->current() }}" />
+<meta property="og:type"          content="website" />
+<meta property="og:title"         content="{{ $alacarte->caption ?? '' }}" />
+<meta property="og:description"   content="{!! $alacarte->text ?? '' !!}" />
+<meta property="og:image"         content="{{ url()->current() }}/storage/{{ $alacarte->image ?? '' }}" />
+@endsection
+{{-- END of Dynamic meta og tags for Share buttons --}}
+
+
 @include('inc.messages')
 
 @if (Session::has('message'))
