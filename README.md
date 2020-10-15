@@ -1,7 +1,8 @@
 
 
 ## About Easy CMS
-Language used primary is Slovak.
+Laravel 7.0 --> 8.0
+Slovak language. 
 
 Simple CMS system build on Laravel framework. For better experience just try it. 
 
