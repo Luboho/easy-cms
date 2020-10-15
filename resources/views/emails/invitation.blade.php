@@ -9,7 +9,7 @@ Pred prvým prihlásením je nutné zaregistrovať sa.  Kliknite na odkaz "Regis
 
 <br>
 
-<a href="http://restaurantcms-test.test/verify?code={{ $email_data['verification_code'] }}"><h2>Registrácia</h2></a>
+<a href="{{ url('/').'/verify?code='.$email_data['verification_code'] }}"><h2>Registrácia</h2></a>
 
 <br>
 

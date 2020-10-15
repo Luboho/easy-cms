@@ -11,7 +11,6 @@
 |
 */
 
-
 Auth::routes();
 
 Route::get('layouts/app', 'NavLogoController@getNavLogo')->name('nav');
