@@ -16,7 +16,7 @@
                     {{-- Logo & Captions --}}
                     @foreach(Helper::getLogoGlobally() as $logo)                                         
                     {{--Edit Button--}}
-                    @can('isHeadAdmin')
+                    @can('isAdmin')
                         <div class="card-header text-right">
                             <button type="submit" style="background:none;"><a href="/logos/{{ $logo->id }}/edit">    
                                 <i class="edit-icon fa fa-edit"></i></a>

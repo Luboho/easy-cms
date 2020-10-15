@@ -41,7 +41,7 @@ class ContactCompanyPolicy
      */
     public function create(User $user, Company $company)
     {
-        return $user->role == 'head_admin';       
+        return $user->role == 'admin';       
     }
 
     /**
@@ -53,7 +53,7 @@ class ContactCompanyPolicy
      */
     public function update(User $user, Company $company)
     {
-        return $user->role == 'head_admin';
+        return $user->role == 'admin';
     }
 
     /**

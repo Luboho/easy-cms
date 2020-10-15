@@ -25,7 +25,7 @@
                             <th class="p-2 border border-secondary"><strong>Profil</strong></th>
                             <th class="p-2 border border-secondary"><strong>Registrovaný</strong></th>
                             <th class="p-2">
-                                @can('isHeadAdmin')
+                                @can('isAdmin')
                                     <div class="d-flex justify-content-center">
                                             <a href="{{ route('invitation.create') }}" class="create-user-icon" type="submit" title="Nový Užívateľ"><i class="p-1 fa fa-user-plus"></i></a>
                                     </div>
@@ -44,8 +44,8 @@
                                         @method('DELETE')
                                         @csrf
                                         
-                                        @if($user->role == 'head_admin')
-                                            @can('isHeadAdmin')
+                                        @if($user->role == 'admin')
+                                            @can('isAdmin')
                                                 <div class="d-flex justify-content-center">
                                                     @if (Route::has('password.request'))
                                                         <a href="{{ route('password.request') }}">
@@ -56,7 +56,7 @@
                                             @endcan
                                         @endif
 
-                                        @if($user->role == 'admin' )
+                                        @if($user->role == 'user')
                                             <div class="">
                                                 {{-- @if (Route::has('password.request'))
                                                     <a class="btn btn-link" href="{{ route('password.request') }}">

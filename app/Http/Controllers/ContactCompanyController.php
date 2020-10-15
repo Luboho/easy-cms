@@ -27,7 +27,7 @@ class ContactCompanyController extends Controller
     {
         $company = Company::all();
 
-        if ( $company->isEmpty() && (Gate::allows('isHeadAdmin'))) {
+        if ( $company->isEmpty() && (Gate::allows('isAdmin'))) {
             return view('company.create');
         }
         else

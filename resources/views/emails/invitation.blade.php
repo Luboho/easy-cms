@@ -1,8 +1,8 @@
 @component('mail::message')
 <h1 class="text-secondary">Dobrý deň</h1>
 
-Boli ste pozvaní k registrácii v redakčnom systéme stránky 
-<a  href="https://www.drevenica.ga">https://www.drevenica.ga</a>
+Boli ste pozvaní k registrácii v redakčnom systéme webovej stránky 
+<a  href="{{ url('/') }}">{{ url('/') }} .</a>
 <br>
 Pred prvým prihlásením je nutné zaregistrovať sa.  Kliknite na odkaz "Registrácia" prosím.
 

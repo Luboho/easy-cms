@@ -87,7 +87,7 @@
                         <!-- End New Post-->
 
                         <!-- Users | New User -->
-                        @can('isHeadAdmin')
+                        @can('isAdmin')
                             <li class="nav-item">
                                 <div class="btn-group">
                                     <button type="button" class="btn dropdown-toggle font-weight-bold pt-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

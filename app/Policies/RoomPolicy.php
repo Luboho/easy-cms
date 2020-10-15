@@ -41,7 +41,7 @@ class RoomPolicy
      */
     public function create(User $user)
     {
-        return $user->role == 'head_admin' || $user->role == 'admin';
+        return $user->role == 'admin' || $user->role == 'user';
     }
 
     /**
@@ -53,7 +53,7 @@ class RoomPolicy
      */
     public function update(User $user, Room $room)
     {
-        return $user->role == 'head_admin' || $user->role == 'admin';
+        return $user->role == 'admin' || $user->role == 'user';
     }
 
     /**
@@ -65,7 +65,7 @@ class RoomPolicy
      */
     public function delete(User $user, Room $room)
     {
-        return $user->role == 'head_admin' || $user->role == 'admin';
+        return $user->role == 'admin' || $user->role == 'user';
     }
 
     /**

@@ -19,7 +19,7 @@
             {{-- Edit button --}}
             <div >   
                 @if($companyData->isEmpty())
-                    @can('isHeadAdmin')
+                    @can('isAdmin')
                         <button style="background:none;">
                             <a href="{{ route('company.create') }}" >    
                                 <i class="fa fa-edit edit-icon"></i>
@@ -30,7 +30,7 @@
                 {{-- Contact Company Data--}}
                 @foreach(Helper::companyData() as $company)
                 
-                        @can('isHeadAdmin')
+                        @can('isAdmin')
                             @if(empty($company))
                                 <button style="background:none;">
                                     <a href="{{ route('company.create') }}" >    

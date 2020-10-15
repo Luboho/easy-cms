@@ -41,7 +41,7 @@ class AlacartePolicy
      */
     public function create(User $user)
     {
-        return $user->role == 'head_admin' || $user->role == 'admin';
+        return $user->role == 'admin' || $user->role == 'user';
     }
 
     /**
@@ -53,7 +53,7 @@ class AlacartePolicy
      */
     public function update(User $user, Alacarte $alacarte)
     {
-        return $user->role == 'head_admin' || $user->role == 'admin';
+        return $user->role == 'admin' || $user->role == 'user';
     }
 
     /**
@@ -65,7 +65,7 @@ class AlacartePolicy
      */
     public function delete(User $user, Alacarte $alacarte)
     {
-        return $user->role == 'head_admin' || $user->role == 'admin';
+        return $user->role == 'admin' || $user->role == 'user';
     }
 
     /**

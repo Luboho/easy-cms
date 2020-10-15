@@ -6,7 +6,6 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">Obnovenie hesla</div>
-
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
@@ -21,8 +20,13 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">E-Mailová adresa</label>
 
                             <div class="col-md-8">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}"  autocomplete="email" autofocus>
 
+                                @guest
+                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}"  autocomplete="email" autofocus>
+                                @else
+                                    <input id="email" disabled  type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ Auth::user()->email }}"  autocomplete="email" autofocus> 
+                                @endguest
+                                
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
