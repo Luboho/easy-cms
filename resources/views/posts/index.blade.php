@@ -138,9 +138,9 @@
                                         {{--Caption--}}
                                         <div class="p-2 align-items-end">{{ $post->caption }}</div>
                                          {{--Create_at--}}                                     
-                                        <div class="ml-2 p-2 align-items-end">
+                                        {{-- <div class="ml-2 p-2 align-items-end">
                                             {{ $post->created_at->format('d.m. Y') }}                                       
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </a>
 
@@ -167,9 +167,9 @@
                                             {{--Caption--}}
                                             <div class="p-2 align-items-end">{{ $post->caption }}</div>
                                              {{--Create_at--}}                                     
-                                            <div class="ml-2 p-2 align-items-end">
+                                            {{-- <div class="ml-2 p-2 align-items-end">
                                                 {{ $post->created_at->format('d.m. Y') }}                                       
-                                            </div>
+                                            </div> --}}
                                         </div>
                                     </a>
 
